@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#06152e" />
-  <meta name="description" content="Football Manager Mini Online — Production Bridge V1" />
+  <meta name="description" content="MS7 Football Manager Mini Online" />
   <meta name="application-name" content="FM Mini Online" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
-  <title>Football Manager Mini Online — Production Bridge V1</title>
+  <title>MS7 Football Manager Mini Online</title>
 <style>
 :root{
   --bg:#0b1020;
@@ -74,7 +74,7 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .sidebar-footer{margin-top:auto;display:grid;gap:12px;padding:16px 8px 0}
 .season-chip{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px;color:var(--muted)}
 .season-chip strong{color:var(--text)}
-.demo-note{font-size:11px;color:#64748b}
+.build-note{font-size:11px;color:#64748b}
 
 .main{min-width:0}
 .topbar{
@@ -1181,7 +1181,7 @@ h1{font-size:clamp(22px,3vw,30px);margin-bottom:0}
 .auth-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
 .auth-link{border:0;background:none;color:var(--accent);font-size:10px;padding:0}
 .auth-divider{height:1px;background:var(--line);margin:20px 0}
-.mock-callout{
+.info-callout{
   padding:11px 12px;border-radius:11px;border:1px solid rgba(94,234,212,.22);
   background:rgba(94,234,212,.05);color:#9ce3d7;font-size:10px;line-height:1.55
 }
@@ -1542,7 +1542,7 @@ h1,h2,h3{letter-spacing:.018em}
   padding:13px 10px;border-radius:9px;
 }
 .sidebar-footer .season-chip strong{font-size:20px;color:var(--accent)}
-.demo-note{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#678471}
+.build-note{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#678471}
 
 /* Stadium / scoreboard topbar */
 .topbar{
@@ -1763,21 +1763,21 @@ h1,h2,h3{letter-spacing:.018em}
   color:#fbbf24;font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase
 }
 .alpha-env-dot{width:7px;height:7px;border-radius:50%;background:#fbbf24;box-shadow:0 0 0 4px rgba(251,191,36,.08)}
-.alpha-status-box{padding:14px;border:1px solid var(--line);border-radius:13px;background:#0f1728;margin:12px 0}
-.alpha-status-box strong{display:block;font-size:12px;margin-bottom:5px}
-.alpha-status-box p{font-size:10px;color:var(--muted);line-height:1.55;margin:0}
-.alpha-status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}
-.alpha-stat{padding:11px;border:1px solid var(--line);border-radius:11px;background:#111a2b}
-.alpha-stat span{display:block;font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.alpha-stat strong{display:block;font-size:15px;margin-top:4px}
-.alpha-user-list{display:grid;gap:8px;margin-top:12px}
-.alpha-user-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:11px;background:#111a2b}
-.alpha-user-row strong{font-size:11px;display:block}.alpha-user-row span{font-size:9px;color:var(--muted)}
-.alpha-user-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
-.alpha-user-actions button{min-height:31px;padding:0 8px;border-radius:8px;font-size:9px;font-weight:900}
-.alpha-good{color:var(--good)}.alpha-warn{color:var(--warn)}.alpha-danger{color:var(--danger)}
-.alpha-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9px;color:#9fb2c9;word-break:break-all}
-@media(max-width:600px){.alpha-status-grid{grid-template-columns:1fr}.alpha-user-row{grid-template-columns:1fr}.alpha-user-actions{justify-content:flex-start}}
+.production-status-box{padding:14px;border:1px solid var(--line);border-radius:13px;background:#0f1728;margin:12px 0}
+.production-status-box strong{display:block;font-size:12px;margin-bottom:5px}
+.production-status-box p{font-size:10px;color:var(--muted);line-height:1.55;margin:0}
+.production-status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}
+.production-stat{padding:11px;border:1px solid var(--line);border-radius:11px;background:#111a2b}
+.production-stat span{display:block;font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.production-stat strong{display:block;font-size:15px;margin-top:4px}
+.production-user-list{display:grid;gap:8px;margin-top:12px}
+.production-user-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:11px;background:#111a2b}
+.production-user-row strong{font-size:11px;display:block}.production-user-row span{font-size:9px;color:var(--muted)}
+.production-user-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.production-user-actions button{min-height:31px;padding:0 8px;border-radius:8px;font-size:9px;font-weight:900}
+.production-good{color:var(--good)}.alpha-warn{color:var(--warn)}.production-danger{color:var(--danger)}
+.production-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9px;color:#9fb2c9;word-break:break-all}
+@media(max-width:600px){.production-status-grid{grid-template-columns:1fr}.production-user-row{grid-template-columns:1fr}.production-user-actions{justify-content:flex-start}}
 
 
 
@@ -1810,7 +1810,7 @@ button,a,input,select{touch-action:manipulation}
 .install-app-btn{min-height:40px;padding:0 12px;border:1px solid rgba(183,245,42,.32);border-radius:9px;background:rgba(183,245,42,.08);color:var(--accent);font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
 .pwa-auth-install{width:100%;margin-top:12px}
 .mobile-bottom-nav{display:none}
-.simulation-note{padding:12px;border:1px solid rgba(103,232,249,.24);border-radius:10px;background:rgba(103,232,249,.055);font-size:10px;color:#b9cbd0;line-height:1.55;margin:12px 0}
+.production-note{padding:12px;border:1px solid rgba(103,232,249,.24);border-radius:10px;background:rgba(103,232,249,.055);font-size:10px;color:#b9cbd0;line-height:1.55;margin:12px 0}
 
 @media(max-width:760px){
   body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
@@ -1887,7 +1887,6 @@ button,a,input,select{touch-action:manipulation}
         <button class="nav-item" data-view="transfers" type="button"><span class="nav-icon">⇄</span><span>Transfers</span></button>
         <button class="nav-item" data-view="league" type="button"><span class="nav-icon">★</span><span>League</span></button>
         <button class="nav-item" data-view="club" type="button"><span class="nav-icon">◆</span><span>Club</span></button>
-        <button class="nav-item admin-only" data-view="admin" type="button"><span class="nav-icon">⚙</span><span>Admin Panel</span></button>
       </nav>
 
       <div class="sidebar-footer">
@@ -1895,7 +1894,7 @@ button,a,input,select{touch-action:manipulation}
           <span>Season</span>
           <strong id="sidebarSeason">1</strong>
         </div>
-        <div class="demo-note">PRODUCTION BRIDGE V1 · SUPABASE BRIDGE</div>
+        <div class="build-note">MS7 · ONLINE CAREER</div>
       </div>
     </aside>
 
@@ -1956,7 +1955,7 @@ window.MS7_CONFIG = Object.freeze({
   url: "https://ibmshyuttubdzlnplugx.supabase.co",
   publishableKey: "sb_publishable_e2POOpOYq8_keYYXkD8M0Q_mTtoJf3d",
   worldSlug: "ms7-private-world",
-  environment: "PRODUCTION_BRIDGE_V1"
+  environment: "PRODUCTION_FINAL"
 });
 
 window.MS7Service = (() => {
@@ -2153,7 +2152,7 @@ window.MS7Service = (() => {
   }
 
   async function runStarterDraw() {
-    const res = await client.rpc("run_starter_draw", { p_reason: "Production Bridge V1 · Founding Draw V1.4" });
+    const res = await client.rpc("run_starter_draw", { p_reason: "Production Final · Founding Draw V1.4" });
     return must(res, "FOUNDING_DRAW_FAILED");
   }
 
@@ -2211,7 +2210,7 @@ window.MS7Service = (() => {
     }
 
     const squad = await getMySquadSummary(club.id);
-    return { screen: "alphaReady", session, user: session.user, profile, world, club, squad };
+    return { screen: "gameReady", session, user: session.user, profile, world, club, squad };
   }
 
   return {
@@ -2225,7 +2224,7 @@ window.MS7Service = (() => {
 
 <script>
 /* =============================================================
-   PRODUCTION BRIDGE V1 — REAL GAMEPLAY
+   PRODUCTION FINAL — REAL GAMEPLAY
    Supabase is the source of truth. No secret/service-role key is used in the frontend.
    ============================================================= */
 window.RealGameService = (() => {
@@ -2547,581 +2546,23 @@ window.RealGameService = (() => {
   }
   async function getFoundingDraw(){ const {world}=await context(); const clubs=[...await clubMap(world.id).then(m=>m.values())]; const squad=await getSquad(); const tiers={S:0,A:0,B:0,C:0,D:0}; squad.forEach(p=>tiers[p.tier]=(tiers[p.tier]||0)+1); return {status:world.founding_draw_status,foundingManagers:clubs.length,maxManagers:world.max_managers,seed:'Server-controlled',simultaneous:true,rerollAllowed:false,fairnessTarget:'Server controlled',idealTierMix:'1 S + 3 A + 7 B + 8 C + 3 D',squadComposition:[['GK',2],['RB',2],['CB',4],['LB',2],['DM/CM',4],['AM',2],['RW',2],['LW',2],['ST',2]],clubs:[{club:(await context()).club.name,avgOvr:squad.length?(squad.reduce((a,p)=>a+p.ovr,0)/squad.length).toFixed(1):0,sTier:tiers.S,aTier:tiers.A,bTier:tiers.B,cTier:tiers.C,dTier:tiers.D}]}; }
   async function getContractActions(){return {renewalLengths:[1,2,3],releaseCompensationPct:[30,40,50]};}
-  async function getAdminState(){return window.MockDB.admin;}
-
-  return {mode:'supabase-production-bridge-v1',invalidate,context,getManager,getSeason,getClub,getNextFixture,getRecentActivities,getSquad,getPlayerById,getTrainingState,getTrainingHistory,getTransferMarket,getLeague,getMatchCentre,getFinance,getFacilities,getNotifications,getSeasonCentre,getClubHistory,getAdminState,getFoundingDraw,getLineupRules,getContractActions,getSavedSetup,hydrateUIState,saveTactics,saveLineup,scheduleTraining,setIndividualFocus,listPlayerForTransfer,makeTransferOffer,respondTransferOffer,placeFreeAgentBid,upgradeFacility,markNotificationRead,markAllNotificationsRead,renewContract,releasePlayer,submitLiveTactics,submitLiveSubstitution};
-})();
-</script>
-
-<script>
-window.MockDB = {
-  manager: {
-    id: "mgr-demo-01",
-    name: "Mustafa Soge",
-    short: "MS",
-    status: "approved",
-    role: "admin"
-  },
-
-  season: {
-    number: 1,
-    phase: "FIRST_HALF",
-    matchday: 5
-  },
-
-  club: {
-    id: "club-demo-01",
-    name: "MS7 FC",
-    shortName: "MS7",
-    stadium: "MS7 Arena",
-    leaguePosition: 4,
-    balance: 67200000,
-    transferBudget: 54200000,
-    wageUsed: 812000,
-    wageLimit: 1200000,
-    reputation: "Normal",
-    form: ["W","D","W","L","W"],
-    strength: {
-      attack: 81,
-      midfield: 79,
-      defense: 78
-    }
-  },
-
-  nextFixture: {
-    id: "fx-005",
-    home: {
-      name: "MS7 FC",
-      short: "MS7"
-    },
-    away: {
-      name: "Northstar United",
-      short: "NSU"
-    },
-    dateLabel: "Matchday 5",
-    kickoff: "20:10 WIB",
-    window: "19:30–21:00 WIB",
-    venue: "MS7 Arena"
-  },
-
-  recentActivities: [
-    { icon: "↗", title: "Training completed", detail: "Normal training — +development progress", time: "Today" },
-    { icon: "£", title: "Transfer offer received", detail: "£18.5M offer for Demo Player 08", time: "1h" },
-    { icon: "✓", title: "Lineup saved", detail: "4-3-3 · Balanced · High Press", time: "2h" },
-    { icon: "W", title: "Last match", detail: "MS7 FC 2–1 Capital Athletic", time: "Yesterday" }
-  ],
-
-  players: [
-    {id:"p01",name:"Demo Player 01",pos:"GK",secondary:"-",ovr:80,age:27,fitness:94,form:78,potential:"Moderate",tier:"B",contract:2,wage:48000,status:"Available",refSeason:"2021/22",refClub:"Demo PL Club A",attributes:{Reflexes:83,Handling:79,Positioning:81,"One-on-One":82,Distribution:75}},
-    {id:"p02",name:"Demo Player 02",pos:"GK",secondary:"-",ovr:75,age:24,fitness:100,form:72,potential:"High",tier:"C",contract:3,wage:30000,status:"Available",refSeason:"2023/24",refClub:"Demo PL Club B",attributes:{Reflexes:77,Handling:74,Positioning:76,"One-on-One":75,Distribution:72}},
-    {id:"p03",name:"Demo Player 03",pos:"RB",secondary:"RWB",ovr:78,age:25,fitness:89,form:80,potential:"Moderate",tier:"B",contract:2,wage:41000,status:"Available",refSeason:"2022/23",refClub:"Demo PL Club C",attributes:{Pace:82,Acceleration:81,Finishing:60,Passing:74,Dribbling:75,Crossing:81,Tackling:79,Positioning:78,Strength:70,Aerial:66,Stamina:84,"Work Rate":82}},
-    {id:"p04",name:"Demo Player 04",pos:"RB",secondary:"CB",ovr:74,age:29,fitness:92,form:70,potential:"Low",tier:"C",contract:1,wage:27000,status:"Available",refSeason:"2019/20",refClub:"Demo PL Club D",attributes:{Pace:74,Acceleration:72,Finishing:51,Passing:70,Dribbling:68,Crossing:73,Tackling:76,Positioning:75,Strength:75,Aerial:71,Stamina:77,"Work Rate":75}},
-    {id:"p05",name:"Demo Player 05",pos:"CB",secondary:"-",ovr:84,age:26,fitness:86,form:84,potential:"Moderate",tier:"A",contract:3,wage:72000,status:"Available",refSeason:"2020/21",refClub:"Demo PL Club E",attributes:{Pace:75,Acceleration:72,Finishing:42,Passing:75,Dribbling:61,Crossing:48,Tackling:88,Positioning:87,Strength:86,Aerial:85,Stamina:80,"Work Rate":77}},
-    {id:"p06",name:"Demo Player 06",pos:"CB",secondary:"DM",ovr:81,age:24,fitness:91,form:79,potential:"High",tier:"B",contract:2,wage:52000,status:"Available",refSeason:"2023/24",refClub:"Demo PL Club F",attributes:{Pace:77,Acceleration:75,Finishing:43,Passing:78,Dribbling:65,Crossing:50,Tackling:84,Positioning:83,Strength:82,Aerial:80,Stamina:82,"Work Rate":81}},
-    {id:"p07",name:"Demo Player 07",pos:"CB",secondary:"-",ovr:77,age:31,fitness:83,form:73,potential:"Low",tier:"C",contract:1,wage:35000,status:"Available",refSeason:"2018/19",refClub:"Demo PL Club G",attributes:{Pace:68,Acceleration:66,Finishing:39,Passing:71,Dribbling:58,Crossing:44,Tackling:81,Positioning:82,Strength:84,Aerial:82,Stamina:72,"Work Rate":73}},
-    {id:"p08",name:"Demo Player 08",pos:"CB",secondary:"LB",ovr:73,age:22,fitness:96,form:75,potential:"High",tier:"C",contract:3,wage:24000,status:"Available",refSeason:"2024/25",refClub:"Demo PL Club H",attributes:{Pace:74,Acceleration:73,Finishing:38,Passing:68,Dribbling:61,Crossing:56,Tackling:76,Positioning:75,Strength:76,Aerial:75,Stamina:76,"Work Rate":77}},
-    {id:"p09",name:"Demo Player 09",pos:"LB",secondary:"LWB",ovr:82,age:25,fitness:88,form:82,potential:"Moderate",tier:"B",contract:2,wage:54000,status:"Available",refSeason:"2021/22",refClub:"Demo PL Club I",attributes:{Pace:86,Acceleration:85,Finishing:60,Passing:78,Dribbling:79,Crossing:85,Tackling:80,Positioning:82,Strength:69,Aerial:64,Stamina:88,"Work Rate":87}},
-    {id:"p10",name:"Demo Player 10",pos:"LB",secondary:"CB",ovr:74,age:28,fitness:93,form:71,potential:"Low",tier:"C",contract:2,wage:28000,status:"Available",refSeason:"2020/21",refClub:"Demo PL Club J",attributes:{Pace:73,Acceleration:72,Finishing:49,Passing:70,Dribbling:67,Crossing:75,Tackling:77,Positioning:76,Strength:72,Aerial:69,Stamina:79,"Work Rate":78}},
-    {id:"p11",name:"Demo Player 11",pos:"DM",secondary:"CM",ovr:83,age:27,fitness:90,form:85,potential:"Moderate",tier:"A",contract:3,wage:65000,status:"Available",refSeason:"2020/21",refClub:"Demo PL Club K",attributes:{Pace:70,Acceleration:68,Finishing:60,Passing:85,Dribbling:76,Crossing:66,Tackling:86,Positioning:88,Strength:82,Aerial:77,Stamina:87,"Work Rate":86}},
-    {id:"p12",name:"Demo Player 12",pos:"CM",secondary:"DM",ovr:81,age:23,fitness:95,form:80,potential:"High",tier:"B",contract:3,wage:50000,status:"Available",refSeason:"2023/24",refClub:"Demo PL Club L",attributes:{Pace:74,Acceleration:75,Finishing:68,Passing:86,Dribbling:81,Crossing:72,Tackling:76,Positioning:84,Strength:73,Aerial:66,Stamina:89,"Work Rate":90}},
-    {id:"p13",name:"Demo Player 13",pos:"CM",secondary:"AM",ovr:79,age:25,fitness:82,form:76,potential:"Moderate",tier:"B",contract:2,wage:45000,status:"Available",refSeason:"2022/23",refClub:"Demo PL Club M",attributes:{Pace:72,Acceleration:73,Finishing:72,Passing:84,Dribbling:82,Crossing:75,Tackling:67,Positioning:82,Strength:68,Aerial:60,Stamina:85,"Work Rate":84}},
-    {id:"p14",name:"Demo Player 14",pos:"DM",secondary:"CM",ovr:74,age:30,fitness:87,form:68,potential:"Low",tier:"C",contract:1,wage:30000,status:"Available",refSeason:"2019/20",refClub:"Demo PL Club N",attributes:{Pace:65,Acceleration:64,Finishing:54,Passing:76,Dribbling:68,Crossing:62,Tackling:79,Positioning:80,Strength:79,Aerial:73,Stamina:78,"Work Rate":78}},
-    {id:"p15",name:"Demo Player 15",pos:"AM",secondary:"CM",ovr:86,age:25,fitness:84,form:88,potential:"Moderate",tier:"A",contract:2,wage:79000,status:"Available",refSeason:"2021/22",refClub:"Demo PL Club O",attributes:{Pace:78,Acceleration:81,Finishing:82,Passing:90,Dribbling:90,Crossing:80,Tackling:50,Positioning:89,Strength:65,Aerial:57,Stamina:82,"Work Rate":80}},
-    {id:"p16",name:"Demo Player 16",pos:"AM",secondary:"RW",ovr:76,age:21,fitness:97,form:77,potential:"Exceptional",tier:"C",contract:3,wage:32000,status:"Available",refSeason:"2024/25",refClub:"Demo PL Club P",attributes:{Pace:80,Acceleration:82,Finishing:73,Passing:80,Dribbling:83,Crossing:74,Tackling:43,Positioning:79,Strength:61,Aerial:50,Stamina:77,"Work Rate":75}},
-    {id:"p17",name:"Demo Player 17",pos:"RW",secondary:"LW",ovr:88,age:24,fitness:79,form:91,potential:"High",tier:"S",contract:3,wage:105000,status:"Available",refSeason:"2022/23",refClub:"Demo PL Club Q",attributes:{Pace:92,Acceleration:93,Finishing:88,Passing:84,Dribbling:92,Crossing:85,Tackling:37,Positioning:87,Strength:67,Aerial:56,Stamina:86,"Work Rate":82}},
-    {id:"p18",name:"Demo Player 18",pos:"RW",secondary:"AM",ovr:78,age:28,fitness:90,form:74,potential:"Low",tier:"B",contract:2,wage:44000,status:"Available",refSeason:"2019/20",refClub:"Demo PL Club R",attributes:{Pace:82,Acceleration:82,Finishing:76,Passing:77,Dribbling:81,Crossing:80,Tackling:42,Positioning:77,Strength:64,Aerial:55,Stamina:80,"Work Rate":78}},
-    {id:"p19",name:"Demo Player 19",pos:"LW",secondary:"RW",ovr:80,age:23,fitness:92,form:81,potential:"High",tier:"B",contract:3,wage:51000,status:"Available",refSeason:"2023/24",refClub:"Demo PL Club S",attributes:{Pace:88,Acceleration:90,Finishing:78,Passing:76,Dribbling:86,Crossing:78,Tackling:39,Positioning:80,Strength:62,Aerial:51,Stamina:82,"Work Rate":79}},
-    {id:"p20",name:"Demo Player 20",pos:"LW",secondary:"ST",ovr:75,age:30,fitness:85,form:69,potential:"Low",tier:"C",contract:1,wage:31000,status:"Available",refSeason:"2018/19",refClub:"Demo PL Club T",attributes:{Pace:78,Acceleration:79,Finishing:76,Passing:70,Dribbling:79,Crossing:75,Tackling:35,Positioning:77,Strength:66,Aerial:58,Stamina:74,"Work Rate":73}},
-    {id:"p21",name:"Demo Player 21",pos:"ST",secondary:"CF",ovr:84,age:27,fitness:81,form:86,potential:"Moderate",tier:"A",contract:2,wage:74000,status:"Available",refSeason:"2020/21",refClub:"Demo PL Club U",attributes:{Pace:82,Acceleration:80,Finishing:89,Passing:72,Dribbling:80,Crossing:61,Tackling:31,Positioning:90,Strength:84,Aerial:83,Stamina:80,"Work Rate":78}},
-    {id:"p22",name:"Demo Player 22",pos:"ST",secondary:"LW",ovr:72,age:20,fitness:98,form:73,potential:"Exceptional",tier:"D",contract:3,wage:18000,status:"Available",refSeason:"2025/26",refClub:"Demo PL Club V",attributes:{Pace:85,Acceleration:86,Finishing:73,Passing:66,Dribbling:76,Crossing:62,Tackling:28,Positioning:74,Strength:70,Aerial:68,Stamina:75,"Work Rate":72}}
-  ]
-,
-  training: {
-    todayType: "Normal",
-    teamFocus: "Balanced",
-    completed: false,
-    trainingCentreLevel: 1,
-    medicalCentreLevel: 1,
-    sessionsRemainingToday: 1,
-    lastSession: {
-      type: "Recovery",
-      focus: "Fitness",
-      result: "Completed",
-      note: "Squad fitness recovered after previous matchday."
-    }
-  },
-  trainingHistory: [
-    {day:"Day 1",type:"Normal",focus:"Balanced",avgDxp:8,avgFitness:-4},
-    {day:"Day 2",type:"Recovery",focus:"Fitness",avgDxp:2,avgFitness:10},
-    {day:"Day 3",type:"Technical",focus:"Passing",avgDxp:7,avgFitness:-3},
-    {day:"Day 4",type:"Light",focus:"Balanced",avgDxp:5,avgFitness:-2}
-  ]
-
-,
-  transferMarket: {
-    windowOpen: true,
-    windowLabel: "Preseason Window",
-    closesIn: "1d 08h",
-    squadSize: 22,
-    squadMin: 18,
-    squadMax: 25,
-    transferList: [
-      {id:"tm01",name:"Market Player 01",pos:"ST",secondary:"RW",ovr:83,age:26,tier:"A",price:28500000,wage:65000,club:"Harbour City",fitness:91,potential:"Moderate",listed:true},
-      {id:"tm02",name:"Market Player 02",pos:"CM",secondary:"DM",ovr:81,age:23,tier:"B",price:22000000,wage:52000,club:"Westbridge FC",fitness:95,potential:"High",listed:true},
-      {id:"tm03",name:"Market Player 03",pos:"CB",secondary:"-",ovr:79,age:28,tier:"B",price:17500000,wage:47000,club:"Capital Athletic",fitness:88,potential:"Moderate",listed:true},
-      {id:"tm04",name:"Market Player 04",pos:"RW",secondary:"LW",ovr:85,age:25,tier:"A",price:38500000,wage:76000,club:"Northstar United",fitness:86,potential:"Moderate",listed:true},
-      {id:"tm05",name:"Market Player 05",pos:"GK",secondary:"-",ovr:77,age:30,tier:"C",price:9000000,wage:32000,club:"Riverside Town",fitness:100,potential:"Low",listed:true},
-      {id:"tm06",name:"Market Player 06",pos:"LB",secondary:"LWB",ovr:78,age:22,tier:"B",price:14500000,wage:39000,club:"Kingsport FC",fitness:93,potential:"High",listed:true}
-    ],
-    freeAgents: [
-      {id:"fa01",name:"Free Agent 01",pos:"AM",secondary:"CM",ovr:80,age:24,tier:"B",openingBid:6000000,currentBid:8200000,currentBidder:"Westbridge FC",wage:48000,potential:"High",endsIn:"05h 42m"},
-      {id:"fa02",name:"Free Agent 02",pos:"ST",secondary:"-",ovr:76,age:29,tier:"C",openingBid:3000000,currentBid:3000000,currentBidder:"—",wage:34000,potential:"Moderate",endsIn:"09h 10m"},
-      {id:"fa03",name:"Free Agent 03",pos:"CB",secondary:"DM",ovr:74,age:21,tier:"C",openingBid:2000000,currentBid:2600000,currentBidder:"Capital Athletic",wage:24000,potential:"High",endsIn:"02h 55m"}
-    ],
-    myBids: [
-      {id:"bid01",type:"TRANSFER",player:"Market Player 02",club:"Westbridge FC",amount:19000000,status:"Pending",submitted:"Today 13:20"},
-      {id:"bid02",type:"AUCTION",player:"Free Agent 01",club:"Free Agent",amount:7800000,status:"Outbid",submitted:"Today 12:45"}
-    ],
-    offersReceived: [
-      {id:"off01",playerId:"p08",player:"Demo Player 08",buyer:"Northstar United",amount:18500000,status:"Pending",submitted:"Today 14:05"},
-      {id:"off02",playerId:"p14",player:"Demo Player 14",buyer:"Harbour City",amount:9200000,status:"Pending",submitted:"Today 11:50"}
-    ]
-  }
-
-,
-  league: {
-    name: "Private Premier Manager League",
-    standings: [
-      {pos:1,club:"Northstar United",p:5,w:4,d:1,l:0,gf:11,ga:4,gd:7,pts:13,form:["W","W","D","W","W"]},
-      {pos:2,club:"Harbour City",p:5,w:4,d:0,l:1,gf:10,ga:5,gd:5,pts:12,form:["W","W","L","W","W"]},
-      {pos:3,club:"Westbridge FC",p:5,w:3,d:1,l:1,gf:9,ga:5,gd:4,pts:10,form:["D","W","W","L","W"]},
-      {pos:4,club:"MS7 FC",p:5,w:3,d:1,l:1,gf:8,ga:5,gd:3,pts:10,form:["W","D","W","L","W"]},
-      {pos:5,club:"Capital Athletic",p:5,w:2,d:2,l:1,gf:7,ga:6,gd:1,pts:8,form:["D","W","D","L","W"]},
-      {pos:6,club:"Riverside Town",p:5,w:2,d:1,l:2,gf:6,ga:6,gd:0,pts:7,form:["L","W","D","W","L"]},
-      {pos:7,club:"Kingsport FC",p:5,w:2,d:0,l:3,gf:7,ga:8,gd:-1,pts:6,form:["W","L","W","L","L"]},
-      {pos:8,club:"Eastern Rovers",p:5,w:1,d:2,l:2,gf:5,ga:7,gd:-2,pts:5,form:["D","L","W","D","L"]},
-      {pos:9,club:"Metro Lions",p:5,w:1,d:1,l:3,gf:5,ga:8,gd:-3,pts:4,form:["L","L","W","D","L"]},
-      {pos:10,club:"Albion Stars",p:5,w:1,d:1,l:3,gf:4,ga:8,gd:-4,pts:4,form:["L","D","L","W","L"]},
-      {pos:11,club:"Southbank FC",p:5,w:0,d:2,l:3,gf:3,ga:8,gd:-5,pts:2,form:["D","L","L","D","L"]},
-      {pos:12,club:"Crown United",p:5,w:0,d:1,l:4,gf:3,ga:10,gd:-7,pts:1,form:["L","L","D","L","L"]}
-    ],
-    fixtures: [
-      {md:5,date:"Today",home:"MS7 FC",away:"Northstar United",time:"20:10",status:"UPCOMING",score:null},
-      {md:5,date:"Today",home:"Harbour City",away:"Capital Athletic",time:"20:20",status:"UPCOMING",score:null},
-      {md:5,date:"Today",home:"Westbridge FC",away:"Riverside Town",time:"20:30",status:"UPCOMING",score:null},
-      {md:5,date:"Today",home:"Kingsport FC",away:"Eastern Rovers",time:"20:40",status:"UPCOMING",score:null},
-      {md:5,date:"Today",home:"Metro Lions",away:"Albion Stars",time:"20:50",status:"UPCOMING",score:null},
-      {md:5,date:"Today",home:"Southbank FC",away:"Crown United",time:"21:00",status:"UPCOMING",score:null},
-      {md:4,date:"Yesterday",home:"MS7 FC",away:"Capital Athletic",time:"22:10",status:"FINISHED",score:"2–1"},
-      {md:4,date:"Yesterday",home:"Northstar United",away:"Harbour City",time:"22:20",status:"FINISHED",score:"1–1"},
-      {md:4,date:"Yesterday",home:"Riverside Town",away:"Kingsport FC",time:"22:30",status:"FINISHED",score:"2–0"}
-    ],
-    playerStats: [
-      {rank:1,name:"Market Player 04",club:"Northstar United",pos:"RW",goals:5,assists:2,rating:8.3},
-      {rank:2,name:"Demo Player 17",club:"MS7 FC",pos:"RW",goals:4,assists:3,rating:8.1},
-      {rank:3,name:"Market Player 01",club:"Harbour City",pos:"ST",goals:4,assists:1,rating:7.9},
-      {rank:4,name:"Demo Player 21",club:"MS7 FC",pos:"ST",goals:3,assists:1,rating:7.8},
-      {rank:5,name:"Market Player 02",club:"Westbridge FC",pos:"CM",goals:2,assists:4,rating:7.8},
-      {rank:6,name:"Demo Player 15",club:"MS7 FC",pos:"AM",goals:2,assists:4,rating:7.7}
-    ]
-  },
-  matchCentre: {
-    fixtureId:"fx-005",
-    home:"MS7 FC",
-    away:"Northstar United",
-    homeShort:"MS7",
-    awayShort:"NSU",
-    kickoff:"20:10 WIB",
-    venue:"MS7 Arena",
-    status:"PRE_MATCH",
-    minute:0,
-    homeScore:0,
-    awayScore:0,
-    possessionHome:52,
-    shotsHome:0,
-    shotsAway:0,
-    sotHome:0,
-    sotAway:0,
-    xgHome:0,
-    xgAway:0,
-    events:[
-      {minute:0,type:"info",text:"Match Centre ready. Start mock simulation to preview live flow."}
-    ]
-  },
-  finance: {
-    balance:67200000,
-    transferBudget:54200000,
-    reserve:13000000,
-    wageUsed:812000,
-    wageLimit:1200000,
-    sponsorIncome:10000000,
-    matchdayIncome:2500000,
-    seasonPrize:0,
-    ledger:[
-      {date:"Today",type:"MATCHDAY",detail:"Home match revenue",amount:500000},
-      {date:"Today",type:"WAGES",detail:"Daily wage allocation",amount:-116000},
-      {date:"Yesterday",type:"SPONSOR",detail:"Season sponsor payment",amount:10000000},
-      {date:"Yesterday",type:"FACILITY",detail:"Medical Centre maintenance",amount:-120000},
-      {date:"Day 1",type:"STARTING_BALANCE",detail:"Season opening balance",amount:57000000}
-    ]
-  },
-  facilities: [
-    {type:"Training Centre",level:1,effect:"Development multiplier 1.00×",nextEffect:"1.03×",upgradeCost:10000000,upgradeTime:"1 season"},
-    {type:"Medical Centre",level:1,effect:"Base recovery",nextEffect:"+4% recovery / -2% injury risk",upgradeCost:8000000,upgradeTime:"1 season"},
-    {type:"Stadium",level:1,effect:"£500k per home match",nextEffect:"£600k per home match",upgradeCost:10000000,upgradeTime:"1 season"}
-  ]
-
-,
-  notifications: [
-    {id:"n01",category:"Match",title:"Match starts tonight",message:"MS7 FC vs Northstar United kicks off at 20:10 WIB.",time:"Today 15:00",read:false},
-    {id:"n02",category:"Transfer",title:"New transfer offer",message:"Northstar United submitted £18.5M for Demo Player 08.",time:"Today 14:05",read:false},
-    {id:"n03",category:"Player",title:"Contract watch",message:"Demo Player 14 has 1 season remaining on his contract.",time:"Today 11:10",read:false},
-    {id:"n04",category:"League",title:"Matchday schedule published",message:"The next two matchday windows are available.",time:"Yesterday",read:false},
-    {id:"n05",category:"Finance",title:"Sponsor payment received",message:"£10M season sponsor payment has been added to the ledger.",time:"Yesterday",read:true}
-  ],
-  seasonCentre: {
-    currentSeason:1,
-    phase:"FIRST_HALF",
-    phaseLabel:"First Half",
-    progressPct:23,
-    currentMatchday:5,
-    totalMatchdays:22,
-    daysUntilMidseason:4,
-    timeline:[
-      {key:"PRESEASON",label:"Preseason",status:"done",note:"Founding squad & preparation"},
-      {key:"FIRST_HALF",label:"First Half",status:"current",note:"Matchday 1–11"},
-      {key:"MIDSEASON_BREAK",label:"Midseason",status:"future",note:"2 days · transfer window"},
-      {key:"SECOND_HALF",label:"Second Half",status:"future",note:"Matchday 12–22"},
-      {key:"OFFSEASON",label:"Offseason",status:"future",note:"2 days · rollover"},
-      {key:"NEXT_SEASON",label:"Season 2",status:"future",note:"New campaign"}
-    ],
-    awardsRace:[
-      {award:"Golden Boot",leader:"Market Player 04",club:"Northstar United",value:"5 goals"},
-      {award:"Top Assist",leader:"Market Player 02",club:"Westbridge FC",value:"4 assists"},
-      {award:"Golden Glove",leader:"Demo Player 01",club:"MS7 FC",value:"2 clean sheets"},
-      {award:"Player of Season",leader:"Market Player 04",club:"Northstar United",value:"8.3 rating"}
-    ],
-    hallOfFame:[
-      {season:"Pre-Launch",champion:"—",runnerUp:"—",goldenBoot:"—",playerSeason:"World not started"},
-      {season:"Season 1",champion:"In Progress",runnerUp:"In Progress",goldenBoot:"In Progress",playerSeason:"In Progress"}
-    ],
-    rollover:[
-      "Finalize standings and champion",
-      "Pay league prizes and awards",
-      "Apply player development",
-      "Age all active players +1",
-      "Apply age decline",
-      "Process retirement",
-      "Reduce contracts by 1 season",
-      "Expired contracts become free agents",
-      "Issue sponsor / new-season budget",
-      "Open 2-day offseason",
-      "Create next season"
-    ]
-  },
-  clubHistory: {
-    founded:"Season 1",
-    manager:"Mustafa Soge",
-    homeGround:"MS7 Arena",
-    highestPosition:"4th",
-    biggestWin:"MS7 FC 3–0 Crown United",
-    recordSigning:"No permanent signing yet",
-    trophies:[
-      {name:"League Championship",count:0},
-      {name:"Golden Boot",count:0},
-      {name:"Player of the Season",count:0},
-      {name:"Manager of the Season",count:0}
-    ],
-    events:[
-      {season:"Season 1",event:"Club founded and approved into the private world."},
-      {season:"Season 1",event:"Founding Squad Draw completed with 22 players."},
-      {season:"Season 1",event:"First competitive win recorded."}
-    ]
-  },
-  admin: {
-    pendingUsers:[
-      {id:"u101",name:"Agung Pinoz",username:"agung",requested:"Today 14:20",status:"pending"},
-      {id:"u102",name:"Raka Demo",username:"raka",requested:"Today 13:05",status:"pending"}
-    ],
-    world:{
-      name:"FM Mini Private World",
-      activeManagers:12,
-      maxManagers:18,
-      season:1,
-      phase:"FIRST_HALF",
-      transferWindow:true,
-      matchScheduler:true
-    },
-    auditLog:[
-      {time:"Today 10:00",action:"Season state checked",entity:"Season 1",reason:"Routine admin review"},
-      {time:"Yesterday 20:05",action:"Fixture kickoff adjusted",entity:"Matchday 4",reason:"Scheduling correction"},
-      {time:"Day 1",action:"Founding squad draw executed",entity:"All clubs",reason:"Initial world setup"}
-    ]
-  }
-
-};
-
-;
-
-// Enrich mock players for Blueprint-Accurate V1.
-window.MockDB.players.forEach((p, idx) => {
-  if (!p.injury) {
-    const injuryCycle = [
-      {level:"None",matchesAffected:0,playable:true,returnFitness:p.fitness},
-      {level:"Very Minor",matchesAffected:1,playable:true,returnFitness:46},
-      {level:"Minor",matchesAffected:2,playable:true,returnFitness:58},
-      {level:"Heavy",matchesAffected:3,playable:false,returnFitness:68},
-      {level:"Very Heavy",matchesAffected:4,playable:false,returnFitness:62}
-    ];
-    p.injury = idx % 11 === 0 ? injuryCycle[1] : idx % 17 === 0 ? injuryCycle[2] : injuryCycle[0];
-  }
-  if (!p.stats) {
-    p.stats = {
-      appearances: 5,
-      starts: idx % 3 === 0 ? 5 : 3,
-      minutes: 300 + (idx % 5) * 70,
-      goals: ["ST","RW","LW","AM"].includes(p.pos) ? idx % 4 : 0,
-      assists: ["CM","AM","RW","LW"].includes(p.pos) ? idx % 3 : 0,
-      cleanSheets: p.pos === "GK" ? (idx % 3) : 0,
-      avgRating: +(6.7 + (idx % 9) * 0.14).toFixed(1)
+  async function getAdminState(){
+    const b = await window.MS7Service.bootstrap();
+    if (b?.profile?.role !== 'admin') throw new Error('ADMIN_REQUIRED');
+    return {
+      world: b.world || {},
+      pendingUsers: b.pending || [],
+      clubs: b.clubs || [],
+      overview: b.adminOverview || {}
     };
   }
-  if (!p.careerHistory) {
-    p.careerHistory = [
-      {season:"Season 1",club:"MS7 FC",apps:p.stats.appearances,goals:p.stats.goals,assists:p.stats.assists,rating:p.stats.avgRating}
-    ];
-  }
-  if (p.resaleCooldown == null) p.resaleCooldown = idx % 7 === 0 ? 2 : 0;
-});
 
-window.MockDB.foundingDraw = {
-  status:"COMPLETED",
-  foundingManagers:12,
-  maxManagers:18,
-  seed:"FMMINI-S1-2026-A",
-  simultaneous:true,
-  rerollAllowed:false,
-  fairnessTarget:"±0.5–1.0 OVR",
-  idealTierMix:"1 S + 3 A + 7 B + 8 C + 3 D",
-  squadComposition:[
-    ["GK",2],["RB",2],["CB",4],["LB",2],["DM/CM",4],["AM",2],["RW",2],["LW",2],["ST",2]
-  ],
-  clubs:[
-    {club:"MS7 FC",avgOvr:79.4,attack:81,midfield:79,defense:78,sTier:1,aTier:3,bTier:7,cTier:8,dTier:3},
-    {club:"Northstar United",avgOvr:79.8,attack:80,midfield:80,defense:79,sTier:1,aTier:3,bTier:7,cTier:8,dTier:3},
-    {club:"Harbour City",avgOvr:79.1,attack:79,midfield:80,defense:78,sTier:1,aTier:3,bTier:7,cTier:8,dTier:3},
-    {club:"Westbridge FC",avgOvr:79.6,attack:80,midfield:79,defense:79,sTier:1,aTier:3,bTier:7,cTier:8,dTier:3}
-  ]
-};
-
-window.MockDB.matchCentre.extraStats = {
-  cornersHome:0,cornersAway:0,
-  foulsHome:0,foulsAway:0,
-  cardsHome:0,cardsAway:0,
-  passAccHome:86,passAccAway:84,
-  fitnessHome:93,fitnessAway:92
-};
-window.MockDB.matchCentre.liveTactics = {
-  lastChangeAgo:45,
-  cooldownSeconds:30
-};
-window.MockDB.matchCentre.substitutions = {
-  max:5, homeUsed:0, awayUsed:0
-};
-window.MockDB.matchCentre.playerRatings = [
-  {name:"Demo Player 17",club:"MS7 FC",pos:"RW",rating:7.8},
-  {name:"Demo Player 21",club:"MS7 FC",pos:"ST",rating:7.4},
-  {name:"Demo Player 11",club:"MS7 FC",pos:"DM",rating:7.2},
-  {name:"Market Player 04",club:"Northstar United",pos:"RW",rating:7.6}
-];
-
-window.MockDB.lineupRules = {
-  lockMinutesBeforeKickoff:5,
-  currentlyLocked:false,
-  lockCountdown:"04:32",
-  offlineFallback:"Last Valid Lineup + Last Valid Tactics",
-  autoSubEnabled:true,
-  autoSubRules:{
-    fatigueThreshold:68,
-    injuryRiskReplacement:true,
-    preserveFormation:true,
-    maxSubs:5
-  }
-};
-
-window.MockDB.contractActions = {
-  renewalLengths:[1,2,3],
-  releaseCompensationPct:[30,40,50]
-};
-
-window.MockDB.players.forEach((p, idx) => {
-  p.suspension = p.suspension || {active: idx===6, matches: idx===6 ? 1 : 0};
-  p.retirementRisk = p.age >= 35 ? "Very High" : p.age >= 33 ? "High" : p.age >= 31 ? "Moderate" : "Low";
-  p.positionOvrs = p.positionOvrs || [{position:p.pos,ovr:p.ovr,familiarity:"Natural"}].concat(
-    p.secondary && p.secondary !== "-" ? [{position:p.secondary.split('/')[0],ovr:Math.max(1,p.ovr-2),familiarity:"Secondary"}] : []
-  );
-});
-if (window.MockDB.players[6]) window.MockDB.players[6].injury={level:"Heavy",matchesAffected:3,playable:false,returnFitness:68};
-if (window.MockDB.players[19]) window.MockDB.players[19].injury={level:"Very Heavy",matchesAffected:4,playable:false,returnFitness:62};
-
-window.MockDB.finance.financialStatus = "Healthy";
-window.MockDB.finance.transferSpendingFrozen = false;
-window.MockDB.finance.prizeBaseline = {Champion:20000000,"2nd":16000000,"3rd":13000000,"4th":11000000,"5–6":9000000,"7–10":7000000,Other:5000000};
-window.MockDB.finance.awardBonus = {"Golden Boot":2000000,"Top Assist":1500000,"Golden Glove":1500000,"Player of Season":2000000};
-
-window.MockDB.seasonCentre.hallOfFame = [
- {season:"Pre-Launch",champion:"—",runnerUp:"—",finalTable:"—",goldenBoot:"—",topAssist:"—",goldenGlove:"—",playerSeason:"World not started",biggestWin:"—",highestScoring:"—"},
- {season:"Season 1",champion:"In Progress",runnerUp:"In Progress",finalTable:"In Progress",goldenBoot:"In Progress",topAssist:"In Progress",goldenGlove:"In Progress",playerSeason:"In Progress",biggestWin:"MS7 FC 3–0 Crown United",highestScoring:"Northstar 3–2 Harbour"}
-];
-
-window.MockDB.admin.auditLog = window.MockDB.admin.auditLog.map((a,i)=>({
-  ...a,
-  oldValue: i===1 ? "20:00" : "—",
-  newValue: i===1 ? "20:05" : "—"
-}));
-window.MockDB.admin.maxManagerEditable = true;
-
-
-window.MockDB.admin.ownership = [
-  {player:"Demo Player 17",club:"MS7 FC",status:"Owned"},
-  {player:"Market Player 04",club:"Northstar United",status:"Owned"},
-  {player:"Free Agent 02",club:"—",status:"Free Agent"}
-];
-window.MockDB.admin.transferOversight = [
-  {type:"Direct Offer",player:"Market Player 02",from:"MS7 FC",to:"Westbridge FC",amount:19000000,status:"Pending"},
-  {type:"Auction",player:"Free Agent 01",from:"Free Agent",to:"Westbridge FC",amount:8200000,status:"Leading"}
-];
-window.MockDB.admin.financeOversight = [
-  {club:"MS7 FC",balance:67200000,wage:812000,status:"Healthy"},
-  {club:"Northstar United",balance:59800000,wage:845000,status:"Healthy"},
-  {club:"Harbour City",balance:41200000,wage:1090000,status:"Watch"}
-];
-window.MockDB.admin.schedule = [
-  {fixture:"MS7 FC vs Northstar United",kickoff:"20:10",status:"scheduled"},
-  {fixture:"Harbour City vs Capital Athletic",kickoff:"20:20",status:"scheduled"}
-];
-window.MockDB.admin.technicalFailures = [
-  {id:"tf01",fixture:"Eastern Rovers vs Metro Lions",reason:"Worker timeout",status:"Needs review"}
-];
-
-</script>
-<script>
-window.GameService = (() => {
-  const clone = (value) => JSON.parse(JSON.stringify(value));
-
-  async function getManager() {
-    return clone(window.MockDB.manager);
-  }
-
-  async function getSeason() {
-    return clone(window.MockDB.season);
-  }
-
-  async function getClub() {
-    return clone(window.MockDB.club);
-  }
-
-  async function getNextFixture() {
-    return clone(window.MockDB.nextFixture);
-  }
-
-  async function getRecentActivities() {
-    return clone(window.MockDB.recentActivities);
-  }
-
-  async function getSquad() {
-    return clone(window.MockDB.players);
-  }
-
-  async function getPlayerById(playerId) {
-    const player = window.MockDB.players.find(p => p.id === playerId);
-    return player ? clone(player) : null;
-  }
-
-  async function getTrainingState() {
-    return clone(window.MockDB.training);
-  }
-
-  async function getTrainingHistory() {
-    return clone(window.MockDB.trainingHistory);
-  }
-
-  async function getTransferMarket() {
-    return clone(window.MockDB.transferMarket);
-  }
-
-  async function getLeague() {
-    return clone(window.MockDB.league);
-  }
-
-  async function getMatchCentre() {
-    return clone(window.MockDB.matchCentre);
-  }
-
-  async function getFinance() {
-    return clone(window.MockDB.finance);
-  }
-
-  async function getFacilities() {
-    return clone(window.MockDB.facilities);
-  }
-
-  async function getNotifications() {
-    return clone(window.MockDB.notifications);
-  }
-
-  async function getSeasonCentre() {
-    return clone(window.MockDB.seasonCentre);
-  }
-
-  async function getClubHistory() {
-    return clone(window.MockDB.clubHistory);
-  }
-
-  async function getAdminState() {
-    return clone(window.MockDB.admin);
-  }
-
-  async function getFoundingDraw() {
-    return clone(window.MockDB.foundingDraw);
-  }
-
-  async function getLineupRules() {
-    return clone(window.MockDB.lineupRules);
-  }
-
-  async function getContractActions() {
-    return clone(window.MockDB.contractActions);
-  }
-
-  return {
-    mode: "mock",
-    getManager,
-    getSeason,
-    getClub,
-    getNextFixture,
-    getRecentActivities,
-    getSquad,
-    getPlayerById,
-    getTrainingState,
-    getTrainingHistory,
-    getTransferMarket,
-    getLeague,
-    getMatchCentre,
-    getFinance,
-    getFacilities,
-    getNotifications,
-    getSeasonCentre,
-    getClubHistory,
-    getAdminState,
-    getFoundingDraw,
-    getLineupRules,
-    getContractActions
-  };
+  return {mode:'supabase-production-final',invalidate,context,getManager,getSeason,getClub,getNextFixture,getRecentActivities,getSquad,getPlayerById,getTrainingState,getTrainingHistory,getTransferMarket,getLeague,getMatchCentre,getFinance,getFacilities,getNotifications,getSeasonCentre,getClubHistory,getAdminState,getFoundingDraw,getLineupRules,getContractActions,getSavedSetup,hydrateUIState,saveTactics,saveLineup,scheduleTraining,setIndividualFocus,listPlayerForTransfer,makeTransferOffer,respondTransferOffer,placeFreeAgentBid,upgradeFacility,markNotificationRead,markAllNotificationsRead,renewContract,releasePlayer,submitLiveTactics,submitLiveSubstitution};
 })();
-window.MockGameService = window.GameService;
-
+window.GameService = window.RealGameService;
 </script>
+
+
 <script>
 (() => {
   const root = document.getElementById("viewRoot");
@@ -3357,8 +2798,8 @@ window.MockGameService = window.GameService;
     try { await MS7Service.signOut(); } catch (err) { console.error(err); }
     state.session.loggedIn = false;
     state.session.screen = "login";
-    state.alpha.bootstrap = null;
-    if(window.MockGameService) window.GameService = window.MockGameService;
+    state.production.bootstrap = null;
+    window.GameService = window.RealGameService;
     mobileBottomNav?.classList.add("is-hidden");
     await showAuth();
   });
@@ -3416,7 +2857,7 @@ window.MockGameService = window.GameService;
     return `<div class="${htmlSafe(className)}" title="${htmlSafe(name)}"><img src="${htmlSafe(src)}" alt="Logo ${htmlSafe(name)}" loading="lazy"></div>`;
   }
 
-  const alphaHero = () => `
+  const productionHero = () => `
     <div class="auth-hero">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
         <div class="brand-mark"><img src="./icons/icon-192.png" alt="MS7 Football Manager"></div>
@@ -3434,18 +2875,18 @@ window.MockGameService = window.GameService;
     </div>`;
 
   function authTemplate(mode) {
-    const hero = alphaHero();
-    const b = state.alpha.bootstrap || {};
+    const hero = productionHero();
+    const b = state.production.bootstrap || {};
     const p = b.profile || {};
     const world = b.world || {};
     const club = b.club || {};
 
     if (mode === "loading") {
-      return `<div class="auth-shell">${hero}<div class="auth-panel"><p class="eyebrow">CONNECTING</p><h2>Membaca production state…</h2><div class="alpha-status-box"><p>Memeriksa session, profile, approval dan club state di Supabase.</p></div></div></div>`;
+      return `<div class="auth-shell">${hero}<div class="auth-panel"><p class="eyebrow">CONNECTING</p><h2>Membaca production state…</h2><div class="production-status-box"><p>Memeriksa session, profile, approval dan club state di Supabase.</p></div></div></div>`;
     }
 
     if (mode === "error") {
-      return `<div class="auth-shell">${hero}<div class="auth-panel"><p class="eyebrow alpha-danger">CONNECTION ERROR</p><h2>Tidak bisa membaca state</h2><div class="finance-warning">${htmlSafe(state.alpha.error || b.message || "Unknown error")}</div><button class="primary-btn" id="retryAlphaBtn" type="button">Retry</button><button class="secondary-btn" id="errorLogoutBtn" style="width:100%;margin-top:8px" type="button">Logout</button></div></div>`;
+      return `<div class="auth-shell">${hero}<div class="auth-panel"><p class="eyebrow production-danger">CONNECTION ERROR</p><h2>Tidak bisa membaca state</h2><div class="finance-warning">${htmlSafe(state.production.error || b.message || "Unknown error")}</div><button class="primary-btn" id="retryProductionBtn" type="button">Retry</button><button class="secondary-btn" id="errorLogoutBtn" style="width:100%;margin-top:8px" type="button">Logout</button></div></div>`;
     }
 
     if (mode === "pending") {
@@ -3456,8 +2897,8 @@ window.MockGameService = window.GameService;
           <div class="pending-icon">${rejected ? "!" : "⌛"}</div>
           <p class="eyebrow">ACCOUNT ${htmlSafe(status).toUpperCase()}</p>
           <h2>${rejected ? "Akses belum tersedia" : "Menunggu persetujuan Admin"}</h2>
-          <p>Manager <strong>${htmlSafe(p.display_name || p.username || "")}</strong> sudah terdaftar di game. Status profile dibaca langsung dari <span class="alpha-code">public.profiles</span>.</p>
-          <div class="alpha-status-box"><strong>Status real: ${htmlSafe(status)}</strong><p>Tekan Refresh setelah Admin mengubah status. Tidak ada tombol simulate approval.</p></div>
+          <p>Manager <strong>${htmlSafe(p.display_name || p.username || "")}</strong> sudah terdaftar di game. Status profile dibaca langsung dari <span class="production-code">public.profiles</span>.</p>
+          <div class="production-status-box"><strong>Status real: ${htmlSafe(status)}</strong><p>Tekan Refresh setelah Admin mengubah status. Tidak ada tombol simulate approval.</p></div>
           <button class="primary-btn" id="refreshApprovalBtn" type="button">Refresh Approval</button>
           <button class="secondary-btn" style="width:100%;margin-top:8px" id="pendingLogoutBtn" type="button">Logout</button>
         </div>
@@ -3468,18 +2909,18 @@ window.MockGameService = window.GameService;
       return `<div class="auth-shell">${hero}<div class="auth-panel">
         <p class="eyebrow">APPROVED · CREATE CLUB</p>
         <h2>Buat custom club</h2>
-        <p>Akun <strong>${htmlSafe(p.username || "manager")}</strong> sudah approved. Klub dibuat melalui RPC server <span class="alpha-code">create_club()</span>.</p>
+        <p>Akun <strong>${htmlSafe(p.username || "manager")}</strong> sudah approved. Klub dibuat melalui RPC server <span class="production-code">create_club()</span>.</p>
         <div class="wizard-progress"><i class="active"></i><i class="active"></i><i></i></div>
         <form class="auth-form" id="createClubForm">
           <div class="auth-field"><label>Club Name</label><input class="auth-input" id="clubNameInput" placeholder="Contoh: Jagakarsa United" minlength="2" maxlength="60" required></div>
           <div class="auth-field"><label>Short Name</label><input class="auth-input" id="clubShortInput" minlength="2" maxlength="8" placeholder="JGU" required></div>
           <div class="auth-field"><label>Stadium</label><input class="auth-input" id="stadiumInput" placeholder="Contoh: South Arena" minlength="2" maxlength="80" required></div>
-          <div class="auth-field"><label>Club Logo</label><div class="club-logo-picker" id="clubLogoPicker">${Object.keys(CLUB_LOGO_THEMES).map(k=>`<button class="club-logo-option ${state.clubLogoTheme===k?"active":""}" type="button" data-logo-theme="${k}"><img src="${htmlSafe(makeClubLogoDataUrl(club.short_name||"FC",k))}" alt="Logo ${k}"></button>`).join("")}</div><div class="logo-helper">Pilih crest. Logo ringan ini disimpan bersama data klub melalui field <span class="alpha-code">logo_url</span>, jadi identitas klub konsisten di Home, League, Match Centre dan Club.</div></div>
+          <div class="auth-field"><label>Club Logo</label><div class="club-logo-picker" id="clubLogoPicker">${Object.keys(CLUB_LOGO_THEMES).map(k=>`<button class="club-logo-option ${state.clubLogoTheme===k?"active":""}" type="button" data-logo-theme="${k}"><img src="${htmlSafe(makeClubLogoDataUrl(club.short_name||"FC",k))}" alt="Logo ${k}"></button>`).join("")}</div><div class="logo-helper">Pilih crest. Logo ringan ini disimpan bersama data klub melalui field <span class="production-code">logo_url</span>, jadi identitas klub konsisten di Home, League, Match Centre dan Club.</div></div>
           <div class="club-preview">
             <div class="club-preview-logo" id="clubPreviewLogo">FC</div>
             <div><strong id="clubPreviewName">Your Club</strong><span class="subtext" id="clubPreviewStadium">Home Stadium</span></div>
           </div>
-          <div class="mock-callout">Squad awal dialokasikan server-side. Untuk testing 4–18 klub, gunakan simulation script server-side; tidak perlu membuat akun manual satu per satu.</div>
+          <div class="info-callout">Setelah klub dibuat, squad awal akan tersedia ketika Founding Draw selesai.</div>
           <button class="primary-btn" type="submit">Create Club</button>
           <button class="secondary-btn" id="createClubLogoutBtn" style="width:100%;margin-top:8px" type="button">Logout</button>
         </form>
@@ -3491,29 +2932,29 @@ window.MockGameService = window.GameService;
       return `<div class="auth-shell">${hero}<div class="auth-panel">
         <p class="eyebrow">CLUB CREATED</p><h2>${htmlSafe(club.name)}</h2>
         <p>${htmlSafe(club.stadium_name)} · manager @${htmlSafe(p.username)}</p>
-        <div class="alpha-status-grid">
-          <div class="alpha-stat"><span>Clubs Ready</span><strong>${clubs.length}/${world.founding_target ?? 4}</strong></div>
-          <div class="alpha-stat"><span>Founding Draw</span><strong>${htmlSafe(world.founding_draw_status || "WAITING")}</strong></div>
-          <div class="alpha-stat"><span>Scheduler</span><strong>${world.scheduler_enabled ? "ON" : "OFF"}</strong></div>
-          <div class="alpha-stat"><span>Transfer Window</span><strong>${world.transfer_window_open ? "OPEN" : "CLOSED"}</strong></div>
+        <div class="production-status-grid">
+          <div class="production-stat"><span>Clubs Ready</span><strong>${clubs.length}/${world.founding_target ?? 4}</strong></div>
+          <div class="production-stat"><span>Founding Draw</span><strong>${htmlSafe(world.founding_draw_status || "WAITING")}</strong></div>
+          <div class="production-stat"><span>Scheduler</span><strong>${world.scheduler_enabled ? "ON" : "OFF"}</strong></div>
+          <div class="production-stat"><span>Transfer Window</span><strong>${world.transfer_window_open ? "OPEN" : "CLOSED"}</strong></div>
         </div>
-        <div class="alpha-status-box"><strong>Menunggu Founding Draw</strong><p>Tidak perlu membuat akun tambahan untuk testing. Manager manusia cukup menunggu proses squad server-side; pengujian massal dilakukan melalui simulation script.</p></div>
+        <div class="production-status-box"><strong>Menunggu Founding Draw</strong><p>Klub Anda sudah terdaftar. Squad awal akan tersedia otomatis setelah Founding Draw selesai.</p></div>
         <button class="primary-btn" id="refreshDrawBtn" type="button">Refresh World Status</button>
         <button class="secondary-btn" id="waitingLogoutBtn" style="width:100%;margin-top:8px" type="button">Logout</button>
       </div></div>`;
     }
 
-    if (mode === "alphaReady") {
+    if (mode === "gameReady") {
       const squad = b.squad || {count:0,players:[]};
       return `<div class="auth-shell">${hero}<div class="auth-panel">
-        <p class="eyebrow alpha-good">FOUNDING DRAW COMPLETE</p><h2>${htmlSafe(club.name)} siap</h2>
+        <p class="eyebrow production-good">FOUNDING DRAW COMPLETE</p><h2>${htmlSafe(club.name)} siap</h2>
         <p>Squad sudah dialokasikan server-side.</p>
-        <div class="alpha-status-grid">
-          <div class="alpha-stat"><span>Owned Players</span><strong>${squad.count}</strong></div>
-          <div class="alpha-stat"><span>Draw Status</span><strong>${htmlSafe(world.founding_draw_status)}</strong></div>
+        <div class="production-status-grid">
+          <div class="production-stat"><span>Owned Players</span><strong>${squad.count}</strong></div>
+          <div class="production-stat"><span>Draw Status</span><strong>${htmlSafe(world.founding_draw_status)}</strong></div>
         </div>
-        <div class="alpha-status-box"><strong>Production Bridge V1 · Real Gameplay Bridge</strong><p>Squad, tactics, training, transfer, finance, league, match centre, contracts dan inbox sekarang membaca/menulis Supabase. Server tetap source of truth.</p></div>
-        <div class="alpha-user-list">${(squad.players || []).map(x=>`<div class="alpha-user-row"><div><strong>${htmlSafe(x.name || x.player_id)}</strong><span>${htmlSafe(x.primary_position || "")} · OVR ${htmlSafe(x.current_ovr)} · Tier ${htmlSafe(x.current_tier)} · ${htmlSafe(x.reference_club || "")} ${htmlSafe(x.reference_season || "")}</span></div></div>`).join("")}</div>
+        <div class="production-status-box"><strong>Squad siap dimainkan</strong><p>Data klub dan pemain tersambung ke server production.</p></div>
+        <div class="production-user-list">${(squad.players || []).map(x=>`<div class="production-user-row"><div><strong>${htmlSafe(x.name || x.player_id)}</strong><span>${htmlSafe(x.primary_position || "")} · OVR ${htmlSafe(x.current_ovr)} · Tier ${htmlSafe(x.current_tier)} · ${htmlSafe(x.reference_club || "")} ${htmlSafe(x.reference_season || "")}</span></div></div>`).join("")}</div>
         <button class="primary-btn" id="enterRealGameplayBtn" type="button">Enter Game</button>
         <button class="secondary-btn" id="refreshReadyBtn" style="width:100%;margin-top:8px" type="button">Refresh Squad</button>
         <button class="secondary-btn" id="readyLogoutBtn" style="width:100%;margin-top:8px" type="button">Logout</button>
@@ -3537,20 +2978,20 @@ window.MockGameService = window.GameService;
       return `<div class="auth-shell">${hero}<div class="auth-panel">
         <p class="eyebrow">OWNER / ADMIN · PRODUCTION</p>
         <h2>${htmlSafe(p.display_name || p.username || "Admin")}${p.is_owner ? " · Owner" : ""}</h2>
-        <p>Console ini membaca <strong>state production Supabase</strong>. Testing 4–18 klub tetap dilakukan lewat simulation server-side, bukan akun manager palsu.</p>
+        <p>Console ini membaca <strong>data production Supabase</strong> secara langsung.</p>
 
-        <div class="alpha-status-grid">
-          <div class="alpha-stat"><span>Approved Clubs</span><strong>${approvedClubCount}/${target}</strong></div>
-          <div class="alpha-stat"><span>Pending Accounts</span><strong>${pending.length}</strong></div>
-          <div class="alpha-stat"><span>Player Master</span><strong>${htmlSafe(activePlayerText)}</strong></div>
-          <div class="alpha-stat"><span>Player State</span><strong>${htmlSafe(playerStateText)}</strong></div>
-          <div class="alpha-stat"><span>Owned Players</span><strong>${htmlSafe(ownedText)}</strong></div>
-          <div class="alpha-stat"><span>Free Agents</span><strong>${htmlSafe(freeAgentText)}</strong></div>
-          <div class="alpha-stat"><span>Draw Status</span><strong>${htmlSafe(world.founding_draw_status || "PENDING")}</strong></div>
-          <div class="alpha-stat"><span>World</span><strong>${htmlSafe(world.status || "setup")}</strong></div>
+        <div class="production-status-grid">
+          <div class="production-stat"><span>Approved Clubs</span><strong>${approvedClubCount}/${target}</strong></div>
+          <div class="production-stat"><span>Pending Accounts</span><strong>${pending.length}</strong></div>
+          <div class="production-stat"><span>Player Master</span><strong>${htmlSafe(activePlayerText)}</strong></div>
+          <div class="production-stat"><span>Player State</span><strong>${htmlSafe(playerStateText)}</strong></div>
+          <div class="production-stat"><span>Owned Players</span><strong>${htmlSafe(ownedText)}</strong></div>
+          <div class="production-stat"><span>Free Agents</span><strong>${htmlSafe(freeAgentText)}</strong></div>
+          <div class="production-stat"><span>Draw Status</span><strong>${htmlSafe(world.founding_draw_status || "PENDING")}</strong></div>
+          <div class="production-stat"><span>World</span><strong>${htmlSafe(world.status || "setup")}</strong></div>
         </div>
 
-        <div class="alpha-status-box">
+        <div class="production-status-box">
           <strong>${drawCompleted ? "Founding Draw sudah selesai" : readyToDraw ? "Production Founding Draw READY" : `Menunggu ${Math.max(0,target-approvedClubCount)} klub approved lagi`}</strong>
           <p>${drawCompleted
             ? "Starter squad sudah dialokasikan. Tidak ada reroll."
@@ -3559,18 +3000,18 @@ window.MockGameService = window.GameService;
               : `Draw production tetap terkunci sampai jumlah klub approved aktif tepat ${target}. Status database boleh tetap PENDING sebelum draw.`}</p>
         </div>
 
-        <div class="alpha-user-list">
-          ${pending.length ? pending.map(u=>`<div class="alpha-user-row">
+        <div class="production-user-list">
+          ${pending.length ? pending.map(u=>`<div class="production-user-row">
             <div><strong>${htmlSafe(u.display_name || u.username || u.id)}</strong><span>@${htmlSafe(u.username || "")} · ${htmlSafe(u.approval_status)}</span></div>
-            <div class="alpha-user-actions">
-              <button class="accept-btn" data-alpha-approve="${htmlSafe(u.id)}">Approve</button>
-              <button class="reject-btn" data-alpha-reject="${htmlSafe(u.id)}">Reject</button>
-              <button class="counter-btn" data-alpha-suspend="${htmlSafe(u.id)}">Suspend</button>
+            <div class="production-user-actions">
+              <button class="accept-btn" data-production-approve="${htmlSafe(u.id)}">Approve</button>
+              <button class="reject-btn" data-production-reject="${htmlSafe(u.id)}">Reject</button>
+              <button class="counter-btn" data-production-suspend="${htmlSafe(u.id)}">Suspend</button>
             </div>
-          </div>`).join("") : `<div class="alpha-status-box"><p>Tidak ada akun pending.</p></div>`}
+          </div>`).join("") : `<div class="production-status-box"><p>Tidak ada akun pending.</p></div>`}
         </div>
 
-        <div class="alpha-status-box">
+        <div class="production-status-box">
           <strong>Human clubs (${clubs.length})</strong>
           <div style="display:grid;gap:8px;margin-top:10px">
             ${clubs.length ? clubs.map(c=>`<div style="display:flex;align-items:center;gap:10px">
@@ -3580,9 +3021,7 @@ window.MockGameService = window.GameService;
           </div>
         </div>
 
-        <div class="simulation-note"><strong>Workflow development:</strong> Production Console untuk akun/club nyata. <strong>Frontend Simulation Preview</strong> hanya untuk mengecek layar UI dengan satu akun Owner/Admin. Simulation SQL tetap terpisah dari production ownership.</div>
-
-        <button class="primary-btn" id="openAdminPreviewBtn" type="button">Open Frontend Simulation Preview</button>
+        <div class="production-note"><strong>Production:</strong> Akun, klub, pemain, ownership, dan Founding Draw pada halaman ini berasal dari Supabase production.</div>
         <button class="secondary-btn" style="width:100%;margin-top:8px" id="runFoundingDrawBtn" type="button" ${readyToDraw ? "" : "disabled"}>
           ${drawCompleted ? "Founding Draw COMPLETED" : readyToDraw ? "RUN PRODUCTION FOUNDING DRAW · FINAL" : `Founding Draw Locked · ${approvedClubCount}/${target} Clubs`}
         </button>
@@ -3607,7 +3046,7 @@ window.MockGameService = window.GameService;
     }
 
     if (mode === "emailConfirmation") {
-      return `<div class="auth-shell">${hero}<div class="auth-panel"><p class="eyebrow">MS7 ACCOUNT SETUP</p><h2>Konfirmasi Auth masih aktif</h2><div class="alpha-status-box"><p>Akun game memakai domain internal <strong>@ms7.com</strong>. Untuk mode private-game tanpa mailbox, matikan email confirmation pada Supabase Auth. Kalau nanti @ms7.com dipakai sebagai email sungguhan/password recovery, domain dan layanan emailnya harus benar-benar dikonfigurasi.</p></div><button class="primary-btn" id="emailGoLoginBtn" type="button">Go to Login</button></div></div>`;
+      return `<div class="auth-shell">${hero}<div class="auth-panel"><p class="eyebrow">MS7 ACCOUNT SETUP</p><h2>Konfirmasi Auth masih aktif</h2><div class="production-status-box"><p>Akun game memakai domain internal <strong>@ms7.com</strong>. Untuk mode private-game tanpa mailbox, matikan email confirmation pada Supabase Auth. Kalau nanti @ms7.com dipakai sebagai email sungguhan/password recovery, domain dan layanan emailnya harus benar-benar dikonfigurasi.</p></div><button class="primary-btn" id="emailGoLoginBtn" type="button">Go to Login</button></div></div>`;
     }
 
     const loginRole = state.session.authRole || "manager";
@@ -3618,37 +3057,37 @@ window.MockGameService = window.GameService;
         <button class="auth-role-tab ${isAdminLogin?"active":""}" data-auth-role="admin" type="button">Owner / Admin</button>
       </div>
       <p class="eyebrow">${isAdminLogin?"OWNER / ADMIN LOGIN":"MANAGER LOGIN"}</p>
-      <h2>${isAdminLogin?"Development & control access":"Masuk ke klub kamu"}</h2>
-      <p>${isAdminLogin?"Jalur khusus akun Owner/Admin utama. Tidak perlu membuat banyak akun untuk development.":"Login memakai identitas internal @ms7.com dan Supabase Auth, lalu masuk ke klub masing-masing."}</p>
-      ${isAdminLogin?`<div class="admin-login-note">Satu akun Owner/Admin cukup untuk development sehari-hari. Gunakan <strong>Frontend Simulation Preview</strong> di Admin Console untuk memeriksa semua layar tanpa login 4–18 klub.</div>`:""}
+      <h2>${isAdminLogin?"Owner & world control":"Masuk ke klub kamu"}</h2>
+      <p>${isAdminLogin?"Jalur khusus Owner/Admin untuk mengelola manager, klub, world, dan Founding Draw.":"Login memakai identitas internal @ms7.com dan Supabase Auth, lalu masuk ke klub masing-masing."}</p>
+      ${isAdminLogin?`<div class="admin-login-note">Akses ini hanya untuk Owner/Admin utama. Gunakan <strong></strong> di Admin Console untuk memeriksa semua layar tanpa login 4–18 klub.</div>`:""}
       <form class="auth-form" id="loginForm">
         <div class="auth-field"><label>MS7 Username</label><input class="auth-input" id="loginUsername" required autocomplete="username" placeholder="contoh: soge"><small class="auth-help">Login sebagai <strong>username@ms7.com</strong>. Boleh juga ketik alamat @ms7.com lengkap.</small></div>
         <div class="auth-field"><label>Password</label><input class="auth-input" id="loginPassword" type="password" required autocomplete="current-password"></div>
         <button class="primary-btn" type="submit">${isAdminLogin?"Login as Owner / Admin":"Login as Manager"}</button>
       </form>
       <div class="auth-divider"></div>
-      ${isAdminLogin?`<div class="mock-callout">Admin memakai akun <strong>@ms7.com</strong> dan harus memiliki <strong>role = admin</strong> pada profile Supabase.</div>`:`<div class="mock-callout">Manager baru: Register → menunggu approval → buat klub → squad awal dialokasikan server-side.</div><div class="auth-links"><button class="auth-link" id="goRegisterBtn" type="button">Register new manager</button></div>`}
+      ${isAdminLogin?`<div class="info-callout">Admin memakai akun <strong>@ms7.com</strong> dan harus memiliki <strong>role = admin</strong> pada profile Supabase.</div>`:`<div class="info-callout">Manager baru: Register → menunggu approval → buat klub → tunggu Founding Draw.</div><div class="auth-links"><button class="auth-link" id="goRegisterBtn" type="button">Register new manager</button></div>`}
     </div></div>`;
   }
 
-  async function alphaLogout() {
+  async function productionLogout() {
     try { await MS7Service.signOut(); } catch (err) { console.error(err); }
-    state.alpha.bootstrap = null;
+    state.production.bootstrap = null;
     state.session.screen = "login";
     state.session.loggedIn = false;
-    if(window.MockGameService) window.GameService=window.MockGameService;
+    window.GameService = window.RealGameService;
     await showAuth();
   }
 
-  async function resolveAlphaState() {
-    state.alpha.loading = true;
-    state.alpha.error = null;
+  async function resolveProductionState() {
+    state.production.loading = true;
+    state.production.error = null;
     state.session.screen = "loading";
     authRoot.innerHTML = authTemplate("loading");
     gameApp.classList.add("is-hidden");
     try {
       const b = await MS7Service.bootstrap();
-      state.alpha.bootstrap = b;
+      state.production.bootstrap = b;
       state.session.screen = b.screen || "login";
       state.session.pending = b.profile?.approval_status === "pending";
       state.session.approved = b.profile?.approval_status === "approved";
@@ -3657,11 +3096,11 @@ window.MockGameService = window.GameService;
       return b;
     } catch (err) {
       console.error("Supabase bootstrap error", err);
-      state.alpha.error = err.message || String(err);
+      state.production.error = err.message || String(err);
       state.session.screen = "error";
       return null;
     } finally {
-      state.alpha.loading = false;
+      state.production.loading = false;
     }
   }
 
@@ -3687,22 +3126,6 @@ window.MockGameService = window.GameService;
     }
   }
 
-  async function enterAdminSimulationPreview() {
-    window.GameService = window.MockGameService;
-    state.session.loggedIn = true;
-    state.session.approved = true;
-    state.session.clubCreated = true;
-    authRoot.innerHTML = "";
-    gameApp.classList.remove("is-hidden");
-    mobileBottomNav?.classList.remove("is-hidden");
-    const adminNav = nav.querySelector('[data-view="admin"]');
-    if (adminNav) adminNav.classList.remove('is-hidden');
-    state.view = "admin";
-    syncActiveNav();
-    await render();
-    await refreshNotificationCounts();
-    showToast("Frontend Simulation Preview aktif · tidak mengubah data pemain asli.");
-  }
 
   function wireAuth(mode) {
     document.getElementById("installFromLoginBtn")?.addEventListener("click", triggerInstall);
@@ -3756,7 +3179,7 @@ window.MockGameService = window.GameService;
       document.getElementById("emailGoLoginBtn")?.addEventListener("click", () => { state.session.screen = "login"; showAuth(false); });
     } else if (mode === "pending") {
       document.getElementById("refreshApprovalBtn")?.addEventListener("click", () => showAuth(true));
-      document.getElementById("pendingLogoutBtn")?.addEventListener("click", alphaLogout);
+      document.getElementById("pendingLogoutBtn")?.addEventListener("click", productionLogout);
     } else if (mode === "createClub") {
       const name = document.getElementById("clubNameInput");
       const short = document.getElementById("clubShortInput");
@@ -3783,32 +3206,31 @@ window.MockGameService = window.GameService;
           await showAuth(true);
         } catch (err) { showToast(`Create club gagal: ${err.message}`); if (btn) btn.disabled = false; }
       });
-      document.getElementById("createClubLogoutBtn")?.addEventListener("click", alphaLogout);
+      document.getElementById("createClubLogoutBtn")?.addEventListener("click", productionLogout);
     } else if (mode === "waitingDraw") {
       document.getElementById("refreshDrawBtn")?.addEventListener("click", () => showAuth(true));
-      document.getElementById("waitingLogoutBtn")?.addEventListener("click", alphaLogout);
-    } else if (mode === "alphaReady") {
+      document.getElementById("waitingLogoutBtn")?.addEventListener("click", productionLogout);
+    } else if (mode === "gameReady") {
       document.getElementById("enterRealGameplayBtn")?.addEventListener("click", enterRealGameplay);
       document.getElementById("refreshReadyBtn")?.addEventListener("click", () => showAuth(true));
-      document.getElementById("readyLogoutBtn")?.addEventListener("click", alphaLogout);
+      document.getElementById("readyLogoutBtn")?.addEventListener("click", productionLogout);
     } else if (mode === "adminLobby") {
-      document.querySelectorAll("[data-alpha-approve]").forEach(btn => btn.addEventListener("click", async () => {
-        try { await MS7Service.adminDecideManager(btn.dataset.alphaApprove, "approved", "Production Bridge V1 manager approved"); showToast("Manager approved."); await showAuth(true); }
+      document.querySelectorAll("[data-production-approve]").forEach(btn => btn.addEventListener("click", async () => {
+        try { await MS7Service.adminDecideManager(btn.dataset.alphaApprove, "approved", "Manager approved"); showToast("Manager approved."); await showAuth(true); }
         catch (err) { showToast(`Approve gagal: ${err.message}`); }
       }));
-      document.querySelectorAll("[data-alpha-reject]").forEach(btn => btn.addEventListener("click", async () => {
-        try { await MS7Service.adminDecideManager(btn.dataset.alphaReject, "rejected", "Production Bridge V1 manager rejected"); showToast("Manager rejected."); await showAuth(true); }
+      document.querySelectorAll("[data-production-reject]").forEach(btn => btn.addEventListener("click", async () => {
+        try { await MS7Service.adminDecideManager(btn.dataset.alphaReject, "rejected", "Manager rejected"); showToast("Manager rejected."); await showAuth(true); }
         catch (err) { showToast(`Reject gagal: ${err.message}`); }
       }));
-      document.querySelectorAll("[data-alpha-suspend]").forEach(btn => btn.addEventListener("click", async () => {
-        try { await MS7Service.adminDecideManager(btn.dataset.alphaSuspend, "suspended", "Production Bridge V1 manager suspended"); showToast("Manager suspended."); await showAuth(true); }
+      document.querySelectorAll("[data-production-suspend]").forEach(btn => btn.addEventListener("click", async () => {
+        try { await MS7Service.adminDecideManager(btn.dataset.alphaSuspend, "suspended", "Manager suspended"); showToast("Manager suspended."); await showAuth(true); }
         catch (err) { showToast(`Suspend gagal: ${err.message}`); }
       }));
-      document.getElementById("openAdminPreviewBtn")?.addEventListener("click", enterAdminSimulationPreview);
       document.getElementById("refreshAdminBtn")?.addEventListener("click", () => showAuth(true));
-      document.getElementById("adminLogoutBtn")?.addEventListener("click", alphaLogout);
+      document.getElementById("adminLogoutBtn")?.addEventListener("click", productionLogout);
       document.getElementById("runFoundingDrawBtn")?.addEventListener("click", async () => {
-        const b = state.alpha.bootstrap || {};
+        const b = state.production.bootstrap || {};
         const world = b.world || {};
         const counts = b.adminOverview?.counts || {};
         const target = Number(world.founding_target || 12);
@@ -3833,23 +3255,23 @@ window.MockGameService = window.GameService;
         }
       });
     } else if (mode === "error") {
-      document.getElementById("retryAlphaBtn")?.addEventListener("click", () => showAuth(true));
-      document.getElementById("errorLogoutBtn")?.addEventListener("click", alphaLogout);
+      document.getElementById("retryProductionBtn")?.addEventListener("click", () => showAuth(true));
+      document.getElementById("errorLogoutBtn")?.addEventListener("click", productionLogout);
     }
   }
 
   async function showAuth(resolve=true) {
     gameApp.classList.add("is-hidden");
     mobileBottomNav?.classList.add("is-hidden");
-    if (resolve) await resolveAlphaState();
+    if (resolve) await resolveProductionState();
     authRoot.innerHTML = authTemplate(state.session.screen);
     wireAuth(state.session.screen);
   }
 
   function enterGame(existingManager=true) {
     // Deliberately disabled in Onboarding V1. The main application still contains
-    // MockDB-powered gameplay screens and must not be mistaken for live server truth.
-    state.session.screen = "alphaReady";
+    // DB-powered gameplay screens and must not be mistaken for live server truth.
+    state.session.screen = "gameReady";
     showAuth(true);
   }
 
@@ -3861,7 +3283,7 @@ window.MockGameService = window.GameService;
       <div class="onboarding-card">
         <p class="eyebrow">FRONTEND V1 COMPLETE</p>
         <h2>${existingManager ? "Welcome to your club" : "Club created successfully"}</h2>
-        <p>Semua core frontend V1 sudah tersedia dalam mock/local mode. Data source nanti tinggal dipindahkan ke Supabase service layer.</p>
+        <p>Semua core frontend V1 sudah tersedia dalam /local mode. Data source nanti tinggal dipindahkan ke Supabase service layer.</p>
         <div class="onboarding-grid">
           <div class="onboarding-item"><strong>Squad & Tactics</strong><span>22-player squad, formations, lineup dan instructions.</span></div>
           <div class="onboarding-item"><strong>Training & Market</strong><span>DXP preview, fitness, transfers dan free-agent auctions.</span></div>
@@ -4725,7 +4147,7 @@ window.MockGameService = window.GameService;
               <div class="impact-card">
                 <span>Injury Risk</span>
                 <strong>${mode.risk}</strong>
-                <small>Relative mock risk</small>
+                <small>Relative  risk</small>
               </div>
             </div>
 
@@ -5160,7 +4582,7 @@ window.MockGameService = window.GameService;
               <label for="offerAmount">Transfer Fee</label>
               <input id="offerAmount" class="money-input" type="number" min="0" step="500000" value="${amount}" />
             </div>
-            <div class="alpha-status-box"><strong>Contract term</strong><p>${contractYears} season${contractYears>1?"s":""} remaining. Direct transfer settlement preserves the current remaining term; wage is validated server-side.</p></div>
+            <div class="production-status-box"><strong>Contract term</strong><p>${contractYears} season${contractYears>1?"s":""} remaining. Direct transfer settlement preserves the current remaining term; wage is validated server-side.</p></div>
             <button class="primary-btn" id="submitOfferBtn" type="button" ${allOk ? "" : "disabled"}>Submit Offer</button>
           </div>
         </article>
@@ -5470,7 +4892,7 @@ window.MockGameService = window.GameService;
     return {goal:"⚽",shot:"↗",save:"🧤",card:"■",sub:"⇄",info:"i"}[type] || "•";
   }
 
-  function generateMockEvent(minute) {
+  function generateEvent(minute) {
     const homeAttack = 0.53;
     const isHome = Math.random() < homeAttack;
     const team = isHome ? "MS7 FC" : "Northstar United";
@@ -5781,39 +5203,20 @@ window.MockGameService = window.GameService;
 
   async function renderAdmin() {
     setHeader("Admin", "WORLD CONTROL");
-    const admin=await GameService.getAdminState();
-    const tabs=[["accounts","Accounts"],["schedule","Schedule"],["ownership","Ownership / Bug Fix"],["transfers","Transfers"],["finance","Finance Ledger"],["technical","Technical"],["world","World / Rollover"],["audit","Audit Log"]];
-    root.innerHTML=`<div class="admin-tabs">${tabs.map(([k,l])=>`<button class="admin-tab ${state.adminView.tab===k?"active":""}" data-admin-tab="${k}" type="button">${l}</button>`).join("")}</div><div id="adminContent"></div>`;
-    const c=document.getElementById("adminContent");
-    if(state.adminView.tab==="accounts"){
-      c.innerHTML=`<article class="card section-card"><div class="section-head"><div><p class="eyebrow">MANAGER ACCESS</p><h2>Approve / Reject / Suspend</h2><p>Target ±12 · hard cap controlled by Admin.</p></div><span class="badge">${admin.world.activeManagers}/${admin.world.maxManagers}</span></div>${admin.pendingUsers.map(u=>`<div class="admin-user"><div><strong>${u.name}</strong><span>@${u.username} · ${u.requested}</span></div><span class="status-badge ${u.status==='approved'?'accepted':u.status==='pending'?'pending':'rejected'}">${u.status}</span><div class="admin-actions"><button class="accept-btn" data-admin-approve="${u.id}">Approve</button><button class="reject-btn" data-admin-reject="${u.id}">Reject</button><button class="counter-btn" data-admin-suspend="${u.id}">Suspend</button></div></div>`).join("")}</article>`;
-    } else if(state.adminView.tab==="schedule"){
-      c.innerHTML=`<article class="card table-card"><div class="section-card"><div class="section-head"><div><p class="eyebrow">FIXTURE SCHEDULING</p><h2>Edit Exact Kickoff</h2><p>Odd window 19:30–21:00 · even window 22:00–23:30 WIB.</p></div></div></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Fixture</th><th>Kickoff</th><th>Status</th><th>Action</th></tr></thead><tbody>${admin.schedule.map((f,i)=>`<tr><td>${f.fixture}</td><td><input class="schedule-input" id="schedule-${i}" value="${f.kickoff}"></td><td>${f.status}</td><td><button class="secondary-btn" data-save-schedule="${i}">Save</button></td></tr>`).join("")}</tbody></table></div></article>`;
-    } else if(state.adminView.tab==="ownership"){
-      c.innerHTML=`<article class="card table-card"><div class="section-card"><div class="section-head"><div><p class="eyebrow">OWNERSHIP INSPECTOR</p><h2>Global Single Ownership</h2><p>Bug correction requires old value, new value and reason.</p></div></div></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Player</th><th>Club</th><th>Status</th><th>Correction</th></tr></thead><tbody>${admin.ownership.map((o,i)=>`<tr><td>${o.player}</td><td>${o.club}</td><td>${o.status}</td><td><button class="secondary-btn" data-correct-owner="${i}">Correct Owner</button></td></tr>`).join("")}</tbody></table></div></article>`;
-    } else if(state.adminView.tab==="transfers"){
-      c.innerHTML=`<article class="card table-card"><div class="section-card"><div class="section-head"><div><p class="eyebrow">TRANSFER OVERSIGHT</p><h2>Market Transactions</h2></div></div></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Type</th><th>Player</th><th>From</th><th>To</th><th>Amount</th><th>Status</th></tr></thead><tbody>${admin.transferOversight.map(t=>`<tr><td>${t.type}</td><td>${t.player}</td><td>${t.from}</td><td>${t.to}</td><td>${money(t.amount)}</td><td>${t.status}</td></tr>`).join("")}</tbody></table></div></article>`;
-    } else if(state.adminView.tab==="finance"){
-      c.innerHTML=`<article class="card table-card"><div class="section-card"><div class="section-head"><div><p class="eyebrow">FINANCE LEDGER OVERSIGHT</p><h2>Club Financial Health</h2></div></div></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Club</th><th>Balance</th><th>Weekly Wage</th><th>Status</th></tr></thead><tbody>${admin.financeOversight.map(f=>`<tr><td>${f.club}</td><td>${money(f.balance)}</td><td>${wage(f.wage)}</td><td>${f.status}</td></tr>`).join("")}</tbody></table></div><div class="section-card"><div class="ledger-list">${window.MockDB.finance.ledger.map(l=>`<div class="ledger-row"><span>${l.date}</span><span>${l.type}</span><strong>${l.detail}</strong><strong class="ledger-amount ${l.amount>=0?'positive':'negative'}">${l.amount>=0?'+':''}${money(Math.abs(l.amount))}</strong></div>`).join("")}</div></div></article>`;
-    } else if(state.adminView.tab==="technical"){
-      c.innerHTML=`<article class="card section-card"><div class="section-head"><div><p class="eyebrow">TECHNICAL FAILURE</p><h2>Rerun Only Failed Matches</h2><p>No manual-winner control exists.</p></div></div>${admin.technicalFailures.map(f=>`<div class="admin-user"><div><strong>${f.fixture}</strong><span>${f.reason}</span></div><span>${f.status}</span><button class="secondary-btn" data-rerun-failure="${f.id}">Rerun</button></div>`).join("")}<div class="finance-warning">Admin cannot choose who wins. Match outcome remains engine-controlled.</div></article>`;
-    } else if(state.adminView.tab==="world"){
-      c.innerHTML=`<div class="admin-grid"><article class="card section-card"><div class="section-head"><div><p class="eyebrow">WORLD CONTROL</p><h2>${admin.world.name}</h2></div></div><div class="admin-control-grid"><div class="admin-control"><span>Active Managers</span><strong>${admin.world.activeManagers}</strong></div><div class="admin-control"><span>Season</span><strong>${admin.world.season}</strong></div><div class="admin-control"><span>Phase</span><strong>${admin.world.phase}</strong></div><div class="admin-control"><span>Scheduler</span><strong>${admin.world.matchScheduler?'ON':'OFF'}</strong></div></div><div class="auth-form" style="margin-top:14px"><div class="auth-field"><label>Maximum Managers</label><input class="auth-input" id="maxManagersInput" type="number" min="1" max="18" value="${admin.world.maxManagers}"></div><div class="auth-field"><label>Phase</label><select class="game-select" id="adminPhaseSelect">${["PRESEASON","FIRST_HALF","MIDSEASON_BREAK","SECOND_HALF","OFFSEASON"].map(p=>`<option ${p===admin.world.phase?'selected':''}>${p}</option>`).join("")}</select></div><button class="secondary-btn" id="saveWorldBtn">Save World Settings</button><button class="secondary-btn" id="adminSchedulerBtn">${admin.world.matchScheduler?'Pause':'Resume'} Scheduler</button><button class="secondary-btn" id="adminTransferBtn">${admin.world.transferWindow?'Close':'Open'} Transfer Window</button><button class="secondary-btn" id="adminRolloverBtn">Run Season Rollover (Admin tool)</button></div></article><aside class="card section-card"><div class="finance-warning">Rollover order is fixed: standings → awards/prizes → development → age → decline → retirement → contracts → free agents → sponsorship/budget → offseason → new season.</div></aside></div>`;
-    } else {
-      c.innerHTML=`<article class="card table-card"><div class="section-card"><div class="section-head"><div><p class="eyebrow">ADMIN AUDIT LOG</p><h2>Transparent Privileged Actions</h2><p>Timestamp, old value, new value and reason are preserved.</p></div></div></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Timestamp</th><th>Action</th><th>Entity</th><th>Old</th><th>New</th><th>Reason</th></tr></thead><tbody>${admin.auditLog.map(a=>`<tr><td>${a.time}</td><td>${a.action}</td><td>${a.entity}</td><td>${a.oldValue||'—'}</td><td>${a.newValue||'—'}</td><td>${a.reason}</td></tr>`).join("")}</tbody></table></div></article>`;
-    }
-    const audit=(action,entity,oldValue,newValue,reason)=>window.MockDB.admin.auditLog.unshift({time:"Now",action,entity,oldValue,newValue,reason});
-    root.querySelectorAll("[data-admin-tab]").forEach(b=>b.addEventListener("click",()=>{state.adminView.tab=b.dataset.adminTab;renderAdmin();}));
-    root.querySelectorAll("[data-admin-approve]").forEach(b=>b.addEventListener("click",()=>{const u=window.MockDB.admin.pendingUsers.find(x=>x.id===b.dataset.adminApprove);if(u){const old=u.status;u.status='approved';audit('Manager approved',u.name,old,'approved','Manual admin approval');}renderAdmin();}));
-    root.querySelectorAll("[data-admin-reject]").forEach(b=>b.addEventListener("click",()=>{const u=window.MockDB.admin.pendingUsers.find(x=>x.id===b.dataset.adminReject);if(u){const old=u.status;u.status='rejected';audit('Manager rejected',u.name,old,'rejected','Manual admin decision');}renderAdmin();}));
-    root.querySelectorAll("[data-admin-suspend]").forEach(b=>b.addEventListener("click",()=>{const u=window.MockDB.admin.pendingUsers.find(x=>x.id===b.dataset.adminSuspend);if(u){const old=u.status;u.status='suspended';audit('Manager suspended',u.name,old,'suspended','Manual admin action');}renderAdmin();}));
-    root.querySelectorAll("[data-save-schedule]").forEach(b=>b.addEventListener("click",()=>{const i=Number(b.dataset.saveSchedule),f=window.MockDB.admin.schedule[i],old=f.kickoff,val=document.getElementById(`schedule-${i}`).value;f.kickoff=val;audit('Fixture kickoff changed',f.fixture,old,val,'Scheduling correction');showToast('Kickoff updated.');}));
-    root.querySelectorAll("[data-correct-owner]").forEach(b=>b.addEventListener("click",()=>{const i=Number(b.dataset.correctOwner),o=window.MockDB.admin.ownership[i],old=o.club,newClub=prompt('Correct owner club:',old)||old,reason=prompt('Reason for correction:','Failed transaction correction')||'Bug correction';o.club=newClub;audit('Ownership corrected',o.player,old,newClub,reason);renderAdmin();}));
-    root.querySelectorAll("[data-rerun-failure]").forEach(b=>b.addEventListener("click",()=>{const f=window.MockDB.admin.technicalFailures.find(x=>x.id===b.dataset.rerunFailure);if(f){const old=f.status;f.status='Rerun queued';audit('Technical rerun queued',f.fixture,old,f.status,f.reason);}renderAdmin();}));
-    document.getElementById('saveWorldBtn')?.addEventListener('click',()=>{const old=window.MockDB.admin.world.maxManagers;window.MockDB.admin.world.maxManagers=Math.min(18,Math.max(1,Number(document.getElementById('maxManagersInput').value)));const oldPhase=window.MockDB.admin.world.phase;window.MockDB.admin.world.phase=document.getElementById('adminPhaseSelect').value;audit('World settings changed','World',`${old};${oldPhase}`,`${window.MockDB.admin.world.maxManagers};${window.MockDB.admin.world.phase}`,'Manual admin control');renderAdmin();});
-    document.getElementById('adminSchedulerBtn')?.addEventListener('click',()=>{const old=window.MockDB.admin.world.matchScheduler;window.MockDB.admin.world.matchScheduler=!old;audit('Scheduler changed','World',old,window.MockDB.admin.world.matchScheduler,'Manual admin control');renderAdmin();});
-    document.getElementById('adminTransferBtn')?.addEventListener('click',()=>{const old=window.MockDB.admin.world.transferWindow;window.MockDB.admin.world.transferWindow=!old;audit('Transfer window changed','World',old,window.MockDB.admin.world.transferWindow,'Manual admin control');renderAdmin();});
-    document.getElementById('adminRolloverBtn')?.addEventListener('click',()=>{audit('Season rollover triggered',`Season ${window.MockDB.admin.world.season}`,'not-run','queued','Manual admin rollover control');showToast('Season rollover queued in mock mode.');});
+    root.innerHTML = `
+      <article class="card section-card">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">OWNER / ADMIN</p>
+            <h2>Production Admin Console</h2>
+            <p>Kelola manager, klub, dan Founding Draw melalui console Owner/Admin production.</p>
+          </div>
+        </div>
+        <div class="production-status-box">
+          <strong>Production only</strong>
+          <p>Tidak ada data manager dummy atau  di build final ini.</p>
+        </div>
+      </article>`;
   }
 
   async function openPlayer(id) {
@@ -5909,7 +5312,7 @@ window.MockGameService = window.GameService;
 
   MS7Service.client.auth.onAuthStateChange((event) => {
     if (event === "SIGNED_OUT") {
-      state.alpha.bootstrap = null;
+      state.production.bootstrap = null;
       state.session.screen = "login";
     }
   });
