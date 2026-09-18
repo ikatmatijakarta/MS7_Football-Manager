@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#07150d" />
+  <meta name="theme-color" content="#06152e" />
   <meta name="description" content="Football Manager Mini Online — Production Bridge V1" />
   <meta name="application-name" content="FM Mini Online" />
   <meta name="mobile-web-app-capable" content="yes" />
@@ -11,8 +11,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="FM Mini Online" />
   <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="./icons/favicon-64.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
   <title>Football Manager Mini Online — Production Bridge V1</title>
 <style>
 :root{
@@ -1397,6 +1400,50 @@ h1{font-size:clamp(22px,3vw,30px);margin-bottom:0}
 .logo-upload{display:grid;gap:8px}.logo-upload input{font-size:10px;color:var(--muted)}.logo-preview-img{width:54px;height:54px;border-radius:16px;object-fit:cover;border:1px solid var(--line);display:none}
 .blueprint-note{font-size:9px;color:var(--muted)}
 
+
+/* ===========================
+   MS7 OFFICIAL APP BRAND ICON
+   =========================== */
+.brand-mark{
+  width:52px!important;
+  height:52px!important;
+  min-width:52px;
+  padding:0!important;
+  border-radius:14px!important;
+  overflow:hidden;
+  clip-path:none!important;
+  background:#06152e!important;
+  border:1px solid rgba(255,255,255,.14)!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.28)!important;
+  display:grid!important;
+  place-items:center!important;
+}
+.brand-mark img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:inherit;
+}
+.auth-hero .brand-mark{
+  width:64px!important;
+  height:64px!important;
+  border-radius:17px!important;
+  clip-path:none!important;
+}
+@media(max-width:760px){
+  .brand-mark{
+    width:46px!important;
+    height:46px!important;
+    min-width:46px;
+    border-radius:13px!important;
+  }
+  .auth-hero .brand-mark{
+    width:58px!important;
+    height:58px!important;
+  }
+}
+
 </style>
 
 <style id="football-matchday-theme">
@@ -1824,7 +1871,7 @@ button,a,input,select{touch-action:manipulation}
   <div id="gameApp" class="app-shell is-hidden">
     <aside class="sidebar" aria-label="Navigasi utama">
       <div class="brand">
-        <div class="brand-mark" aria-hidden="true">FM</div>
+        <div class="brand-mark"><img src="./icons/icon-192.png" alt="MS7 Football Manager"></div>
         <div>
           <strong>Football Manager</strong>
           <span>Mini Online</span>
@@ -3372,7 +3419,7 @@ window.MockGameService = window.GameService;
   const alphaHero = () => `
     <div class="auth-hero">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <div class="brand-mark">FM</div>
+        <div class="brand-mark"><img src="./icons/icon-192.png" alt="MS7 Football Manager"></div>
         <span class="alpha-env-badge"><i class="alpha-env-dot"></i>PRODUCTION BRIDGE V1</span>
       </div>
       <p class="eyebrow" style="margin-top:28px">MOBILE-FIRST · SUPABASE BRIDGE</p>
