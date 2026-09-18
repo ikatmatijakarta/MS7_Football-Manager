@@ -4,8 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#07150d" />
-  <meta name="description" content="Football Manager Mini Online — Blueprint 100% Frontend V1" />
-  <title>Football Manager Mini Online — Matchday Edition</title>
+  <meta name="description" content="Football Manager Mini Online — Production Bridge V1" />
+  <meta name="application-name" content="FM Mini Online" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FM Mini Online" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <title>Football Manager Mini Online — Production Bridge V1</title>
 <style>
 :root{
   --bg:#0b1020;
@@ -1697,6 +1705,116 @@ h1,h2,h3{letter-spacing:.018em}
   .card{border-radius:12px}
   .fixture-card{padding-top:25px}
 }
+
+
+/* ===========================
+   CLOSED ALPHA - REAL SUPABASE ONBOARDING
+   =========================== */
+.alpha-env-badge{
+  display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;
+  background:rgba(251,191,36,.10);border:1px solid rgba(251,191,36,.35);
+  color:#fbbf24;font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase
+}
+.alpha-env-dot{width:7px;height:7px;border-radius:50%;background:#fbbf24;box-shadow:0 0 0 4px rgba(251,191,36,.08)}
+.alpha-status-box{padding:14px;border:1px solid var(--line);border-radius:13px;background:#0f1728;margin:12px 0}
+.alpha-status-box strong{display:block;font-size:12px;margin-bottom:5px}
+.alpha-status-box p{font-size:10px;color:var(--muted);line-height:1.55;margin:0}
+.alpha-status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}
+.alpha-stat{padding:11px;border:1px solid var(--line);border-radius:11px;background:#111a2b}
+.alpha-stat span{display:block;font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.alpha-stat strong{display:block;font-size:15px;margin-top:4px}
+.alpha-user-list{display:grid;gap:8px;margin-top:12px}
+.alpha-user-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:11px;background:#111a2b}
+.alpha-user-row strong{font-size:11px;display:block}.alpha-user-row span{font-size:9px;color:var(--muted)}
+.alpha-user-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.alpha-user-actions button{min-height:31px;padding:0 8px;border-radius:8px;font-size:9px;font-weight:900}
+.alpha-good{color:var(--good)}.alpha-warn{color:var(--warn)}.alpha-danger{color:var(--danger)}
+.alpha-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9px;color:#9fb2c9;word-break:break-all}
+@media(max-width:600px){.alpha-status-grid{grid-template-columns:1fr}.alpha-user-row{grid-template-columns:1fr}.alpha-user-actions{justify-content:flex-start}}
+
+
+
+/* =====================================================
+   PRODUCTION BRIDGE V1 — MOBILE-FIRST / PWA / CLUB IDENTITY
+   ===================================================== */
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{overflow-x:hidden;overscroll-behavior-y:none}
+button,a,input,select{touch-action:manipulation}
+.table-wrap{overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+.team-logo,.club-preview-logo,.league-club-logo{overflow:hidden}
+.team-logo img,.club-preview-logo img,.league-club-logo img{width:100%;height:100%;display:block;object-fit:cover}
+.league-club-cell{display:flex;align-items:center;gap:9px;min-width:170px}
+.league-club-logo{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;clip-path:polygon(50% 0,92% 16%,86% 72%,50% 100%,14% 72%,8% 16%);background:#16351f;border:1px solid #41684d;font-size:8px;font-weight:900}
+
+.auth-role-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:5px;border:1px solid #2b5038;border-radius:12px;background:#06120a;margin:0 0 18px}
+.auth-role-tab{min-height:44px;border:0;border-radius:9px;background:transparent;color:var(--muted);font-weight:900;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.auth-role-tab.active{background:rgba(183,245,42,.12);color:var(--accent);box-shadow:inset 0 0 0 1px rgba(183,245,42,.32)}
+.admin-login-note{padding:11px 12px;border-radius:10px;border:1px solid rgba(183,245,42,.22);background:rgba(183,245,42,.055);color:#b9cdbf;font-size:10px;line-height:1.55;margin:12px 0}
+.auth-help{display:block;margin-top:6px;color:var(--muted);font-size:9px;line-height:1.45}.auth-help strong{color:var(--text)}
+
+.club-logo-picker{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.club-logo-option{min-height:58px;border:1px solid #2d5139;border-radius:10px;background:#091a10;padding:5px;display:grid;place-items:center}
+.club-logo-option.active{border-color:var(--accent);box-shadow:0 0 0 2px rgba(183,245,42,.12)}
+.club-logo-option img{width:42px;height:42px;object-fit:cover}
+.club-preview-logo{display:grid;place-items:center}
+.club-preview-logo img{width:100%;height:100%}
+.logo-helper{font-size:9px;color:var(--muted);line-height:1.5;margin-top:7px}
+
+.install-app-btn{min-height:40px;padding:0 12px;border:1px solid rgba(183,245,42,.32);border-radius:9px;background:rgba(183,245,42,.08);color:var(--accent);font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.pwa-auth-install{width:100%;margin-top:12px}
+.mobile-bottom-nav{display:none}
+.simulation-note{padding:12px;border:1px solid rgba(103,232,249,.24);border-radius:10px;background:rgba(103,232,249,.055);font-size:10px;color:#b9cbd0;line-height:1.55;margin:12px 0}
+
+@media(max-width:760px){
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .view-root{padding:14px 12px 96px}
+  .topbar{min-height:68px;padding:10px 12px;backdrop-filter:blur(10px)}
+  .topbar-actions{gap:7px}
+  .notification-btn,.avatar-btn,.mobile-menu{width:40px;height:40px;min-width:40px}
+  .install-app-btn{display:none!important}
+  .section-card{padding:15px}
+  .section-head{gap:10px;margin-bottom:14px}
+  .section-head h2{font-size:16px}
+  .card{box-shadow:0 10px 28px rgba(0,0,0,.22)}
+  .mobile-bottom-nav{
+    position:fixed;left:8px;right:8px;bottom:max(8px,env(safe-area-inset-bottom));z-index:70;
+    display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;
+    min-height:62px;padding:6px;border:1px solid #2d5139;border-radius:16px;
+    background:rgba(5,18,10,.96);backdrop-filter:blur(16px);box-shadow:0 18px 50px rgba(0,0,0,.4)
+  }
+  .mobile-nav-btn{border:0;background:transparent;color:#809487;border-radius:11px;display:grid;place-items:center;gap:2px;padding:5px 2px;font-size:8px;font-weight:800}
+  .mobile-nav-btn b{font-size:16px;line-height:1}
+  .mobile-nav-btn.active{color:var(--accent);background:rgba(183,245,42,.09)}
+  .mobile-nav-btn[data-mobile-more]{color:#a9b8ae}
+  .sidebar{padding-bottom:calc(90px + env(safe-area-inset-bottom));will-change:transform}
+  .toast{bottom:calc(82px + env(safe-area-inset-bottom));left:12px;right:12px;max-width:none}
+  .fixture-card{padding:22px 10px 14px}
+  .team strong{font-size:12px}
+  .team span{font-size:9px}
+  .auth-root{padding:12px;min-height:100dvh}
+  .auth-shell{width:100%;max-width:560px}
+  .auth-panel{padding:22px 18px}
+  .auth-input,.game-select,.search-box{font-size:16px}
+  .club-logo-picker{grid-template-columns:repeat(3,1fr)}
+  .table-wrap{margin-left:-15px;margin-right:-15px;padding:0 15px}
+  .squad-table th:first-child,.squad-table td:first-child{position:sticky;left:0;z-index:2;background:#08160e}
+  .squad-table td:first-child{background:#0a1b11}
+}
+@media(max-width:470px){
+  .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .kpi{padding:13px;min-height:104px}
+  .kpi-value{font-size:22px}
+  .kpi-label{font-size:8px}
+  .kpi-sub{font-size:9px}
+  .fixture-meta{min-width:60px}
+  .fixture-meta strong{font-size:20px}
+  .team-logo{width:44px;height:44px}
+  .topbar h1{font-size:18px}
+  .pageEyebrow{font-size:8px}
+}
+@media(max-width:360px){.kpi-grid{grid-template-columns:1fr}.club-logo-picker{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
 </style>
 
 </head>
@@ -1730,7 +1848,7 @@ h1,h2,h3{letter-spacing:.018em}
           <span>Season</span>
           <strong id="sidebarSeason">1</strong>
         </div>
-        <div class="demo-note">PRIVATE WORLD · SEASON 1 · LOCAL PREVIEW</div>
+        <div class="demo-note">PRODUCTION BRIDGE V1 · SUPABASE BRIDGE</div>
       </div>
     </aside>
 
@@ -1745,6 +1863,7 @@ h1,h2,h3{letter-spacing:.018em}
         </div>
 
         <div class="topbar-actions">
+          <button class="install-app-btn is-hidden" id="installAppBtn" type="button">Install</button>
           <button class="notification-btn" id="notificationBtn" type="button" aria-label="Notifications">
             ✉
             <span id="notificationCount">4</span>
@@ -1761,6 +1880,14 @@ h1,h2,h3{letter-spacing:.018em}
     </main>
   </div>
 
+  <nav class="mobile-bottom-nav is-hidden" id="mobileBottomNav" aria-label="Navigasi mobile">
+    <button class="mobile-nav-btn active" data-mobile-view="home" type="button"><b>⌂</b><span>Home</span></button>
+    <button class="mobile-nav-btn" data-mobile-view="squad" type="button"><b>XI</b><span>Squad</span></button>
+    <button class="mobile-nav-btn" data-mobile-view="tactics" type="button"><b>↗</b><span>Tactics</span></button>
+    <button class="mobile-nav-btn" data-mobile-view="match" type="button"><b>⚽</b><span>Match</span></button>
+    <button class="mobile-nav-btn" data-mobile-more type="button"><b>☰</b><span>More</span></button>
+  </nav>
+
   <div class="mobile-backdrop" id="mobileBackdrop"></div>
 
   <dialog id="playerDialog" class="player-dialog">
@@ -1775,6 +1902,609 @@ h1,h2,h3{letter-spacing:.018em}
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+window.MS7_CONFIG = Object.freeze({
+  url: "https://ibmshyuttubdzlnplugx.supabase.co",
+  publishableKey: "sb_publishable_e2POOpOYq8_keYYXkD8M0Q_mTtoJf3d",
+  worldSlug: "ms7-private-world",
+  environment: "PRODUCTION_BRIDGE_V1"
+});
+
+window.MS7Service = (() => {
+  const cfg = window.MS7_CONFIG;
+  if (!window.supabase?.createClient) throw new Error("SUPABASE_JS_NOT_LOADED");
+
+  const client = window.supabase.createClient(cfg.url, cfg.publishableKey, {
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: true
+    }
+  });
+
+  const must = (result, label) => {
+    if (result?.error) {
+      const e = new Error(result.error.message || label || "Supabase error");
+      e.code = result.error.code;
+      e.details = result.error.details;
+      e.hint = result.error.hint;
+      throw e;
+    }
+    return result?.data;
+  };
+
+  async function getSession() {
+    const { data, error } = await client.auth.getSession();
+    if (error) throw error;
+    return data.session;
+  }
+
+  const MS7_EMAIL_DOMAIN = "ms7.com";
+
+  function normalizeMs7Username(value) {
+    let raw = String(value || "").trim().toLowerCase();
+    if (raw.endsWith(`@${MS7_EMAIL_DOMAIN}`)) raw = raw.slice(0, -(MS7_EMAIL_DOMAIN.length + 1));
+    if (raw.includes("@")) throw new Error(`Gunakan username MS7 saja atau akun @${MS7_EMAIL_DOMAIN}.`);
+    if (!/^[a-z0-9][a-z0-9._-]{1,31}$/.test(raw)) {
+      throw new Error("Username harus 2–32 karakter dan hanya boleh huruf kecil, angka, titik, underscore, atau tanda minus.");
+    }
+    return raw;
+  }
+
+  function toMs7Email(value) {
+    return `${normalizeMs7Username(value)}@${MS7_EMAIL_DOMAIN}`;
+  }
+
+  async function signUp({ password, username, displayName }) {
+    const cleanUsername = normalizeMs7Username(username);
+    const cleanEmail = toMs7Email(cleanUsername);
+    const cleanName = String(displayName || "").trim();
+    if (!password || !cleanName) throw new Error("Lengkapi semua field registrasi.");
+    const { data, error } = await client.auth.signUp({
+      email: cleanEmail,
+      password,
+      options: { data: { username: cleanUsername, display_name: cleanName, ms7_email: cleanEmail } }
+    });
+    if (error) throw error;
+    return data;
+  }
+
+  async function signIn({ username, password }) {
+    const { data, error } = await client.auth.signInWithPassword({
+      email: toMs7Email(username), password
+    });
+    if (error) throw error;
+    return data;
+  }
+
+  async function signOut() {
+    const { error } = await client.auth.signOut();
+    if (error) throw error;
+  }
+
+  async function getProfile(userId) {
+    const session = await getSession();
+    const id = userId || session?.user?.id;
+    if (!id) return null;
+    const res = await client.from("profiles").select("id,username,display_name,role,is_owner,approval_status,approved_at,created_at,updated_at").eq("id", id).maybeSingle();
+    return must(res, "PROFILE_READ_FAILED");
+  }
+
+  async function getWorld() {
+    const res = await client.from("game_worlds")
+      .select("id,slug,name,status,max_managers,founding_target,registration_open,transfer_window_open,scheduler_enabled,founding_draw_status,current_season_number,timezone")
+      .eq("slug", cfg.worldSlug).maybeSingle();
+    return must(res, "WORLD_READ_FAILED");
+  }
+
+  async function getMyClub(userId) {
+    const session = await getSession();
+    const id = userId || session?.user?.id;
+    if (!id) return null;
+    const res = await client.from("clubs")
+      .select("id,world_id,manager_id,name,short_name,logo_url,stadium_name,reputation,active,created_at")
+      .eq("manager_id", id).eq("active", true).maybeSingle();
+    return must(res, "CLUB_READ_FAILED");
+  }
+
+  async function listClubs() {
+    const res = await client.from("clubs")
+      .select("id,world_id,manager_id,name,short_name,logo_url,stadium_name,reputation,active,created_at")
+      .eq("active", true).order("created_at", { ascending: true });
+    return must(res, "CLUB_LIST_FAILED") || [];
+  }
+
+  async function createClub({ name, shortName, stadiumName, logoUrl = null }) {
+    const res = await client.rpc("create_club", {
+      p_name: String(name || "").trim(),
+      p_short_name: String(shortName || "").trim().toUpperCase(),
+      p_stadium_name: String(stadiumName || "").trim(),
+      p_logo_url: logoUrl || null
+    });
+    return must(res, "CREATE_CLUB_FAILED");
+  }
+
+  async function adminPendingAccounts() {
+    const res = await client.rpc("admin_pending_accounts", { p_limit: 50 });
+    return must(res, "ADMIN_PENDING_FAILED") || [];
+  }
+
+  async function adminDecideManager(userId, decision, reason) {
+    const res = await client.rpc("admin_decide_manager", {
+      p_user_id: userId,
+      p_decision: decision,
+      p_reason: reason || `Production Bridge V1: ${decision}`
+    });
+    return must(res, "ADMIN_DECISION_FAILED");
+  }
+
+  async function safeCount(table, column = "*", configure = null) {
+    try {
+      let q = client.from(table).select(column, { count: "exact", head: true });
+      if (typeof configure === "function") q = configure(q);
+      const res = await q;
+      if (res.error) {
+        console.warn(`Count ${table} gagal`, res.error);
+        return null;
+      }
+      return Number(res.count ?? 0);
+    } catch (err) {
+      console.warn(`Count ${table} gagal`, err);
+      return null;
+    }
+  }
+
+  async function adminOverview() {
+    const [pending, clubs, profilesRes, activePlayers, playerStateRows, ownedPlayers, freeAgents] = await Promise.all([
+      adminPendingAccounts(),
+      listClubs(),
+      client.from("profiles")
+        .select("id,username,display_name,role,is_owner,approval_status,created_at,updated_at")
+        .order("created_at", { ascending: true }),
+      safeCount("players", "id", q => q.eq("active", true)),
+      safeCount("player_state", "player_id"),
+      safeCount("player_state", "player_id", q => q.eq("ownership_status", "owned")),
+      safeCount("player_state", "player_id", q => q.eq("ownership_status", "free_agent"))
+    ]);
+
+    const profiles = must(profilesRes, "ADMIN_PROFILES_FAILED") || [];
+    const profileById = new Map(profiles.map(x => [x.id, x]));
+    const enrichedClubs = clubs.map(c => {
+      const manager = profileById.get(c.manager_id) || null;
+      return {
+        ...c,
+        manager_username: manager?.username || null,
+        manager_name: manager?.display_name || manager?.username || "Manager",
+        manager_status: manager?.approval_status || "unknown"
+      };
+    });
+
+    const approvedManagers = profiles.filter(x =>
+      x.role === "manager" && x.approval_status === "approved"
+    ).length;
+
+    const approvedActiveClubs = enrichedClubs.filter(c =>
+      c.manager_status === "approved"
+    ).length;
+
+    return {
+      pending,
+      clubs: enrichedClubs,
+      profiles,
+      counts: {
+        profiles: profiles.length,
+        approvedManagers,
+        approvedActiveClubs,
+        activePlayers,
+        playerStateRows,
+        ownedPlayers,
+        freeAgents
+      }
+    };
+  }
+
+  async function runStarterDraw() {
+    const res = await client.rpc("run_starter_draw", { p_reason: "Production Bridge V1 · Founding Draw V1.4" });
+    return must(res, "FOUNDING_DRAW_FAILED");
+  }
+
+  async function getMySquadSummary(clubId) {
+    if (!clubId) return { count: 0, players: [] };
+    const stateRes = await client.from("player_state")
+      .select("player_id,current_age,current_ovr,current_tier,fitness,form")
+      .eq("current_club_id", clubId).eq("ownership_status", "owned")
+      .order("current_ovr", { ascending: false });
+    const states = must(stateRes, "SQUAD_STATE_FAILED") || [];
+    if (!states.length) return { count: 0, players: [] };
+    const ids = states.map(x => x.player_id);
+    const playerRes = await client.from("players").select("id,name,primary_position,secondary_positions,reference_season,reference_club,potential_label").in("id", ids);
+    const players = must(playerRes, "SQUAD_PLAYERS_FAILED") || [];
+    const byId = new Map(players.map(p => [p.id, p]));
+    return {
+      count: states.length,
+      players: states.map(s => ({ ...s, ...(byId.get(s.player_id) || {}) }))
+    };
+  }
+
+  async function bootstrap() {
+    const session = await getSession();
+    if (!session?.user) return { screen: "login", session: null, user: null, profile: null };
+
+    const profile = await getProfile(session.user.id);
+    if (!profile) return { screen: "error", message: "Profile belum terbentuk untuk Auth user ini." };
+
+    if (profile.approval_status !== "approved") {
+      return { screen: "pending", session, user: session.user, profile };
+    }
+
+    const world = await getWorld();
+
+    if (profile.role === "admin") {
+      const overview = await adminOverview();
+      return {
+        screen: "adminLobby",
+        session,
+        user: session.user,
+        profile,
+        world,
+        pending: overview.pending,
+        clubs: overview.clubs,
+        adminOverview: overview
+      };
+    }
+
+    const club = await getMyClub(session.user.id);
+    if (!club) return { screen: "createClub", session, user: session.user, profile, world, club: null };
+
+    if (world?.founding_draw_status !== "COMPLETED") {
+      const clubs = await listClubs();
+      return { screen: "waitingDraw", session, user: session.user, profile, world, club, clubs };
+    }
+
+    const squad = await getMySquadSummary(club.id);
+    return { screen: "alphaReady", session, user: session.user, profile, world, club, squad };
+  }
+
+  return {
+    client, getSession, signUp, signIn, signOut, getProfile, getWorld, getMyClub,
+    listClubs, createClub, adminPendingAccounts, adminDecideManager, adminOverview, runStarterDraw,
+    getMySquadSummary, bootstrap
+  };
+})();
+</script>
+
+
+<script>
+/* =============================================================
+   PRODUCTION BRIDGE V1 — REAL GAMEPLAY
+   Supabase is the source of truth. No secret/service-role key is used in the frontend.
+   ============================================================= */
+window.RealGameService = (() => {
+  const client = window.MS7Service.client;
+  const cache = { ctx:null, ctxAt:0, squad:null, squadAt:0 };
+  const TTL = 2500;
+
+  function must(result, label='SUPABASE_ERROR') {
+    if (result?.error) {
+      const e = result.error;
+      const msg = [e.message, e.details, e.hint, e.code].filter(Boolean).join(' | ');
+      throw new Error(`${label}: ${msg || 'Unknown Supabase error'}`);
+    }
+    return result?.data;
+  }
+  const cap = s => String(s ?? '').trim();
+  const num = (v, d=0) => Number.isFinite(Number(v)) ? Number(v) : d;
+  const title = s => cap(s).toLowerCase().replace(/\b\w/g, m=>m.toUpperCase());
+  const pressToServer = v => v === 'High Press' ? 'High' : v === 'Very High Press' ? 'Very High' : v;
+  const pressToUi = v => v === 'High' ? 'High Press' : v === 'Very High' ? 'Very High Press' : v;
+  const focusToServer = v => {
+    if (!v || v === 'Balanced') return null;
+    const map = {'Work Rate':'work_rate','One-on-One':'one_on_one'};
+    return map[v] || String(v).toLowerCase().replaceAll(' ','_').replaceAll('-','_');
+  };
+  const prettyCategory = c => ({MATCH:'Match',TRANSFER:'Transfer',PLAYER:'Player',FINANCE:'Finance',LEAGUE:'League'}[c] || title(c));
+  const fmtWib = ts => {
+    if (!ts) return 'TBD';
+    try { return new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(ts))+' WIB'; }
+    catch { return cap(ts); }
+  };
+  const fmtDate = ts => {
+    if (!ts) return 'TBD';
+    try { return new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Jakarta',day:'2-digit',month:'short'}).format(new Date(ts)); }
+    catch { return cap(ts); }
+  };
+  const relative = ts => {
+    if (!ts) return '';
+    const diff = Date.now()-new Date(ts).getTime();
+    if (!Number.isFinite(diff)) return '';
+    const m=Math.max(0,Math.floor(diff/60000));
+    if (m<1) return 'Now'; if (m<60) return `${m}m`; const h=Math.floor(m/60); if(h<24)return `${h}h`; return `${Math.floor(h/24)}d`;
+  };
+  function invalidate() { cache.ctx=null; cache.squad=null; cache.ctxAt=cache.squadAt=0; }
+
+  async function context(force=false) {
+    if (!force && cache.ctx && Date.now()-cache.ctxAt<TTL) return cache.ctx;
+    const session = await MS7Service.getSession();
+    if (!session?.user) throw new Error('AUTH_REQUIRED');
+    const [profile, world] = await Promise.all([
+      MS7Service.getProfile(session.user.id), MS7Service.getWorld()
+    ]);
+    if (!profile || profile.approval_status !== 'approved') throw new Error('ACCOUNT_NOT_APPROVED');
+    const club = await MS7Service.getMyClub(session.user.id);
+    if (!club) throw new Error('CLUB_NOT_FOUND_FOR_MANAGER');
+    const season = must(await client.from('seasons').select('*').eq('world_id',world.id).eq('season_number',world.current_season_number).maybeSingle(),'SEASON');
+    if (!season) throw new Error('CURRENT_SEASON_NOT_FOUND');
+    cache.ctx = {session,profile,world,club,season}; cache.ctxAt=Date.now();
+    return cache.ctx;
+  }
+
+  async function clubMap(worldId) {
+    const rows = must(await client.from('clubs').select('id,name,short_name,logo_url,stadium_name,manager_id,reputation,active').eq('world_id',worldId).eq('active',true),'CLUBS') || [];
+    return new Map(rows.map(x=>[x.id,x]));
+  }
+
+  async function getManager() {
+    const {profile} = await context();
+    const n = profile.display_name || profile.username || 'Manager';
+    return {id:profile.id,name:n,short:n.split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase(),status:profile.approval_status,role:profile.role};
+  }
+  async function getSeason(){ const {season}=await context(); return {number:season.season_number,phase:season.phase,matchday:season.matchday,id:season.id}; }
+
+  async function getSquad(force=false) {
+    const {club,season} = await context();
+    if (!force && cache.squad && Date.now()-cache.squadAt<TTL) return JSON.parse(JSON.stringify(cache.squad));
+    const states = must(await client.from('player_state').select('*').eq('current_club_id',club.id).eq('ownership_status','owned').order('current_ovr',{ascending:false}),'SQUAD_STATE') || [];
+    if (!states.length) return [];
+    const ids=states.map(x=>x.player_id);
+    const [playersR, contractsR, attrsR, posR, injuriesR, suspR, statsR, transR] = await Promise.all([
+      client.from('players').select('*').in('id',ids),
+      client.from('contracts').select('*').in('player_id',ids).eq('club_id',club.id).eq('status','active'),
+      client.from('player_current_attributes').select('*').in('player_id',ids),
+      client.from('player_position_ratings').select('*').in('player_id',ids),
+      client.from('player_injuries').select('*').in('player_id',ids).eq('status','active'),
+      client.from('player_suspensions').select('*').in('player_id',ids).eq('season_id',season.id).eq('status','active'),
+      client.from('player_season_stats').select('*').in('player_id',ids).eq('season_id',season.id),
+      client.from('player_transfer_state').select('*').in('player_id',ids)
+    ]);
+    const players=must(playersR,'PLAYERS')||[], contracts=must(contractsR,'CONTRACTS')||[], attrs=must(attrsR,'ATTRS')||[], pos=must(posR,'POS_RATINGS')||[], injuries=must(injuriesR,'INJURIES')||[], susp=must(suspR,'SUSPENSIONS')||[], stats=must(statsR,'STATS')||[], trs=must(transR,'TRANSFER_STATE')||[];
+    const by=(arr,key='player_id')=>new Map(arr.map(x=>[x[key],x]));
+    const pBy=by(players,'id'), cBy=by(contracts), aBy=by(attrs), iBy=by(injuries), sBy=by(susp), stBy=by(stats), trBy=by(trs);
+    const posBy=new Map(); for(const x of pos){if(!posBy.has(x.player_id))posBy.set(x.player_id,[]);posBy.get(x.player_id).push(x)}
+    const attrsNames={pace:'Pace',acceleration:'Acceleration',finishing:'Finishing',passing:'Passing',dribbling:'Dribbling',crossing:'Crossing',tackling:'Tackling',positioning:'Positioning',strength:'Strength',aerial:'Aerial',stamina:'Stamina',work_rate:'Work Rate',reflexes:'Reflexes',handling:'Handling',one_on_one:'One-on-One',distribution:'Distribution'};
+    const out=states.map(s=>{
+      const p=pBy.get(s.player_id)||{}, c=cBy.get(s.player_id)||{}, a=aBy.get(s.player_id)||{}, inj=iBy.get(s.player_id), su=sBy.get(s.player_id), st=stBy.get(s.player_id)||{}, tr=trBy.get(s.player_id)||{};
+      const attributes={}; for(const [k,label] of Object.entries(attrsNames)){ if(a[k]!=null) attributes[label]=a[k]; }
+      let positionOvrs=(posBy.get(s.player_id)||[]).map(r=>({position:r.position,ovr:r.position===p.primary_position?s.current_ovr:r.ovr,familiarity:r.familiarity}));
+      if(!positionOvrs.length) positionOvrs=[{position:p.primary_position,ovr:s.current_ovr,familiarity:'Natural'}];
+      const injury = inj ? {level:inj.severity,matchesAffected:inj.recovery_days,playable:!['Heavy','Very Heavy'].includes(inj.severity),returnFitness:s.fitness} : {level:'None',matchesAffected:0,playable:true,returnFitness:s.fitness};
+      const suspension = su ? {active:true,matches:su.matches_remaining} : {active:false,matches:0};
+      const status = suspension.active ? `Suspended (${suspension.matches})` : injury.level!=='None' ? `Injured · ${injury.level}` : 'Available';
+      const refAge=p.reference_age ?? s.current_age;
+      const careerStage=refAge<=23?'Developing':refAge<=29?'Peak Age':'Veteran';
+      const sec=cap(p.secondary_positions)||'-';
+      return {
+        id:s.player_id,name:p.name||s.player_id,pos:p.primary_position||'?',secondary:sec,ovr:s.current_ovr,age:s.current_age,fitness:Math.round(num(s.fitness,100)),form:Math.round(num(s.form,50)),potential:p.potential_label||'Moderate',tier:s.current_tier,contract:c.seasons_remaining??0,wage:c.weekly_wage??0,status,
+        refSeason:p.reference_season||'-',refClub:p.reference_club||'-',refAge,careerStage,attributes,injury,suspension,retirementRisk:s.retirement_risk||'Low',resaleCooldown:Math.max(0,num(s.resale_eligible_matchday)-num(season.matchday)),positionOvrs,
+        stats:{appearances:st.appearances||0,starts:st.starts||0,minutes:st.minutes||0,goals:st.goals||0,assists:st.assists||0,cleanSheets:st.clean_sheets||0,avgRating:st.average_rating==null?'-':Number(st.average_rating).toFixed(2)},
+        careerHistory:[{season:`Season ${season.season_number}`,club:club.name,apps:st.appearances||0,goals:st.goals||0,assists:st.assists||0,rating:st.average_rating==null?'-':Number(st.average_rating).toFixed(2)}],
+        transferState:tr, renewal:{seasons:c.renewal_seasons??null,wage:c.renewal_weekly_wage??null}
+      };
+    });
+    cache.squad=out; cache.squadAt=Date.now(); return JSON.parse(JSON.stringify(out));
+  }
+  async function getPlayerById(id){ const s=await getSquad(); return s.find(x=>x.id===id)||null; }
+
+  async function recentForm(clubId, seasonId) {
+    const fixtures = must(await client.from('league_fixtures').select('id,home_club_id,away_club_id,matchday,status').eq('season_id',seasonId).eq('status','completed').or(`home_club_id.eq.${clubId},away_club_id.eq.${clubId}`).order('matchday',{ascending:false}).limit(5),'FORM_FIXTURES') || [];
+    if(!fixtures.length)return [];
+    const results=must(await client.from('league_match_results').select('*').in('fixture_id',fixtures.map(x=>x.id)),'FORM_RESULTS')||[];
+    const rBy=new Map(results.map(x=>[x.fixture_id,x]));
+    return fixtures.map(f=>{const r=rBy.get(f.id);if(!r)return 'D';const home=f.home_club_id===clubId;const gf=home?r.home_score:r.away_score,ga=home?r.away_score:r.home_score;return gf>ga?'W':gf<ga?'L':'D'});
+  }
+
+  async function getClub(){
+    const {club,season}=await context();
+    const [csR, stR, squad, form] = await Promise.all([
+      client.from('club_seasons').select('*').eq('club_id',club.id).eq('season_id',season.id).maybeSingle(),
+      client.from('league_standings').select('*').eq('club_id',club.id).eq('season_id',season.id).maybeSingle(),
+      getSquad(), recentForm(club.id,season.id)
+    ]);
+    const cs=must(csR,'CLUB_SEASON')||{}, st=must(stR,'STANDING')||{};
+    const avg=arr=>arr.length?Math.round(arr.reduce((a,b)=>a+b,0)/arr.length):0;
+    const attack=avg(squad.filter(p=>['ST','RW','LW','AM'].includes(p.pos)).map(p=>p.ovr));
+    const midfield=avg(squad.filter(p=>['DM','CM','AM'].includes(p.pos)).map(p=>p.ovr));
+    const defense=avg(squad.filter(p=>['RB','CB','LB','RWB','LWB'].includes(p.pos)).map(p=>p.ovr));
+    return {id:club.id,name:club.name,shortName:club.short_name,logoUrl:club.logo_url||null,stadium:club.stadium_name,leaguePosition:st.position||'-',balance:cs.balance||0,transferBudget:cs.transfer_budget||0,wageUsed:cs.weekly_wage_committed||0,wageLimit:cs.wage_limit_weekly||1200000,reputation:`${club.reputation}`,form,strength:{attack,midfield,defense},transferSpendingFrozen:!!cs.transfer_spending_frozen,financeStatus:cs.finance_status||'healthy'};
+  }
+
+  async function getNextFixture(){
+    const {club,season,world}=await context();
+    const rows=must(await client.from('league_fixtures').select('*').eq('season_id',season.id).in('status',['scheduled','lineup_locked','live']).or(`home_club_id.eq.${club.id},away_club_id.eq.${club.id}`).order('matchday',{ascending:true}).order('scheduled_kickoff',{ascending:true}).limit(1),'NEXT_FIXTURE')||[];
+    const f=rows[0]; const cmap=await clubMap(world.id);
+    if(!f) return {id:null,home:{name:club.name,short:club.short_name,logoUrl:club.logo_url||null},away:{name:'TBD',short:'TBD',logoUrl:null},dateLabel:'No scheduled fixture',kickoff:'TBD',window:'Scheduler OFF / TBD',venue:club.stadium_name};
+    const h=cmap.get(f.home_club_id)||{}, a=cmap.get(f.away_club_id)||{};
+    const windowLabel=f.kickoff_window==='ODD_19_30_21_00'?'19:30–21:00 WIB':'22:00–23:30 WIB';
+    return {id:f.id,home:{name:h.name||'Home',short:h.short_name||'H',logoUrl:h.logo_url||null},away:{name:a.name||'Away',short:a.short_name||'A',logoUrl:a.logo_url||null},dateLabel:`Matchday ${f.matchday}`,kickoff:fmtWib(f.scheduled_kickoff),window:windowLabel,venue:h.stadium_name||'Home Stadium',status:f.status,scheduledKickoff:f.scheduled_kickoff};
+  }
+
+  async function getNotifications(){
+    const data=must(await client.rpc('notification_feed',{p_category:null,p_unread_only:false,p_limit:100,p_before:null}),'NOTIFICATIONS')||{};
+    return (data.items||[]).map(n=>({id:n.id,category:prettyCategory(n.category),title:n.title,message:n.body,time:relative(n.created_at),read:!!n.is_read,actionKey:n.action_key,createdAt:n.created_at}));
+  }
+  async function getRecentActivities(){
+    const notes=await getNotifications();
+    return notes.slice(0,5).map(n=>({icon:{Match:'▶',Transfer:'£',Player:'XI',Finance:'$',League:'LG'}[n.category]||'i',title:n.title,detail:n.message,time:n.time}));
+  }
+
+  async function getSavedSetup(){
+    const {club,season}=await context();
+    const [tR,lR,eR]=await Promise.all([
+      client.from('club_tactics').select('*').eq('club_id',club.id).eq('season_id',season.id).maybeSingle(),
+      client.from('club_lineups').select('*').eq('club_id',club.id).eq('season_id',season.id).maybeSingle(),
+      client.from('club_lineup_entries').select('*').eq('club_id',club.id).eq('season_id',season.id).order('role').order('slot_index')
+    ]);
+    return {tactics:must(tR,'TACTICS_READ'),lineup:must(lR,'LINEUP_READ'),entries:must(eR,'LINEUP_ENTRIES')||[]};
+  }
+  async function hydrateUIState(state){
+    const setup=await getSavedSetup();
+    if(setup.tactics){
+      const t=setup.tactics;
+      state.tactics.formation=t.formation_code||state.tactics.formation;
+      state.tactics.mentality=t.mentality||'Balanced'; state.tactics.pressing=pressToUi(t.press||'Standard'); state.tactics.defensiveLine=t.defensive_line||'Standard'; state.tactics.tempo=t.tempo||'Balanced'; state.tactics.passingStyle=t.passing_style||'Mixed'; state.tactics.width=t.width||'Balanced'; state.tactics.attackFocus=t.focus||'Balanced'; state.tactics.transition=t.transition||'Balanced'; state.tactics.autoSubEnabled=t.auto_sub_enabled!==false;
+    }
+    const starters=setup.entries.filter(x=>x.role==='starter').sort((a,b)=>a.slot_index-b.slot_index);
+    const bench=setup.entries.filter(x=>x.role==='bench').sort((a,b)=>a.slot_index-b.slot_index);
+    if(starters.length===11){ state.lineup={}; starters.forEach((x,i)=>state.lineup[i]=x.player_id); state.bench=bench.map(x=>x.player_id); }
+    return setup;
+  }
+  async function saveTactics(t){
+    const data=must(await client.rpc('save_tactics',{p_formation_code:t.formation,p_mentality:t.mentality,p_press:pressToServer(t.pressing),p_defensive_line:t.defensiveLine,p_tempo:t.tempo,p_passing_style:t.passingStyle,p_width:t.width,p_focus:t.attackFocus,p_transition:t.transition,p_auto_sub_enabled:t.autoSubEnabled!==false}),'SAVE_TACTICS'); invalidate(); return data;
+  }
+  async function saveLineup(formation,starters,bench){ const data=must(await client.rpc('save_lineup',{p_formation_code:formation,p_starters:starters,p_bench:bench}),'SAVE_LINEUP'); invalidate(); return data; }
+
+  async function getLineupRules(){
+    const {club,season}=await context();
+    const [lockR,tR]=await Promise.all([
+      client.from('lineup_locks').select('*').eq('club_id',club.id).eq('season_id',season.id).maybeSingle(),
+      client.from('club_tactics').select('auto_sub_enabled').eq('club_id',club.id).eq('season_id',season.id).maybeSingle()
+    ]);
+    const lock=must(lockR,'LINEUP_LOCK'), t=must(tR,'TACTICS_RULES'); const locked=!!(lock?.active && new Date(lock.lock_at)<=new Date());
+    let countdown='Not scheduled'; if(lock?.lock_at){const sec=Math.max(0,Math.floor((new Date(lock.lock_at)-Date.now())/1000));countdown=`${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`;}
+    return {lockMinutesBeforeKickoff:5,currentlyLocked:locked,lockCountdown:countdown,offlineFallback:'Last Valid Lineup + Last Valid Tactics',autoSubEnabled:t?.auto_sub_enabled!==false,autoSubRules:{fatigueThreshold:68,injuryRiskReplacement:true,preserveFormation:true,maxSubs:5}};
+  }
+
+  async function getTrainingState(){
+    const {club}=await context(); const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Jakarta'}).format(new Date());
+    const [sessR,facR]=await Promise.all([
+      client.from('training_sessions').select('*').eq('club_id',club.id).eq('training_date',today).maybeSingle(),
+      client.from('club_facilities').select('*').eq('club_id',club.id).maybeSingle()
+    ]);
+    const s=must(sessR,'TRAINING_TODAY'), f=must(facR,'FACILITIES')||{};
+    return {todayType:s?.session_type||'Normal',teamFocus:'Balanced',completed:s?.status==='completed',scheduled:s?.status==='scheduled',trainingCentreLevel:f.training_level||1,medicalCentreLevel:f.medical_level||1,sessionsRemainingToday:s?.status==='completed'?0:1,lastSession:s?{type:s.session_type,focus:'Server',result:s.status,note:`Server session ${s.status}`} : null};
+  }
+  async function getTrainingHistory(){
+    const {club}=await context(); const rows=must(await client.from('training_sessions').select('*').eq('club_id',club.id).order('training_date',{ascending:false}).limit(8),'TRAINING_HISTORY')||[];
+    const fitnessDelta={Recovery:10,Light:3,Normal:-2,Intensive:-6,Attacking:-3,Defensive:-3,Technical:-3,Fitness:-5};
+    return rows.map(x=>({day:fmtDate(x.training_date),type:x.session_type,focus:x.session_type,avgDxp:x.players_processed?Math.round(num(x.total_effective_dxp)/Math.max(1,x.players_processed)):0,avgFitness:fitnessDelta[x.session_type]??0,status:x.status}));
+  }
+  async function scheduleTraining(type){ const data=must(await client.rpc('schedule_training',{p_session_type:type,p_training_date:null}),'SCHEDULE_TRAINING'); invalidate(); return data; }
+  async function setIndividualFocus(playerId,label){ return must(await client.rpc('set_individual_focus',{p_player_id:playerId,p_attribute:focusToServer(label)}),'SET_FOCUS'); }
+
+  async function getTransferMarket(){
+    const {club,season,world}=await context(); const cmap=await clubMap(world.id); const squad=await getSquad();
+    const [listR, offersR, aucR, bidsR, statesR] = await Promise.all([
+      client.from('transfer_listings').select('*').eq('status','listed').order('listed_at',{ascending:false}),
+      client.from('transfer_offers').select('*').order('created_at',{ascending:false}),
+      client.from('free_agent_auctions').select('*').eq('world_id',world.id).eq('status','open').order('ends_at',{ascending:true}),
+      client.from('free_agent_bids').select('*').order('updated_at',{ascending:false}),
+      client.from('player_state').select('*').in('ownership_status',['owned','free_agent'])
+    ]);
+    const listings=must(listR,'LISTINGS')||[], offers=must(offersR,'OFFERS')||[], auctions=must(aucR,'AUCTIONS')||[], bids=must(bidsR,'FA_BIDS')||[], allStates=must(statesR,'PLAYER_STATES')||[];
+    const ids=[...new Set([...listings.map(x=>x.player_id),...offers.map(x=>x.player_id),...auctions.map(x=>x.player_id)])];
+    const [pR,cR] = ids.length ? await Promise.all([client.from('players').select('*').in('id',ids),client.from('contracts').select('*').in('player_id',ids).eq('status','active')]) : [{data:[]},{data:[]}];
+    const players=must(pR,'MARKET_PLAYERS')||[], contracts=must(cR,'MARKET_CONTRACTS')||[]; const pBy=new Map(players.map(x=>[x.id,x])); const cBy=new Map(contracts.map(x=>[x.player_id,x])); const sBy=new Map(allStates.map(x=>[x.player_id,x]));
+    const transferList=listings.filter(x=>x.seller_club_id!==club.id).map(l=>{const p=pBy.get(l.player_id)||{},s=sBy.get(l.player_id)||{},c=cBy.get(l.player_id)||{}; const seller=cmap.get(l.seller_club_id)||{};return {id:l.player_id,listingId:l.id,name:p.name||l.player_id,club:seller.name||'Unknown Club',clubId:l.seller_club_id,pos:p.primary_position||'?',secondary:p.secondary_positions||'-',ovr:s.current_ovr||p.initial_ovr||0,age:s.current_age||p.reference_age||0,fitness:Math.round(num(s.fitness,100)),potential:p.potential_label||'Moderate',tier:s.current_tier||p.initial_tier||'D',price:l.asking_price,wage:c.weekly_wage||0,contract:c.seasons_remaining||1};});
+    const freeAgents=auctions.map(a=>{const p=pBy.get(a.player_id)||{},s=sBy.get(a.player_id)||{};const bb=bids.filter(b=>b.auction_id===a.id).sort((x,y)=>y.signing_bonus-x.signing_bonus)[0];return {id:a.id,playerId:a.player_id,name:p.name||a.player_id,pos:p.primary_position||'?',secondary:p.secondary_positions||'-',ovr:s.current_ovr||p.initial_ovr||0,age:s.current_age||p.reference_age||0,tier:s.current_tier||p.initial_tier||'D',wage:bb?.weekly_wage||20000,currentBid:bb?.signing_bonus||0,currentBidder:bb?cmap.get(bb.club_id)?.name||'Club':'No bids',openingBid:1000000,endsIn:relative(a.ends_at),endsAt:a.ends_at};});
+    const directMine=offers.filter(o=>o.buyer_club_id===club.id).map(o=>({id:o.id,type:'Direct Offer',player:pBy.get(o.player_id)?.name||o.player_id,club:cmap.get(o.seller_club_id)?.name||'Seller',amount:o.seller_counter_amount??o.buyer_amount,status:title(o.status),submitted:relative(o.created_at)}));
+    const myFa=bids.filter(b=>b.club_id===club.id).map(b=>({id:b.id,type:'FA Auction',player:pBy.get(auctions.find(a=>a.id===b.auction_id)?.player_id)?.name||'Free Agent',club:'Free Agent',amount:b.signing_bonus,status:'Bid',submitted:relative(b.updated_at)}));
+    const offersReceived=offers.filter(o=>o.seller_club_id===club.id && ['pending','countered'].includes(o.status)).map(o=>({id:o.id,playerId:o.player_id,player:pBy.get(o.player_id)?.name||o.player_id,buyer:cmap.get(o.buyer_club_id)?.name||'Buyer',amount:o.buyer_amount,status:title(o.status),submitted:relative(o.created_at),counterAmount:o.seller_counter_amount}));
+    return {windowOpen:!!world.transfer_window_open,windowLabel:`${season.phase} Window`,closesIn:world.transfer_window_open?'Open by phase':'Closed',squadSize:squad.length,squadMin:18,squadMax:25,transferList,freeAgents,myBids:[...directMine,...myFa],offersReceived};
+  }
+  async function listPlayerForTransfer(playerId,askingPrice){ const d=must(await client.rpc('list_player_for_transfer',{p_player_id:playerId,p_asking_price:Math.round(askingPrice)}),'LIST_PLAYER'); invalidate(); return d; }
+  async function makeTransferOffer(playerId,amount,wage){ const d=must(await client.rpc('make_transfer_offer',{p_player_id:playerId,p_amount:Math.round(amount),p_weekly_wage:Math.round(wage)}),'MAKE_OFFER'); invalidate(); return d; }
+  async function respondTransferOffer(offerId,action,counter=null){ const d=must(await client.rpc('respond_transfer_offer',{p_offer_id:offerId,p_action:action,p_counter_amount:counter==null?null:Math.round(counter)}),'RESPOND_OFFER'); invalidate(); return d; }
+  async function placeFreeAgentBid(auctionId,bonus,wage,years=2){ const d=must(await client.rpc('place_free_agent_bid',{p_auction_id:auctionId,p_signing_bonus:Math.round(bonus),p_weekly_wage:Math.round(wage),p_contract_seasons:years}),'FA_BID'); invalidate(); return d; }
+
+  async function getLeague(){
+    const {season,world}=await context(); const cmap=await clubMap(world.id);
+    const [stR,fxR,resR,psR] = await Promise.all([
+      client.from('league_standings').select('*').eq('season_id',season.id).order('position',{ascending:true}),
+      client.from('league_fixtures').select('*').eq('season_id',season.id).order('matchday',{ascending:false}).order('scheduled_kickoff',{ascending:false}),
+      client.from('league_match_results').select('*'),
+      client.from('player_season_stats').select('*').eq('season_id',season.id).order('goals',{ascending:false}).order('assists',{ascending:false}).limit(30)
+    ]);
+    const standings=must(stR,'STANDINGS')||[], fixturesRaw=must(fxR,'FIXTURES')||[], results=must(resR,'RESULTS')||[], stats=must(psR,'SEASON_STATS')||[]; const resultBy=new Map(results.map(x=>[x.fixture_id,x]));
+    const standingsOut=standings.map(r=>{const c=cmap.get(r.club_id)||{};return {pos:r.position||'-',club:c.name||'Club',clubShort:c.short_name||'',clubLogoUrl:c.logo_url||null,p:r.played,w:r.won,d:r.drawn,l:r.lost,gf:r.goals_for,ga:r.goals_against,gd:r.goal_difference,pts:r.points,form:[]};});
+    // derive last-five form per club from completed fixtures
+    for(const row of standingsOut){ const club=[...cmap.values()].find(c=>c.name===row.club); if(club)row.form=await recentForm(club.id,season.id); }
+    const fixtures=fixturesRaw.map(f=>{const r=resultBy.get(f.id); return {md:f.matchday,date:fmtDate(f.scheduled_kickoff),home:cmap.get(f.home_club_id)?.name||'Home',away:cmap.get(f.away_club_id)?.name||'Away',time:fmtWib(f.scheduled_kickoff).replace(' WIB',''),status:f.status==='completed'?'FINISHED':String(f.status||'scheduled').toUpperCase(),score:r?`${r.home_score}–${r.away_score}`:null};});
+    const ids=stats.map(x=>x.player_id); const pR=ids.length?await client.from('players').select('id,name,primary_position').in('id',ids):{data:[]}; const players=must(pR,'STAT_PLAYERS')||[]; const pBy=new Map(players.map(x=>[x.id,x])); const statesR=ids.length?await client.from('player_state').select('player_id,current_club_id').in('player_id',ids):{data:[]}; const states=must(statesR,'STAT_STATE')||[];const stateBy=new Map(states.map(x=>[x.player_id,x]));
+    const playerStats=stats.map((s,i)=>({rank:i+1,name:pBy.get(s.player_id)?.name||s.player_id,club:cmap.get(stateBy.get(s.player_id)?.current_club_id)?.name||'-',pos:pBy.get(s.player_id)?.primary_position||'?',goals:s.goals||0,assists:s.assists||0,rating:s.average_rating==null?'-':Number(s.average_rating).toFixed(2)}));
+    return {name:'Private Premier Manager League',seasonNumber:season.season_number,matchday:season.matchday,phase:season.phase,myClubName:(await context()).club.name,clubCount:cmap.size,standings:standingsOut,fixtures,playerStats};
+  }
+
+  async function getMatchCentre(){
+    const {club,season,world}=await context(); const cmap=await clubMap(world.id);
+    let fs=must(await client.from('league_fixtures').select('*').eq('season_id',season.id).or(`home_club_id.eq.${club.id},away_club_id.eq.${club.id}`).in('status',['live','lineup_locked','scheduled','completed']).limit(50),'MATCH_FIXTURES')||[];
+    const liveFixture=fs.find(x=>x.status==='live');
+    const upcomingFixtures=fs.filter(x=>['lineup_locked','scheduled'].includes(x.status)).sort((a,b)=>num(a.matchday)-num(b.matchday) || new Date(a.scheduled_kickoff||0)-new Date(b.scheduled_kickoff||0));
+    const completedFixtures=fs.filter(x=>x.status==='completed').sort((a,b)=>num(b.matchday)-num(a.matchday) || new Date(b.scheduled_kickoff||0)-new Date(a.scheduled_kickoff||0));
+    let f=liveFixture||upcomingFixtures[0]||completedFixtures[0]||null;
+    if(!f) return {fixtureId:null,home:club.name,away:'TBD',homeShort:club.short_name,awayShort:'TBD',homeLogoUrl:club.logo_url||null,awayLogoUrl:null,kickoff:'TBD',venue:club.stadium_name,status:'NO_FIXTURE',minute:0,homeScore:0,awayScore:0,possessionHome:50,shotsHome:0,shotsAway:0,sotHome:0,sotAway:0,xgHome:0,xgAway:0,events:[{minute:0,type:'info',text:'No fixture scheduled.'}],playerRatings:[]};
+    const [liveR,resultR,eventsR,statsR]=await Promise.all([
+      client.from('live_match_sessions').select('*').eq('fixture_id',f.id).maybeSingle(),
+      client.from('league_match_results').select('*').eq('fixture_id',f.id).maybeSingle(),
+      client.from('live_match_events').select('*').eq('fixture_id',f.id).order('sequence',{ascending:true}),
+      client.from('player_match_stats').select('*').eq('fixture_id',f.id).order('rating',{ascending:false})
+    ]);
+    const live=must(liveR,'LIVE_SESSION'), result=must(resultR,'MATCH_RESULT'), events=must(eventsR,'LIVE_EVENTS')||[], stats=must(statsR,'MATCH_STATS')||[]; const h=cmap.get(f.home_club_id)||{},a=cmap.get(f.away_club_id)||{};
+    const ids=stats.map(x=>x.player_id);const pR=ids.length?await client.from('players').select('id,name,primary_position').in('id',ids):{data:[]};const ps=must(pR,'MATCH_PLAYERS')||[];const pBy=new Map(ps.map(x=>[x.id,x]));
+    const playerRatings=stats.filter(x=>x.rating!=null).slice(0,8).map(x=>({name:pBy.get(x.player_id)?.name||x.player_id,club:cmap.get(x.club_id)?.name||'-',pos:pBy.get(x.player_id)?.primary_position||'?',rating:Number(x.rating)}));
+    const ev=events.map(e=>({minute:e.match_minute,type:e.event_type==='GOAL'?'goal':e.event_type==='SAVE'?'save':'shot',text:`${e.event_type.replaceAll('_',' ')}${e.xg!=null?` · xG ${Number(e.xg).toFixed(2)}`:''}`}));
+    if(!ev.length)ev.push({minute:live?.match_minute||0,type:'info',text:f.status==='completed'?'Match completed.':'Waiting for server match events.'});
+    const hs=live?.home_score ?? result?.home_score ?? 0, as=live?.away_score ?? result?.away_score ?? 0;
+    return {fixtureId:f.id,home:h.name||'Home',away:a.name||'Away',homeShort:h.short_name||'H',awayShort:a.short_name||'A',homeLogoUrl:h.logo_url||null,awayLogoUrl:a.logo_url||null,kickoff:fmtWib(f.scheduled_kickoff),venue:h.stadium_name||'Home Stadium',status:f.status.toUpperCase(),minute:live?.match_minute || (f.status==='completed'?90:0),homeScore:hs,awayScore:as,possessionHome:Number(live?.home_possession??result?.home_stats?.possession??50),possessionAway:Number(live?.away_possession??result?.away_stats?.possession??50),shotsHome:Number(result?.home_stats?.shots??0),shotsAway:Number(result?.away_stats?.shots??0),sotHome:Number(result?.home_stats?.shots_on_target??0),sotAway:Number(result?.away_stats?.shots_on_target??0),xgHome:Number(live?.home_xg??result?.home_xg??0),xgAway:Number(live?.away_xg??result?.away_xg??0),events:ev,playerRatings,isLive:f.status==='live'};
+  }
+  async function submitLiveTactics(fixtureId,changes){const mapped={...changes};if(mapped.press)mapped.press=pressToServer(mapped.press);return must(await client.rpc('submit_live_tactics',{p_fixture_id:fixtureId,p_changes:mapped}),'LIVE_TACTICS');}
+  async function submitLiveSubstitution(fixtureId,outId,inId){return must(await client.rpc('submit_live_substitution',{p_fixture_id:fixtureId,p_out_player_id:outId,p_in_player_id:inId}),'LIVE_SUB');}
+
+  async function getFinance(){
+    const {club,season}=await context();
+    const [csR,ledR,evR]=await Promise.all([
+      client.from('club_seasons').select('*').eq('club_id',club.id).eq('season_id',season.id).maybeSingle(),
+      client.from('finance_ledger').select('*').eq('club_id',club.id).eq('season_id',season.id).order('created_at',{ascending:false}).limit(25),
+      client.from('finance_events').select('*').eq('club_id',club.id).eq('season_id',season.id).order('created_at',{ascending:false})
+    ]);
+    const cs=must(csR,'FINANCE')||{}, ledger=must(ledR,'LEDGER')||[], ev=must(evR,'FIN_EVENTS')||[];
+    return {balance:cs.balance||0,transferBudget:cs.transfer_budget||0,reserve:cs.reserve_cash||0,wageUsed:cs.weekly_wage_committed||0,wageLimit:cs.wage_limit_weekly||0,sponsorIncome:cs.sponsor_value||0,matchdayIncome:ev.filter(x=>x.event_type==='stadium_home_revenue').reduce((a,b)=>a+num(b.amount),0),seasonPrize:ev.filter(x=>['league_prize','individual_award_bonus'].includes(String(x.event_type))).reduce((a,b)=>a+num(b.amount),0),financialStatus:title(cs.finance_status||'healthy'),transferSpendingFrozen:!!cs.transfer_spending_frozen,ledger:ledger.map(x=>({date:fmtDate(x.created_at),type:String(x.category||'').toUpperCase(),detail:x.detail,amount:x.amount}))};
+  }
+  async function getFacilities(){
+    const {club}=await context(); const f=must(await client.from('club_facilities').select('*').eq('club_id',club.id).maybeSingle(),'FACILITIES')||{};
+    const levels=[0,0,10000000,18000000,28000000,40000000];
+    const mk=(type,key,effects)=>{const lv=f[key]||1;return {type,facilityKey:type.startsWith('Training')?'training':type.startsWith('Medical')?'medical':'stadium',level:lv,effect:effects[lv]||effects[1],nextEffect:lv<5?(effects[lv+1]||'Upgrade'):'MAX LEVEL',upgradeCost:lv<5?levels[lv+1]:0,upgradeTime:'Instant server-side'};};
+    return [mk('Training Centre','training_level',{1:'Development ×1.00',2:'Development ×1.03',3:'Development ×1.06',4:'Development ×1.09',5:'Development ×1.12'}),mk('Medical Centre','medical_level',{1:'Base recovery',2:'Recovery ×1.05',3:'Recovery ×1.10',4:'Recovery ×1.15',5:'Recovery ×1.20'}),mk('Stadium','stadium_level',{1:'£500k / home match',2:'£600k / home match',3:'£725k / home match',4:'£875k / home match',5:'£1M / home match'})];
+  }
+  async function upgradeFacility(key){ const d=must(await client.rpc('upgrade_club_facility',{p_facility:key}),'UPGRADE_FACILITY'); invalidate(); return d; }
+  async function markNotificationRead(id){return must(await client.rpc('mark_notification_read',{p_notification_id:id}),'MARK_READ');}
+  async function markAllNotificationsRead(category=null){return must(await client.rpc('mark_all_notifications_read',{p_category:category}),'MARK_ALL_READ');}
+  async function renewContract(playerId,seasons,wage){const d=must(await client.rpc('renew_contract',{p_player_id:playerId,p_seasons:seasons,p_weekly_wage:wage}),'RENEW_CONTRACT');invalidate();return d;}
+  async function releasePlayer(playerId){const d=must(await client.rpc('release_player',{p_player_id:playerId}),'RELEASE_PLAYER');invalidate();return d;}
+
+  async function getSeasonCentre(){
+    const {season,world}=await context(); const total=Math.max(0,(world.founding_target||4)-1)*2; const phases=['PRESEASON','FIRST_HALF','MIDSEASON_BREAK','SECOND_HALF','OFFSEASON']; const idx=phases.indexOf(season.phase); const labels={PRESEASON:'Preseason',FIRST_HALF:'First Half',MIDSEASON_BREAK:'Midseason',SECOND_HALF:'Second Half',OFFSEASON:'Offseason'};
+    const [awR,hofR]=await Promise.all([client.from('season_awards').select('*').eq('season_id',season.id),client.from('season_hall_of_fame').select('*').order('season_number',{ascending:true})]);
+    const awards=must(awR,'AWARDS')||[], hof=must(hofR,'HOF')||[];
+    const playerIds=awards.map(x=>x.winner_player_id).filter(Boolean); const clubIds=awards.map(x=>x.winner_club_id).filter(Boolean); const [pR,cR]=await Promise.all([playerIds.length?client.from('players').select('id,name').in('id',playerIds):Promise.resolve({data:[]}),clubIds.length?client.from('clubs').select('id,name').in('id',clubIds):Promise.resolve({data:[]})]);const pBy=new Map((must(pR,'AWARD_PLAYERS')||[]).map(x=>[x.id,x]));const cBy=new Map((must(cR,'AWARD_CLUBS')||[]).map(x=>[x.id,x]));
+    const awardsRace=awards.map(a=>({award:title(String(a.award_type).replaceAll('_',' ')),leader:pBy.get(a.winner_player_id)?.name||'-',club:cBy.get(a.winner_club_id)?.name||'-',value:a.metric_value==null?'Awarded':String(a.metric_value)}));
+    const clubsAll=await clubMap(world.id); const hofPlayerIds=[...new Set(hof.flatMap(h=>[h.golden_boot_player_id,h.top_assist_player_id,h.golden_glove_player_id,h.player_of_season_player_id]).filter(Boolean))];const hpR=hofPlayerIds.length?await client.from('players').select('id,name').in('id',hofPlayerIds):{data:[]};const hpBy=new Map((must(hpR,'HOF_PLAYERS')||[]).map(x=>[x.id,x]));
+    const hallOfFame=hof.map(h=>({season:`Season ${h.season_number}`,champion:clubsAll.get(h.champion_club_id)?.name||'-',runnerUp:clubsAll.get(h.runner_up_club_id)?.name||'-',finalTable:Array.isArray(h.final_table)?`${h.final_table.length} clubs`:'Archived',goldenBoot:hpBy.get(h.golden_boot_player_id)?.name||'-',topAssist:hpBy.get(h.top_assist_player_id)?.name||'-',goldenGlove:hpBy.get(h.golden_glove_player_id)?.name||'-',playerSeason:hpBy.get(h.player_of_season_player_id)?.name||'-',biggestWin:h.biggest_win_fixture_id?'Archived':'-',highestScoring:h.highest_scoring_fixture_id?'Archived':'-'}));
+    const timeline=phases.map((p,i)=>({key:p,label:labels[p],status:i<idx?'done':i===idx?'current':'future',note:p==='MIDSEASON_BREAK'?'2 days · transfer window':p==='OFFSEASON'?'2 days · rollover':p==='FIRST_HALF'?'First half fixtures':p==='SECOND_HALF'?'Second half fixtures':'Preparation'}));
+    return {currentSeason:season.season_number,phase:season.phase,phaseLabel:labels[season.phase]||title(season.phase),progressPct:total?Math.min(100,Math.round((season.matchday/total)*100)):0,currentMatchday:season.matchday,totalMatchdays:total,daysUntilMidseason:0,timeline,awardsRace,hallOfFame,rollover:['Finalize standings and champion','Pay league prizes and awards','Apply player development','Age all active players +1','Apply age decline','Process retirement','Reduce/renew contracts','Expired contracts become free agents','Issue sponsor / new-season budget','Open 2-day offseason','Create next season']};
+  }
+
+  async function getClubHistory(){
+    const {club,profile,season}=await context(); const trophies=must(await client.from('club_trophies').select('*').eq('club_id',club.id),'TROPHIES')||[]; const history=must(await client.from('transfer_history').select('*').eq('to_club_id',club.id).order('transfer_fee',{ascending:false}).limit(1),'TRANSFER_HISTORY')||[];
+    return {founded:'Season 1',manager:profile.display_name||profile.username,homeGround:club.stadium_name,highestPosition:'In progress',biggestWin:'In progress',recordSigning:history[0]?`£${Math.round(history[0].transfer_fee/1000000)}M`:'No permanent signing yet',trophies:[{name:'League Championship',count:trophies.filter(x=>x.trophy_type==='LEAGUE_CHAMPION').length},{name:'Golden Boot',count:0},{name:'Player of the Season',count:0},{name:'Manager of the Season',count:0}],events:[{season:`Season ${season.season_number}`,event:'Club active in the shared server world.'}]};
+  }
+  async function getFoundingDraw(){ const {world}=await context(); const clubs=[...await clubMap(world.id).then(m=>m.values())]; const squad=await getSquad(); const tiers={S:0,A:0,B:0,C:0,D:0}; squad.forEach(p=>tiers[p.tier]=(tiers[p.tier]||0)+1); return {status:world.founding_draw_status,foundingManagers:clubs.length,maxManagers:world.max_managers,seed:'Server-controlled',simultaneous:true,rerollAllowed:false,fairnessTarget:'Server controlled',idealTierMix:'1 S + 3 A + 7 B + 8 C + 3 D',squadComposition:[['GK',2],['RB',2],['CB',4],['LB',2],['DM/CM',4],['AM',2],['RW',2],['LW',2],['ST',2]],clubs:[{club:(await context()).club.name,avgOvr:squad.length?(squad.reduce((a,p)=>a+p.ovr,0)/squad.length).toFixed(1):0,sTier:tiers.S,aTier:tiers.A,bTier:tiers.B,cTier:tiers.C,dTier:tiers.D}]}; }
+  async function getContractActions(){return {renewalLengths:[1,2,3],releaseCompensationPct:[30,40,50]};}
+  async function getAdminState(){return window.MockDB.admin;}
+
+  return {mode:'supabase-production-bridge-v1',invalidate,context,getManager,getSeason,getClub,getNextFixture,getRecentActivities,getSquad,getPlayerById,getTrainingState,getTrainingHistory,getTransferMarket,getLeague,getMatchCentre,getFinance,getFacilities,getNotifications,getSeasonCentre,getClubHistory,getAdminState,getFoundingDraw,getLineupRules,getContractActions,getSavedSetup,hydrateUIState,saveTactics,saveLineup,scheduleTraining,setIndividualFocus,listPlayerForTransfer,makeTransferOffer,respondTransferOffer,placeFreeAgentBid,upgradeFacility,markNotificationRead,markAllNotificationsRead,renewContract,releasePlayer,submitLiveTactics,submitLiveSubstitution};
+})();
+</script>
 
 <script>
 window.MockDB = {
@@ -2342,6 +3072,7 @@ window.GameService = (() => {
     getContractActions
   };
 })();
+window.MockGameService = window.GameService;
 
 </script>
 <script>
@@ -2361,6 +3092,8 @@ window.GameService = (() => {
   const mobileMenu = document.getElementById("mobileMenu");
   const sidebar = document.querySelector(".sidebar");
   const mobileBackdrop = document.getElementById("mobileBackdrop");
+  const mobileBottomNav = document.getElementById("mobileBottomNav");
+  const installAppBtn = document.getElementById("installAppBtn");
   const authRoot = document.getElementById("authRoot");
   const gameApp = document.getElementById("gameApp");
   const notificationBtn = document.getElementById("notificationBtn");
@@ -2426,20 +3159,27 @@ window.GameService = (() => {
     clubView: { tab: "overview" },
     session: {
       screen: "login",
+      authRole: "manager",
       loggedIn: false,
       pending: false,
-      approved: true,
-      clubCreated: true
+      approved: false,
+      clubCreated: false
+    },
+    alpha: {
+      loading: false,
+      bootstrap: null,
+      error: null
     },
     inbox: { filter: "All" },
     seasonView: { tab: "overview" },
-    onboardingShown: false
+    onboardingShown: false,
+    clubLogoTheme: "lime"
   };
 
   const formations = {
     "4-3-3": [
       ["GK",50,90],["RB",82,73],["CB",62,74],["CB",38,74],["LB",18,73],
-      ["CM",66,53],["DM",50,59],["CM",34,53],
+      ["CM",66,53],["CM",50,59],["CM",34,53],
       ["RW",77,28],["ST",50,18],["LW",23,28]
     ],
     "4-2-3-1": [
@@ -2448,35 +3188,35 @@ window.GameService = (() => {
     ],
     "4-4-2": [
       ["GK",50,90],["RB",82,73],["CB",62,74],["CB",38,74],["LB",18,73],
-      ["RM",80,50],["CM",61,53],["CM",39,53],["LM",20,50],
+      ["RW",80,50],["CM",61,53],["CM",39,53],["LW",20,50],
       ["ST",62,22],["ST",38,22]
     ],
     "4-1-4-1": [
       ["GK",50,90],["RB",82,73],["CB",62,74],["CB",38,74],["LB",18,73],
-      ["DM",50,62],["RM",79,45],["CM",61,48],["CM",39,48],["LM",21,45],["ST",50,18]
+      ["DM",50,62],["RW",79,45],["CM",61,48],["CM",39,48],["LW",21,45],["ST",50,18]
     ],
     "4-3-2-1": [
       ["GK",50,90],["RB",82,73],["CB",62,74],["CB",38,74],["LB",18,73],
-      ["CM",68,55],["DM",50,61],["CM",32,55],
+      ["CM",68,55],["CM",50,61],["CM",32,55],
       ["AM",63,34],["AM",37,34],["ST",50,17]
     ],
     "3-5-2": [
       ["GK",50,90],["CB",70,73],["CB",50,76],["CB",30,73],
-      ["RWB",84,51],["CM",64,52],["DM",50,59],["CM",36,52],["LWB",16,51],
+      ["RW",84,51],["CM",64,52],["CM",50,59],["CM",36,52],["LW",16,51],
       ["ST",62,22],["ST",38,22]
     ],
     "3-4-3": [
       ["GK",50,90],["CB",70,73],["CB",50,76],["CB",30,73],
-      ["RM",82,52],["CM",61,54],["CM",39,54],["LM",18,52],
-      ["RW",76,28],["ST",50,18],["LW",24,28]
+      ["RW",82,52],["CM",61,54],["CM",39,54],["LW",18,52],
+      ["ST",76,28],["ST",50,18],["ST",24,28]
     ],
     "5-3-2": [
-      ["GK",50,90],["RWB",86,63],["CB",70,73],["CB",50,77],["CB",30,73],["LWB",14,63],
-      ["CM",66,49],["DM",50,55],["CM",34,49],["ST",62,22],["ST",38,22]
+      ["GK",50,90],["RB",86,63],["CB",70,73],["CB",50,77],["CB",30,73],["LB",14,63],
+      ["CM",66,49],["CM",50,55],["CM",34,49],["ST",62,22],["ST",38,22]
     ],
     "5-4-1": [
-      ["GK",50,90],["RWB",86,65],["CB",70,74],["CB",50,78],["CB",30,74],["LWB",14,65],
-      ["RM",80,48],["CM",61,53],["CM",39,53],["LM",20,48],["ST",50,19]
+      ["GK",50,90],["RB",86,65],["CB",70,74],["CB",50,78],["CB",30,74],["LB",14,65],
+      ["RW",80,48],["CM",61,53],["CM",39,53],["LW",20,48],["ST",50,19]
     ]
   };
 
@@ -2502,6 +3242,29 @@ window.GameService = (() => {
     showToast._timer = setTimeout(() => toast.classList.remove("show"), 2200);
   }
 
+  let deferredInstallPrompt = null;
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent || "");
+  const isStandalone = window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  function updateInstallButtons() {
+    if (installAppBtn) installAppBtn.classList.toggle("is-hidden", isStandalone || !deferredInstallPrompt);
+  }
+  async function triggerInstall() {
+    if (isStandalone) { showToast("App sudah berjalan dari Home Screen."); return; }
+    if (deferredInstallPrompt) {
+      deferredInstallPrompt.prompt();
+      try { await deferredInstallPrompt.userChoice; } catch (_) {}
+      deferredInstallPrompt = null;
+      updateInstallButtons();
+      return;
+    }
+    if (isIOS) showToast("iPhone/iPad: Share → Add to Home Screen.");
+    else showToast("Gunakan menu browser → Install app / Add to Home Screen.");
+  }
+  window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferredInstallPrompt = e; updateInstallButtons(); });
+  window.addEventListener("appinstalled", () => { deferredInstallPrompt = null; updateInstallButtons(); showToast("FM Mini Online terpasang di Home Screen."); });
+  installAppBtn?.addEventListener("click", triggerInstall);
+
+
   function setHeader(title, eyebrow) {
     pageTitle.textContent = title;
     pageEyebrow.textContent = eyebrow;
@@ -2518,6 +3281,20 @@ window.GameService = (() => {
   });
   mobileBackdrop.addEventListener("click", closeMobileNav);
 
+  mobileBottomNav?.addEventListener("click", (e) => {
+    const viewBtn = e.target.closest("[data-mobile-view]");
+    if (viewBtn) {
+      state.view = viewBtn.dataset.mobileView;
+      syncActiveNav();
+      render();
+      return;
+    }
+    if (e.target.closest("[data-mobile-more]")) {
+      sidebar.classList.add("open");
+      mobileBackdrop.classList.add("show");
+    }
+  });
+
   nav.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-view]");
     if (!btn) return;
@@ -2527,14 +3304,16 @@ window.GameService = (() => {
     render();
   });
 
-  profileBtn.addEventListener("click", () => {
-    const ok = confirm("Mock manager session\n\nOK = Logout ke login screen\nCancel = tetap di game");
-    if (ok) {
-      state.session.loggedIn = false;
-      state.session.screen = "login";
-      localStorage.removeItem("fmMiniSession");
-      showAuth();
-    }
+  profileBtn.addEventListener("click", async () => {
+    const ok = confirm("Logout dari Football Manager Mini Online?");
+    if (!ok) return;
+    try { await MS7Service.signOut(); } catch (err) { console.error(err); }
+    state.session.loggedIn = false;
+    state.session.screen = "login";
+    state.alpha.bootstrap = null;
+    if(window.MockGameService) window.GameService = window.MockGameService;
+    mobileBottomNav?.classList.add("is-hidden");
+    await showAuth();
   });
 
   notificationBtn.addEventListener("click", () => {
@@ -2548,6 +3327,7 @@ window.GameService = (() => {
 
   function syncActiveNav() {
     [...nav.querySelectorAll(".nav-item")].forEach(x => x.classList.toggle("active", x.dataset.view === state.view));
+    mobileBottomNav?.querySelectorAll("[data-mobile-view]").forEach(x => x.classList.toggle("active", x.dataset.mobileView === state.view));
   }
 
   async function refreshNotificationCounts() {
@@ -2559,170 +3339,471 @@ window.GameService = (() => {
     if (navUnreadCount) navUnreadCount.style.display = unread ? "inline-grid" : "none";
   }
 
-  function authTemplate(mode) {
-    const hero = `
-      <div class="auth-hero">
+  const htmlSafe = (value) => String(value ?? "")
+    .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;").replaceAll("'","&#039;");
+
+
+  const CLUB_LOGO_THEMES = {
+    lime:["#b7f52a","#174527","#06100a"],
+    sky:["#67e8f9","#164e63","#07131a"],
+    red:["#fb7185","#7f1d1d","#17080b"],
+    gold:["#fbbf24","#78350f","#171007"],
+    violet:["#c084fc","#4c1d95","#10071a"],
+    silver:["#e2e8f0","#334155","#0b1018"]
+  };
+  function normalizeClubShort(shortName) { return String(shortName || "FC").trim().toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0,4) || "FC"; }
+  function makeClubLogoToken(shortName, themeId="lime") { return `crest:${themeId}:${normalizeClubShort(shortName)}`; }
+  function makeClubLogoDataUrl(shortName, themeId="lime") {
+    const short = normalizeClubShort(shortName);
+    const [accent,mid,dark] = CLUB_LOGO_THEMES[themeId] || CLUB_LOGO_THEMES.lime;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${accent}"/><stop offset="1" stop-color="${mid}"/></linearGradient></defs><path d="M64 5 112 24 104 89 64 122 24 89 16 24Z" fill="url(#g)" stroke="${accent}" stroke-width="4"/><path d="M64 14 101 29 95 84 64 109 33 84 27 29Z" fill="${dark}" opacity=".82"/><circle cx="64" cy="56" r="28" fill="none" stroke="${accent}" stroke-width="2" opacity=".34"/><text x="64" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900" fill="${accent}">${short}</text><path d="M44 87h40" stroke="${accent}" stroke-width="4" stroke-linecap="round"/></svg>`;
+    return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  }
+  function crestMarkup({short="FC",name="Club",logoUrl=null,className="team-logo"}={}) {
+    let src = logoUrl || makeClubLogoDataUrl(short || initials(name), "lime");
+    if (String(logoUrl||"").startsWith("crest:")) {
+      const [,theme,tokenShort] = String(logoUrl).split(":");
+      src = makeClubLogoDataUrl(tokenShort || short || initials(name), theme || "lime");
+    }
+    return `<div class="${htmlSafe(className)}" title="${htmlSafe(name)}"><img src="${htmlSafe(src)}" alt="Logo ${htmlSafe(name)}" loading="lazy"></div>`;
+  }
+
+  const alphaHero = () => `
+    <div class="auth-hero">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
         <div class="brand-mark">FM</div>
-        <p class="eyebrow">PRIVATE ONLINE WORLD</p>
-        <h1>Football Manager Mini Online</h1>
-        <p>Bangun klub sendiri, kelola satu-copy real-player universe, atur taktik, transfer, latihan, dan kejar gelar dalam season cepat 2–3 minggu.</p>
-        <div class="auth-points">
-          <div class="auth-point"><i>1</i><span>Satu copy global untuk setiap pemain.</span></div>
-          <div class="auth-point"><i>2</i><span>12 manager target, hard cap 18.</span></div>
-          <div class="auth-point"><i>3</i><span>2 matchday per hari, live-style match centre.</span></div>
-        </div>
+        <span class="alpha-env-badge"><i class="alpha-env-dot"></i>PRODUCTION BRIDGE V1</span>
       </div>
-    `;
+      <p class="eyebrow" style="margin-top:28px">MOBILE-FIRST · SUPABASE BRIDGE</p>
+      <h1>Football Manager Mini Online</h1>
+      <p>Frontend final untuk manager manusia dan Owner/Admin. Data asli tetap berasal dari Supabase; pengujian banyak klub tidak perlu login akun satu per satu.</p>
+      <div class="auth-points">
+        <div class="auth-point"><i>1</i><span>Manager register sendiri, membuat klub dan mendapat squad dari server.</span></div>
+        <div class="auth-point"><i>2</i><span>Owner/Admin punya jalur login khusus dan satu akun cukup untuk development harian.</span></div>
+        <div class="auth-point"><i>3</i><span>Test 4–18 klub diarahkan ke simulation script server-side, bukan akun manual.</span></div>
+      </div>
+      <button class="secondary-btn pwa-auth-install" id="installFromLoginBtn" type="button">Install ke Home Screen</button>
+    </div>`;
+
+  function authTemplate(mode) {
+    const hero = alphaHero();
+    const b = state.alpha.bootstrap || {};
+    const p = b.profile || {};
+    const world = b.world || {};
+    const club = b.club || {};
+
+    if (mode === "loading") {
+      return `<div class="auth-shell">${hero}<div class="auth-panel"><p class="eyebrow">CONNECTING</p><h2>Membaca production state…</h2><div class="alpha-status-box"><p>Memeriksa session, profile, approval dan club state di Supabase.</p></div></div></div>`;
+    }
+
+    if (mode === "error") {
+      return `<div class="auth-shell">${hero}<div class="auth-panel"><p class="eyebrow alpha-danger">CONNECTION ERROR</p><h2>Tidak bisa membaca state</h2><div class="finance-warning">${htmlSafe(state.alpha.error || b.message || "Unknown error")}</div><button class="primary-btn" id="retryAlphaBtn" type="button">Retry</button><button class="secondary-btn" id="errorLogoutBtn" style="width:100%;margin-top:8px" type="button">Logout</button></div></div>`;
+    }
 
     if (mode === "pending") {
+      const status = p.approval_status || "pending";
+      const rejected = status === "rejected" || status === "suspended";
       return `<div class="auth-shell">${hero}<div class="auth-panel">
         <div class="pending-card">
-          <div class="pending-icon">⌛</div>
-          <p class="eyebrow">ACCOUNT PENDING</p>
-          <h2>Menunggu persetujuan Admin</h2>
-          <p>Di backend asli, akun baru tidak bisa masuk ke dunia game sampai Admin melakukan approval.</p>
-          <div class="mock-callout">Mock mode: gunakan tombol di bawah untuk mensimulasikan approval Admin.</div>
-          <button class="primary-btn" id="simulateApprovalBtn" type="button">Simulate Admin Approval</button>
-          <button class="secondary-btn" style="width:100%;margin-top:8px" id="backLoginBtn" type="button">Back to Login</button>
+          <div class="pending-icon">${rejected ? "!" : "⌛"}</div>
+          <p class="eyebrow">ACCOUNT ${htmlSafe(status).toUpperCase()}</p>
+          <h2>${rejected ? "Akses belum tersedia" : "Menunggu persetujuan Admin"}</h2>
+          <p>Manager <strong>${htmlSafe(p.display_name || p.username || "")}</strong> sudah terdaftar di game. Status profile dibaca langsung dari <span class="alpha-code">public.profiles</span>.</p>
+          <div class="alpha-status-box"><strong>Status real: ${htmlSafe(status)}</strong><p>Tekan Refresh setelah Admin mengubah status. Tidak ada tombol simulate approval.</p></div>
+          <button class="primary-btn" id="refreshApprovalBtn" type="button">Refresh Approval</button>
+          <button class="secondary-btn" style="width:100%;margin-top:8px" id="pendingLogoutBtn" type="button">Logout</button>
         </div>
       </div></div>`;
     }
 
     if (mode === "createClub") {
       return `<div class="auth-shell">${hero}<div class="auth-panel">
-        <p class="eyebrow">CREATE CLUB</p>
-        <h2>Bangun identitas klub</h2>
-        <p>Setelah approval, manager membuat klub sebelum Founding Squad Draw.</p>
+        <p class="eyebrow">APPROVED · CREATE CLUB</p>
+        <h2>Buat custom club</h2>
+        <p>Akun <strong>${htmlSafe(p.username || "manager")}</strong> sudah approved. Klub dibuat melalui RPC server <span class="alpha-code">create_club()</span>.</p>
         <div class="wizard-progress"><i class="active"></i><i class="active"></i><i></i></div>
         <form class="auth-form" id="createClubForm">
-          <div class="auth-field"><label>Club Name</label><input class="auth-input" id="clubNameInput" value="MS7 FC" required></div>
-          <div class="auth-field"><label>Short Name</label><input class="auth-input" id="clubShortInput" maxlength="4" value="MS7" required></div>
-          <div class="auth-field"><label>Stadium</label><input class="auth-input" id="stadiumInput" value="MS7 Arena" required></div>
-          <div class="auth-field logo-upload"><label>Custom Logo</label><input id="clubLogoInput" type="file" accept="image/*"></div>
+          <div class="auth-field"><label>Club Name</label><input class="auth-input" id="clubNameInput" placeholder="Contoh: Jagakarsa United" minlength="2" maxlength="60" required></div>
+          <div class="auth-field"><label>Short Name</label><input class="auth-input" id="clubShortInput" minlength="2" maxlength="8" placeholder="JGU" required></div>
+          <div class="auth-field"><label>Stadium</label><input class="auth-input" id="stadiumInput" placeholder="Contoh: South Arena" minlength="2" maxlength="80" required></div>
+          <div class="auth-field"><label>Club Logo</label><div class="club-logo-picker" id="clubLogoPicker">${Object.keys(CLUB_LOGO_THEMES).map(k=>`<button class="club-logo-option ${state.clubLogoTheme===k?"active":""}" type="button" data-logo-theme="${k}"><img src="${htmlSafe(makeClubLogoDataUrl(club.short_name||"FC",k))}" alt="Logo ${k}"></button>`).join("")}</div><div class="logo-helper">Pilih crest. Logo ringan ini disimpan bersama data klub melalui field <span class="alpha-code">logo_url</span>, jadi identitas klub konsisten di Home, League, Match Centre dan Club.</div></div>
           <div class="club-preview">
-            <div class="club-preview-logo" id="clubPreviewLogo">MS7</div>
-            <img class="logo-preview-img" id="clubPreviewImg" alt="Club logo preview">
-            <div><strong id="clubPreviewName">MS7 FC</strong><span class="subtext" id="clubPreviewStadium">MS7 Arena</span></div>
+            <div class="club-preview-logo" id="clubPreviewLogo">FC</div>
+            <div><strong id="clubPreviewName">Your Club</strong><span class="subtext" id="clubPreviewStadium">Home Stadium</span></div>
           </div>
-          <div class="mock-callout">Starter squad 22 pemain akan diberikan melalui controlled Founding Squad Draw. Tidak ada reroll.</div>
-          <button class="primary-btn" type="submit">Create Club & Enter World</button>
+          <div class="mock-callout">Squad awal dialokasikan server-side. Untuk testing 4–18 klub, gunakan simulation script server-side; tidak perlu membuat akun manual satu per satu.</div>
+          <button class="primary-btn" type="submit">Create Club</button>
+          <button class="secondary-btn" id="createClubLogoutBtn" style="width:100%;margin-top:8px" type="button">Logout</button>
         </form>
       </div></div>`;
     }
 
-    if (mode === "register") {
+    if (mode === "waitingDraw") {
+      const clubs = b.clubs || [];
       return `<div class="auth-shell">${hero}<div class="auth-panel">
-        <p class="eyebrow">REGISTRATION</p>
+        <p class="eyebrow">CLUB CREATED</p><h2>${htmlSafe(club.name)}</h2>
+        <p>${htmlSafe(club.stadium_name)} · manager @${htmlSafe(p.username)}</p>
+        <div class="alpha-status-grid">
+          <div class="alpha-stat"><span>Clubs Ready</span><strong>${clubs.length}/${world.founding_target ?? 4}</strong></div>
+          <div class="alpha-stat"><span>Founding Draw</span><strong>${htmlSafe(world.founding_draw_status || "WAITING")}</strong></div>
+          <div class="alpha-stat"><span>Scheduler</span><strong>${world.scheduler_enabled ? "ON" : "OFF"}</strong></div>
+          <div class="alpha-stat"><span>Transfer Window</span><strong>${world.transfer_window_open ? "OPEN" : "CLOSED"}</strong></div>
+        </div>
+        <div class="alpha-status-box"><strong>Menunggu Founding Draw</strong><p>Tidak perlu membuat akun tambahan untuk testing. Manager manusia cukup menunggu proses squad server-side; pengujian massal dilakukan melalui simulation script.</p></div>
+        <button class="primary-btn" id="refreshDrawBtn" type="button">Refresh World Status</button>
+        <button class="secondary-btn" id="waitingLogoutBtn" style="width:100%;margin-top:8px" type="button">Logout</button>
+      </div></div>`;
+    }
+
+    if (mode === "alphaReady") {
+      const squad = b.squad || {count:0,players:[]};
+      return `<div class="auth-shell">${hero}<div class="auth-panel">
+        <p class="eyebrow alpha-good">FOUNDING DRAW COMPLETE</p><h2>${htmlSafe(club.name)} siap</h2>
+        <p>Squad sudah dialokasikan server-side.</p>
+        <div class="alpha-status-grid">
+          <div class="alpha-stat"><span>Owned Players</span><strong>${squad.count}</strong></div>
+          <div class="alpha-stat"><span>Draw Status</span><strong>${htmlSafe(world.founding_draw_status)}</strong></div>
+        </div>
+        <div class="alpha-status-box"><strong>Production Bridge V1 · Real Gameplay Bridge</strong><p>Squad, tactics, training, transfer, finance, league, match centre, contracts dan inbox sekarang membaca/menulis Supabase. Server tetap source of truth.</p></div>
+        <div class="alpha-user-list">${(squad.players || []).map(x=>`<div class="alpha-user-row"><div><strong>${htmlSafe(x.name || x.player_id)}</strong><span>${htmlSafe(x.primary_position || "")} · OVR ${htmlSafe(x.current_ovr)} · Tier ${htmlSafe(x.current_tier)} · ${htmlSafe(x.reference_club || "")} ${htmlSafe(x.reference_season || "")}</span></div></div>`).join("")}</div>
+        <button class="primary-btn" id="enterRealGameplayBtn" type="button">Enter Game</button>
+        <button class="secondary-btn" id="refreshReadyBtn" style="width:100%;margin-top:8px" type="button">Refresh Squad</button>
+        <button class="secondary-btn" id="readyLogoutBtn" style="width:100%;margin-top:8px" type="button">Logout</button>
+      </div></div>`;
+    }
+
+    if (mode === "adminLobby") {
+      const pending = b.pending || [];
+      const clubs = b.clubs || [];
+      const overview = b.adminOverview || {};
+      const counts = overview.counts || {};
+      const target = Number(world.founding_target || 12);
+      const approvedClubCount = Number(counts.approvedActiveClubs ?? clubs.length);
+      const drawCompleted = world.founding_draw_status === "COMPLETED";
+      const readyToDraw = !drawCompleted && approvedClubCount === target;
+      const activePlayerText = counts.activePlayers == null ? "—" : counts.activePlayers;
+      const playerStateText = counts.playerStateRows == null ? "—" : counts.playerStateRows;
+      const ownedText = counts.ownedPlayers == null ? "—" : counts.ownedPlayers;
+      const freeAgentText = counts.freeAgents == null ? "—" : counts.freeAgents;
+
+      return `<div class="auth-shell">${hero}<div class="auth-panel">
+        <p class="eyebrow">OWNER / ADMIN · PRODUCTION</p>
+        <h2>${htmlSafe(p.display_name || p.username || "Admin")}${p.is_owner ? " · Owner" : ""}</h2>
+        <p>Console ini membaca <strong>state production Supabase</strong>. Testing 4–18 klub tetap dilakukan lewat simulation server-side, bukan akun manager palsu.</p>
+
+        <div class="alpha-status-grid">
+          <div class="alpha-stat"><span>Approved Clubs</span><strong>${approvedClubCount}/${target}</strong></div>
+          <div class="alpha-stat"><span>Pending Accounts</span><strong>${pending.length}</strong></div>
+          <div class="alpha-stat"><span>Player Master</span><strong>${htmlSafe(activePlayerText)}</strong></div>
+          <div class="alpha-stat"><span>Player State</span><strong>${htmlSafe(playerStateText)}</strong></div>
+          <div class="alpha-stat"><span>Owned Players</span><strong>${htmlSafe(ownedText)}</strong></div>
+          <div class="alpha-stat"><span>Free Agents</span><strong>${htmlSafe(freeAgentText)}</strong></div>
+          <div class="alpha-stat"><span>Draw Status</span><strong>${htmlSafe(world.founding_draw_status || "PENDING")}</strong></div>
+          <div class="alpha-stat"><span>World</span><strong>${htmlSafe(world.status || "setup")}</strong></div>
+        </div>
+
+        <div class="alpha-status-box">
+          <strong>${drawCompleted ? "Founding Draw sudah selesai" : readyToDraw ? "Production Founding Draw READY" : `Menunggu ${Math.max(0,target-approvedClubCount)} klub approved lagi`}</strong>
+          <p>${drawCompleted
+            ? "Starter squad sudah dialokasikan. Tidak ada reroll."
+            : readyToDraw
+              ? `Tepat ${target} klub approved aktif sudah tersedia. Tombol draw production sekarang boleh digunakan.`
+              : `Draw production tetap terkunci sampai jumlah klub approved aktif tepat ${target}. Status database boleh tetap PENDING sebelum draw.`}</p>
+        </div>
+
+        <div class="alpha-user-list">
+          ${pending.length ? pending.map(u=>`<div class="alpha-user-row">
+            <div><strong>${htmlSafe(u.display_name || u.username || u.id)}</strong><span>@${htmlSafe(u.username || "")} · ${htmlSafe(u.approval_status)}</span></div>
+            <div class="alpha-user-actions">
+              <button class="accept-btn" data-alpha-approve="${htmlSafe(u.id)}">Approve</button>
+              <button class="reject-btn" data-alpha-reject="${htmlSafe(u.id)}">Reject</button>
+              <button class="counter-btn" data-alpha-suspend="${htmlSafe(u.id)}">Suspend</button>
+            </div>
+          </div>`).join("") : `<div class="alpha-status-box"><p>Tidak ada akun pending.</p></div>`}
+        </div>
+
+        <div class="alpha-status-box">
+          <strong>Human clubs (${clubs.length})</strong>
+          <div style="display:grid;gap:8px;margin-top:10px">
+            ${clubs.length ? clubs.map(c=>`<div style="display:flex;align-items:center;gap:10px">
+              ${crestMarkup({short:c.short_name,name:c.name,logoUrl:c.logo_url,className:"team-logo"})}
+              <div style="min-width:0"><strong>${htmlSafe(c.name)}</strong><p style="margin:2px 0 0">@${htmlSafe(c.manager_username || "manager")} · ${htmlSafe(c.stadium_name || "")}</p></div>
+            </div>`).join("") : `<p>Belum ada custom club manusia.</p>`}
+          </div>
+        </div>
+
+        <div class="simulation-note"><strong>Workflow development:</strong> Production Console untuk akun/club nyata. <strong>Frontend Simulation Preview</strong> hanya untuk mengecek layar UI dengan satu akun Owner/Admin. Simulation SQL tetap terpisah dari production ownership.</div>
+
+        <button class="primary-btn" id="openAdminPreviewBtn" type="button">Open Frontend Simulation Preview</button>
+        <button class="secondary-btn" style="width:100%;margin-top:8px" id="runFoundingDrawBtn" type="button" ${readyToDraw ? "" : "disabled"}>
+          ${drawCompleted ? "Founding Draw COMPLETED" : readyToDraw ? "RUN PRODUCTION FOUNDING DRAW · FINAL" : `Founding Draw Locked · ${approvedClubCount}/${target} Clubs`}
+        </button>
+        <button class="secondary-btn" id="refreshAdminBtn" style="width:100%;margin-top:8px" type="button">Refresh Production State</button>
+        <button class="secondary-btn" id="adminLogoutBtn" style="width:100%;margin-top:8px" type="button">Logout</button>
+      </div></div>`;
+    }
+
+        if (mode === "register") {
+      return `<div class="auth-shell">${hero}<div class="auth-panel">
+        <p class="eyebrow">MANAGER REGISTRATION</p>
         <h2>Request access</h2>
-        <p>Akun baru masuk status pending sampai disetujui Admin.</p>
+        <p>Akun dibuat di Supabase Auth dan profile otomatis masuk status <strong>pending</strong>.</p>
         <form class="auth-form" id="registerForm">
-          <div class="auth-field"><label>Full Name</label><input class="auth-input" required value="New Manager"></div>
-          <div class="auth-field"><label>Username</label><input class="auth-input" required value="manager01"></div>
-          <div class="auth-field"><label>Password</label><input class="auth-input" type="password" required value="demo1234"></div>
-          <button class="primary-btn" type="submit">Submit Registration</button>
+          <div class="auth-field"><label>Full Name</label><input class="auth-input" id="regName" required autocomplete="name"></div>
+          <div class="auth-field"><label>MS7 Username</label><input class="auth-input" id="regUsername" required minlength="2" maxlength="32" autocomplete="username" placeholder="contoh: soge"><small class="auth-help">Akun game otomatis menjadi <strong><span id="regMs7Preview">username</span>@ms7.com</strong>.</small></div>
+          <div class="auth-field"><label>Password</label><input class="auth-input" id="regPassword" type="password" minlength="6" required autocomplete="new-password"></div>
+          <button class="primary-btn" type="submit">Create Manager Account</button>
         </form>
         <div class="auth-links"><button class="auth-link" id="goLoginBtn" type="button">Already registered? Login</button></div>
       </div></div>`;
     }
 
+    if (mode === "emailConfirmation") {
+      return `<div class="auth-shell">${hero}<div class="auth-panel"><p class="eyebrow">MS7 ACCOUNT SETUP</p><h2>Konfirmasi Auth masih aktif</h2><div class="alpha-status-box"><p>Akun game memakai domain internal <strong>@ms7.com</strong>. Untuk mode private-game tanpa mailbox, matikan email confirmation pada Supabase Auth. Kalau nanti @ms7.com dipakai sebagai email sungguhan/password recovery, domain dan layanan emailnya harus benar-benar dikonfigurasi.</p></div><button class="primary-btn" id="emailGoLoginBtn" type="button">Go to Login</button></div></div>`;
+    }
+
+    const loginRole = state.session.authRole || "manager";
+    const isAdminLogin = loginRole === "admin";
     return `<div class="auth-shell">${hero}<div class="auth-panel">
-      <p class="eyebrow">MANAGER LOGIN</p>
-      <h2>Welcome back</h2>
-      <p>Frontend mock. Supabase Auth akan mengganti flow ini nanti tanpa mengubah UI utama.</p>
+      <div class="auth-role-tabs" role="tablist" aria-label="Jenis login">
+        <button class="auth-role-tab ${!isAdminLogin?"active":""}" data-auth-role="manager" type="button">Manager</button>
+        <button class="auth-role-tab ${isAdminLogin?"active":""}" data-auth-role="admin" type="button">Owner / Admin</button>
+      </div>
+      <p class="eyebrow">${isAdminLogin?"OWNER / ADMIN LOGIN":"MANAGER LOGIN"}</p>
+      <h2>${isAdminLogin?"Development & control access":"Masuk ke klub kamu"}</h2>
+      <p>${isAdminLogin?"Jalur khusus akun Owner/Admin utama. Tidak perlu membuat banyak akun untuk development.":"Login memakai identitas internal @ms7.com dan Supabase Auth, lalu masuk ke klub masing-masing."}</p>
+      ${isAdminLogin?`<div class="admin-login-note">Satu akun Owner/Admin cukup untuk development sehari-hari. Gunakan <strong>Frontend Simulation Preview</strong> di Admin Console untuk memeriksa semua layar tanpa login 4–18 klub.</div>`:""}
       <form class="auth-form" id="loginForm">
-        <div class="auth-field"><label>Username</label><input class="auth-input" id="loginUser" value="soge"></div>
-        <div class="auth-field"><label>Password</label><input class="auth-input" id="loginPassword" type="password" value="demo123"></div>
-        <button class="primary-btn" type="submit">Login as Existing Manager</button>
+        <div class="auth-field"><label>MS7 Username</label><input class="auth-input" id="loginUsername" required autocomplete="username" placeholder="contoh: soge"><small class="auth-help">Login sebagai <strong>username@ms7.com</strong>. Boleh juga ketik alamat @ms7.com lengkap.</small></div>
+        <div class="auth-field"><label>Password</label><input class="auth-input" id="loginPassword" type="password" required autocomplete="current-password"></div>
+        <button class="primary-btn" type="submit">${isAdminLogin?"Login as Owner / Admin":"Login as Manager"}</button>
       </form>
       <div class="auth-divider"></div>
-      <div class="mock-callout">Untuk test flow user baru: Register → Pending → Admin Approval → Create Club.</div>
-      <div class="auth-links">
-        <button class="auth-link" id="goRegisterBtn" type="button">Register new account</button>
-        <button class="auth-link" id="quickPreviewBtn" type="button">Enter full game preview</button>
-      </div>
+      ${isAdminLogin?`<div class="mock-callout">Admin memakai akun <strong>@ms7.com</strong> dan harus memiliki <strong>role = admin</strong> pada profile Supabase.</div>`:`<div class="mock-callout">Manager baru: Register → menunggu approval → buat klub → squad awal dialokasikan server-side.</div><div class="auth-links"><button class="auth-link" id="goRegisterBtn" type="button">Register new manager</button></div>`}
     </div></div>`;
   }
 
+  async function alphaLogout() {
+    try { await MS7Service.signOut(); } catch (err) { console.error(err); }
+    state.alpha.bootstrap = null;
+    state.session.screen = "login";
+    state.session.loggedIn = false;
+    if(window.MockGameService) window.GameService=window.MockGameService;
+    await showAuth();
+  }
+
+  async function resolveAlphaState() {
+    state.alpha.loading = true;
+    state.alpha.error = null;
+    state.session.screen = "loading";
+    authRoot.innerHTML = authTemplate("loading");
+    gameApp.classList.add("is-hidden");
+    try {
+      const b = await MS7Service.bootstrap();
+      state.alpha.bootstrap = b;
+      state.session.screen = b.screen || "login";
+      state.session.pending = b.profile?.approval_status === "pending";
+      state.session.approved = b.profile?.approval_status === "approved";
+      state.session.clubCreated = !!b.club;
+      state.session.loggedIn = !!b.session;
+      return b;
+    } catch (err) {
+      console.error("Supabase bootstrap error", err);
+      state.alpha.error = err.message || String(err);
+      state.session.screen = "error";
+      return null;
+    } finally {
+      state.alpha.loading = false;
+    }
+  }
+
+  async function enterRealGameplay() {
+    try {
+      window.GameService = window.RealGameService;
+      await window.RealGameService.hydrateUIState(state);
+      state.session.loggedIn = true;
+      state.session.approved = true;
+      state.session.clubCreated = true;
+      authRoot.innerHTML = "";
+      gameApp.classList.remove("is-hidden");
+      mobileBottomNav?.classList.remove("is-hidden");
+      const legacyAdminNav = nav.querySelector('[data-view="admin"]');
+      if (legacyAdminNav) legacyAdminNav.classList.add('is-hidden');
+      state.view = "home";
+      syncActiveNav();
+      await render();
+      await refreshNotificationCounts();
+    } catch (err) {
+      console.error('Real gameplay entry failed',err);
+      showToast(`Gameplay gagal: ${err.message}`);
+    }
+  }
+
+  async function enterAdminSimulationPreview() {
+    window.GameService = window.MockGameService;
+    state.session.loggedIn = true;
+    state.session.approved = true;
+    state.session.clubCreated = true;
+    authRoot.innerHTML = "";
+    gameApp.classList.remove("is-hidden");
+    mobileBottomNav?.classList.remove("is-hidden");
+    const adminNav = nav.querySelector('[data-view="admin"]');
+    if (adminNav) adminNav.classList.remove('is-hidden');
+    state.view = "admin";
+    syncActiveNav();
+    await render();
+    await refreshNotificationCounts();
+    showToast("Frontend Simulation Preview aktif · tidak mengubah data pemain asli.");
+  }
+
   function wireAuth(mode) {
+    document.getElementById("installFromLoginBtn")?.addEventListener("click", triggerInstall);
     if (mode === "login") {
-      document.getElementById("loginForm")?.addEventListener("submit", e => {
+      document.getElementById("loginForm")?.addEventListener("submit", async e => {
         e.preventDefault();
-        enterGame(true);
+        const btn = e.submitter; if (btn) btn.disabled = true;
+        try {
+          await MS7Service.signIn({ username: document.getElementById("loginUsername").value, password: document.getElementById("loginPassword").value });
+          const session = await MS7Service.getSession();
+          const profile = session?.user ? await MS7Service.getProfile(session.user.id) : null;
+          if (state.session.authRole === "admin" && profile?.role !== "admin") {
+            await MS7Service.signOut();
+            throw new Error("Akun ini bukan Owner/Admin.");
+          }
+          if (profile?.role === "admin") state.session.authRole = "admin";
+          await showAuth(true);
+        } catch (err) { showToast(`Login gagal: ${err.message}`); if (btn) btn.disabled = false; }
       });
-      document.getElementById("goRegisterBtn")?.addEventListener("click", () => {
-        state.session.screen = "register"; showAuth();
-      });
-      document.getElementById("quickPreviewBtn")?.addEventListener("click", () => enterGame(true));
+      document.querySelectorAll("[data-auth-role]").forEach(btn => btn.addEventListener("click", () => { state.session.authRole = btn.dataset.authRole; showAuth(false); }));
+      document.getElementById("goRegisterBtn")?.addEventListener("click", () => { state.session.authRole = "manager"; state.session.screen = "register"; showAuth(false); });
     } else if (mode === "register") {
-      document.getElementById("registerForm")?.addEventListener("submit", e => {
+      const regUsernameInput = document.getElementById("regUsername");
+      const regMs7Preview = document.getElementById("regMs7Preview");
+      const updateMs7Preview = () => {
+        if (!regMs7Preview) return;
+        const raw = String(regUsernameInput?.value || "username").trim().toLowerCase().replace(/@ms7\.com$/i, "") || "username";
+        regMs7Preview.textContent = raw;
+      };
+      regUsernameInput?.addEventListener("input", updateMs7Preview);
+      updateMs7Preview();
+      document.getElementById("registerForm")?.addEventListener("submit", async e => {
         e.preventDefault();
-        state.session.pending = true;
-        state.session.screen = "pending";
-        showAuth();
+        const btn = e.submitter; if (btn) btn.disabled = true;
+        try {
+          const data = await MS7Service.signUp({
+            displayName: document.getElementById("regName").value,
+            username: document.getElementById("regUsername").value,
+            password: document.getElementById("regPassword").value
+          });
+          if (!data.session) {
+            state.session.screen = "emailConfirmation";
+            showAuth(false);
+          } else {
+            await showAuth(true);
+          }
+        } catch (err) { showToast(`Registrasi gagal: ${err.message}`); if (btn) btn.disabled = false; }
       });
-      document.getElementById("goLoginBtn")?.addEventListener("click", () => {
-        state.session.screen = "login"; showAuth();
-      });
+      document.getElementById("goLoginBtn")?.addEventListener("click", () => { state.session.authRole = "manager"; state.session.screen = "login"; showAuth(false); });
+    } else if (mode === "emailConfirmation") {
+      document.getElementById("emailGoLoginBtn")?.addEventListener("click", () => { state.session.screen = "login"; showAuth(false); });
     } else if (mode === "pending") {
-      document.getElementById("simulateApprovalBtn")?.addEventListener("click", () => {
-        state.session.pending = false;
-        state.session.approved = true;
-        state.session.clubCreated = false;
-        state.session.screen = "createClub";
-        showAuth();
-      });
-      document.getElementById("backLoginBtn")?.addEventListener("click", () => {
-        state.session.screen = "login"; showAuth();
-      });
+      document.getElementById("refreshApprovalBtn")?.addEventListener("click", () => showAuth(true));
+      document.getElementById("pendingLogoutBtn")?.addEventListener("click", alphaLogout);
     } else if (mode === "createClub") {
       const name = document.getElementById("clubNameInput");
       const short = document.getElementById("clubShortInput");
       const stadium = document.getElementById("stadiumInput");
       const sync = () => {
+        const shortName = (short.value || "FC").toUpperCase();
         document.getElementById("clubPreviewName").textContent = name.value || "Your Club";
-        document.getElementById("clubPreviewLogo").textContent = (short.value || "FC").toUpperCase();
+        document.getElementById("clubPreviewLogo").innerHTML = `<img src="${htmlSafe(makeClubLogoDataUrl(shortName,state.clubLogoTheme))}" alt="Club logo preview">`;
         document.getElementById("clubPreviewStadium").textContent = stadium.value || "Home Stadium";
+        document.querySelectorAll("[data-logo-theme]").forEach(btn=>{
+          btn.classList.toggle("active",btn.dataset.logoTheme===state.clubLogoTheme);
+          const img=btn.querySelector("img"); if(img) img.src=makeClubLogoDataUrl(shortName,btn.dataset.logoTheme);
+        });
       };
       [name, short, stadium].forEach(el => el?.addEventListener("input", sync));
-      document.getElementById("clubLogoInput")?.addEventListener("change", e => {
-        const file=e.target.files?.[0]; if(!file) return;
-        const reader=new FileReader();
-        reader.onload=()=>{ const img=document.getElementById("clubPreviewImg"); img.src=reader.result; img.style.display="block"; document.getElementById("clubPreviewLogo").style.display="none"; window.MockDB.club.logoDataUrl=reader.result; };
-        reader.readAsDataURL(file);
-      });
-      document.getElementById("createClubForm")?.addEventListener("submit", e => {
+      document.querySelectorAll("[data-logo-theme]").forEach(btn=>btn.addEventListener("click",()=>{state.clubLogoTheme=btn.dataset.logoTheme;sync();}));
+      sync();
+      document.getElementById("createClubForm")?.addEventListener("submit", async e => {
         e.preventDefault();
-        window.MockDB.club.name = name.value.trim() || "MS7 FC";
-        window.MockDB.club.shortName = (short.value.trim() || "MS7").toUpperCase();
-        window.MockDB.club.stadium = stadium.value.trim() || "MS7 Arena";
-        window.MockDB.nextFixture.home.name = window.MockDB.club.name;
-        window.MockDB.nextFixture.home.short = window.MockDB.club.shortName;
-        state.session.clubCreated = true;
-        enterGame(false);
-        state.view = "draw";
-        render();
+        const btn = e.submitter; if (btn) btn.disabled = true;
+        try {
+          await MS7Service.createClub({ name: name.value, shortName: short.value, stadiumName: stadium.value, logoUrl: makeClubLogoToken(short.value,state.clubLogoTheme) });
+          showToast("Club berhasil dibuat.");
+          await showAuth(true);
+        } catch (err) { showToast(`Create club gagal: ${err.message}`); if (btn) btn.disabled = false; }
       });
+      document.getElementById("createClubLogoutBtn")?.addEventListener("click", alphaLogout);
+    } else if (mode === "waitingDraw") {
+      document.getElementById("refreshDrawBtn")?.addEventListener("click", () => showAuth(true));
+      document.getElementById("waitingLogoutBtn")?.addEventListener("click", alphaLogout);
+    } else if (mode === "alphaReady") {
+      document.getElementById("enterRealGameplayBtn")?.addEventListener("click", enterRealGameplay);
+      document.getElementById("refreshReadyBtn")?.addEventListener("click", () => showAuth(true));
+      document.getElementById("readyLogoutBtn")?.addEventListener("click", alphaLogout);
+    } else if (mode === "adminLobby") {
+      document.querySelectorAll("[data-alpha-approve]").forEach(btn => btn.addEventListener("click", async () => {
+        try { await MS7Service.adminDecideManager(btn.dataset.alphaApprove, "approved", "Production Bridge V1 manager approved"); showToast("Manager approved."); await showAuth(true); }
+        catch (err) { showToast(`Approve gagal: ${err.message}`); }
+      }));
+      document.querySelectorAll("[data-alpha-reject]").forEach(btn => btn.addEventListener("click", async () => {
+        try { await MS7Service.adminDecideManager(btn.dataset.alphaReject, "rejected", "Production Bridge V1 manager rejected"); showToast("Manager rejected."); await showAuth(true); }
+        catch (err) { showToast(`Reject gagal: ${err.message}`); }
+      }));
+      document.querySelectorAll("[data-alpha-suspend]").forEach(btn => btn.addEventListener("click", async () => {
+        try { await MS7Service.adminDecideManager(btn.dataset.alphaSuspend, "suspended", "Production Bridge V1 manager suspended"); showToast("Manager suspended."); await showAuth(true); }
+        catch (err) { showToast(`Suspend gagal: ${err.message}`); }
+      }));
+      document.getElementById("openAdminPreviewBtn")?.addEventListener("click", enterAdminSimulationPreview);
+      document.getElementById("refreshAdminBtn")?.addEventListener("click", () => showAuth(true));
+      document.getElementById("adminLogoutBtn")?.addEventListener("click", alphaLogout);
+      document.getElementById("runFoundingDrawBtn")?.addEventListener("click", async () => {
+        const b = state.alpha.bootstrap || {};
+        const world = b.world || {};
+        const counts = b.adminOverview?.counts || {};
+        const target = Number(world.founding_target || 12);
+        const approvedClubCount = Number(counts.approvedActiveClubs ?? (b.clubs || []).length);
+        const ready = world.founding_draw_status !== "COMPLETED" && approvedClubCount === target;
+
+        if (!ready) {
+          showToast(`Founding Draw belum siap: ${approvedClubCount}/${target} klub approved aktif.`);
+          return;
+        }
+
+        const ok = confirm(`RUN PRODUCTION FOUNDING DRAW SEKARANG?\n\n${approvedClubCount} klub akan menerima masing-masing 22 pemain. Ini FINAL dan NO REROLL.`);
+        if (!ok) return;
+
+        try {
+          const result = await MS7Service.runStarterDraw();
+          console.log("Production Founding Draw result", result);
+          showToast("Production Founding Draw selesai.");
+          await showAuth(true);
+        } catch (err) {
+          showToast(`Founding Draw gagal: ${err.message}`);
+        }
+      });
+    } else if (mode === "error") {
+      document.getElementById("retryAlphaBtn")?.addEventListener("click", () => showAuth(true));
+      document.getElementById("errorLogoutBtn")?.addEventListener("click", alphaLogout);
     }
   }
 
-  function showAuth() {
+  async function showAuth(resolve=true) {
     gameApp.classList.add("is-hidden");
+    mobileBottomNav?.classList.add("is-hidden");
+    if (resolve) await resolveAlphaState();
     authRoot.innerHTML = authTemplate(state.session.screen);
     wireAuth(state.session.screen);
   }
 
   function enterGame(existingManager=true) {
-    state.session.loggedIn = true;
-    state.session.approved = true;
-    state.session.clubCreated = true;
-    localStorage.setItem("fmMiniSession","active");
-    authRoot.innerHTML = "";
-    gameApp.classList.remove("is-hidden");
-    state.view = "home";
-    syncActiveNav();
-    render();
-    refreshNotificationCounts();
-    if (!localStorage.getItem("fmMiniOnboarded")) showOnboarding(existingManager);
+    // Deliberately disabled in Onboarding V1. The main application still contains
+    // MockDB-powered gameplay screens and must not be mistaken for live server truth.
+    state.session.screen = "alphaReady";
+    showAuth(true);
   }
 
   function showOnboarding(existingManager=true) {
@@ -2847,7 +3928,7 @@ window.GameService = (() => {
 
             <div class="fixture-card">
               <div class="team">
-                <div class="team-logo">${fixture.home.short}</div>
+                ${crestMarkup({short:fixture.home.short,name:fixture.home.name,logoUrl:fixture.home.logoUrl})}
                 <strong>${fixture.home.name}</strong>
                 <span>Home</span>
               </div>
@@ -2858,7 +3939,7 @@ window.GameService = (() => {
               </div>
 
               <div class="team">
-                <div class="team-logo">${fixture.away.short}</div>
+                ${crestMarkup({short:fixture.away.short,name:fixture.away.name,logoUrl:fixture.away.logoUrl})}
                 <strong>${fixture.away.name}</strong>
                 <span>Away</span>
               </div>
@@ -2872,7 +3953,7 @@ window.GameService = (() => {
               <div>
                 <p class="eyebrow">TEAM PROFILE</p>
                 <h2>Current Strength</h2>
-                <p>Mock squad ratings — engine belum aktif.</p>
+                <p>Server squad ratings · Supabase source of truth.</p>
               </div>
             </div>
             <div class="form-bars">
@@ -2963,7 +4044,7 @@ window.GameService = (() => {
 
   async function renderDraw() {
     setHeader("Founding Squad Draw", "SEASON 1 INITIALIZATION");
-    const [draw,squad]=await Promise.all([GameService.getFoundingDraw(),GameService.getSquad()]);
+    const [draw,squad,realClub]=await Promise.all([GameService.getFoundingDraw(),GameService.getSquad(),GameService.getClub()]);
     const tierCounts=squad.reduce((a,p)=>(a[p.tier]=(a[p.tier]||0)+1,a),{});
     const avgOvr=(squad.reduce((a,p)=>a+p.ovr,0)/squad.length).toFixed(1);
     root.innerHTML=`
@@ -2988,8 +4069,8 @@ window.GameService = (() => {
           </article>
         </div>
         <aside class="stack">
-          <article class="card section-card"><div class="section-head"><div><p class="eyebrow">YOUR RESULT</p><h2>${window.MockDB.club.name}</h2></div></div><div class="activity-list">${["S","A","B","C","D"].map(t=>`<div class="activity"><div class="activity-icon">${t}</div><div><strong>Tier ${t}</strong><p>${tierCounts[t]||0} player(s)</p></div></div>`).join("")}</div></article>
-          <article class="card section-card"><p class="eyebrow">DRAW SEED / LOG</p><h2 style="font-size:15px">${draw.seed}</h2><p style="font-size:10px;color:var(--muted)">Mock display only. Real seed and allocation log must stay server-side.</p><button class="primary-btn" id="finishDrawBtn" type="button">Continue to Squad</button></article>
+          <article class="card section-card"><div class="section-head"><div><p class="eyebrow">YOUR RESULT</p><h2>${realClub.name}</h2></div></div><div class="activity-list">${["S","A","B","C","D"].map(t=>`<div class="activity"><div class="activity-icon">${t}</div><div><strong>Tier ${t}</strong><p>${tierCounts[t]||0} player(s)</p></div></div>`).join("")}</div></article>
+          <article class="card section-card"><p class="eyebrow">DRAW SEED / LOG</p><h2 style="font-size:15px">${draw.seed}</h2><p style="font-size:10px;color:var(--muted)">Draw seed/allocation details remain server-side for fairness auditing.</p><button class="primary-btn" id="finishDrawBtn" type="button">Continue to Squad</button></article>
         </aside>
       </div>`;
     document.getElementById("finishDrawBtn")?.addEventListener("click",()=>{state.view="squad";syncActiveNav();render();});
@@ -3025,6 +4106,7 @@ window.GameService = (() => {
                 <th>Pos</th>
                 <th>OVR</th>
                 <th>Age</th>
+                <th>Historical Reference</th>
                 <th>Fitness</th>
                 <th>Form</th>
                 <th>Injury</th>
@@ -3073,6 +4155,7 @@ window.GameService = (() => {
           <td><span class="pos">${p.pos}</span></td>
           <td><span class="ovr">${p.ovr}</span></td>
           <td>${p.age}</td>
+          <td><strong>${p.refClub||"-"}</strong><span class="subtext">${p.refSeason||"-"} · Ref age ${p.refAge??"-"} · ${p.careerStage||""}</span></td>
           <td>
             <div class="fitness">
               <div class="fitness-bar"><i style="width:${p.fitness}%"></i></div>
@@ -3087,7 +4170,7 @@ window.GameService = (() => {
           <td>${wage(p.wage)}</td>
         </tr>
       `).join("") : `
-        <tr><td colspan="11" style="text-align:center;color:var(--muted);padding:36px">No players found.</td></tr>
+        <tr><td colspan="12" style="text-align:center;color:var(--muted);padding:36px">No players found.</td></tr>
       `;
 
       body.querySelectorAll("[data-player]").forEach(btn => {
@@ -3299,7 +4382,7 @@ window.GameService = (() => {
               <div>
                 <p class="eyebrow">TACTICAL PROFILE</p>
                 <h2>Estimated Style</h2>
-                <p>Preview only — match engine belum terhubung.</p>
+                <p>Style preview; saved tactics are server-authoritative.</p>
               </div>
             </div>
             <div class="tactical-profile">
@@ -3334,14 +4417,23 @@ window.GameService = (() => {
     document.getElementById("autoPickBtn").addEventListener("click", () => {
       assignDefaultLineup(players, state.tactics.formation);
       state.selectedSlot = null;
-      showToast("Best-fit XI selected from mock squad.");
+      showToast("Best-fit XI selected from the real server squad.");
       renderTactics();
     });
 
-    document.getElementById("saveTacticsBtn").addEventListener("click", () => {
+    document.getElementById("saveTacticsBtn").addEventListener("click", async () => {
       state.selectedSlot = null;
-      showToast("Tactics saved locally (mock mode).");
-      renderTactics();
+      const btn=document.getElementById("saveTacticsBtn"); btn.disabled=true;
+      try {
+        await GameService.saveTactics({...state.tactics,autoSubEnabled:state.tactics.autoSubEnabled!==false});
+        const shape=formations[state.tactics.formation];
+        const starters=shape.map((slot,idx)=>({player_id:state.lineup[idx],position:slot[0]}));
+        if(starters.some(x=>!x.player_id)) throw new Error('Starting XI belum lengkap.');
+        const bench=state.bench.filter(Boolean).slice(0,9).map(id=>({player_id:id}));
+        await GameService.saveLineup(state.tactics.formation,starters,bench);
+        showToast("Tactics + lineup saved to Supabase.");
+      } catch(err){ showToast(`Save gagal: ${err.message}`); }
+      finally { btn.disabled=false; await renderTactics(); }
     });
 
     root.querySelectorAll("[data-tactic]").forEach(select => {
@@ -3363,7 +4455,7 @@ window.GameService = (() => {
       btn.addEventListener("click", () => openPlayer(btn.dataset.benchPlayer));
     });
 
-    document.getElementById("autoSubToggle")?.addEventListener("click",()=>{window.MockDB.lineupRules.autoSubEnabled=!window.MockDB.lineupRules.autoSubEnabled;renderTactics();});
+    document.getElementById("autoSubToggle")?.addEventListener("click",()=>{state.tactics.autoSubEnabled=!(state.tactics.autoSubEnabled!==false);showToast("Auto-sub preference changed. Click Save Tactics to persist.");renderTactics();});
 
     root.querySelectorAll("[data-pick-player]").forEach(btn => {
       btn.addEventListener("click", () => {
@@ -3522,7 +4614,7 @@ window.GameService = (() => {
       ? `<div class="training-warning">Intensive training memberi DXP tertinggi, tetapi squad fitness turun lebih besar. Menjelang dua matchday dalam satu hari, ini berisiko jika pemain tidak cukup bugar.</div>`
       : state.training.type === "Recovery"
       ? `<div class="training-safe">Recovery hampir tidak meningkatkan atribut, tetapi sangat berguna untuk memulihkan squad setelah dua pertandingan dalam satu hari.</div>`
-      : `<div class="training-safe">Beban latihan masih dalam range aman untuk mock squad saat ini.</div>`;
+      : `<div class="training-safe">Training-load preview based on current real squad fitness.</div>`;
 
     root.innerHTML = `
       <div class="training-layout">
@@ -3594,7 +4686,7 @@ window.GameService = (() => {
             ${warning}
 
             <button type="button" class="primary-btn" id="startTrainingBtn" ${state.training.completed ? "disabled":""}>
-              ${state.training.completed ? "Today's Training Completed" : "Run Training Session"}
+              ${state.training.completed ? "Today's Training Completed" : (trainingState.scheduled ? "Update Today's Training" : "Schedule Today's Training")}
             </button>
           </article>
 
@@ -3758,9 +4850,10 @@ window.GameService = (() => {
     });
 
     root.querySelectorAll("[data-individual-focus]").forEach(sel => {
-      sel.addEventListener("change", () => {
+      sel.addEventListener("change", async () => {
         state.training.individualFocus[sel.dataset.individualFocus] = sel.value;
-        showToast(`Individual focus set to ${sel.value}.`);
+        try { await GameService.setIndividualFocus(sel.dataset.individualFocus,sel.value); showToast(`Individual focus saved: ${sel.value}.`); }
+        catch(err){ showToast(`Focus gagal: ${err.message}`); }
       });
     });
 
@@ -3770,11 +4863,12 @@ window.GameService = (() => {
 
     const startBtn = document.getElementById("startTrainingBtn");
     if (startBtn) {
-      startBtn.addEventListener("click", () => {
+      startBtn.addEventListener("click", async () => {
         if (state.training.completed) return;
-        state.training.completed = true;
-        showToast(`${state.training.type} training completed locally.`);
-        renderTraining();
+        startBtn.disabled=true;
+        try { await GameService.scheduleTraining(state.training.type); showToast(`${state.training.type} training scheduled on server.`); }
+        catch(err){ showToast(`Training gagal: ${err.message}`); }
+        await renderTraining();
       });
     }
   }
@@ -3965,7 +5059,7 @@ window.GameService = (() => {
     });
 
     container.querySelectorAll("[data-market-watch]").forEach(btn => {
-      btn.addEventListener("click", () => showToast("Added to watchlist (mock)."));
+      btn.addEventListener("click", () => showToast("Watchlist UI is local-only in Production Bridge V1."));
     });
 
     container.querySelectorAll("[data-market-offer]").forEach(btn => {
@@ -3973,7 +5067,6 @@ window.GameService = (() => {
         const player = market.transferList.find(p=>p.id===btn.dataset.marketOffer);
         state.transfers.selectedPlayer = player.id;
         state.transfers.offerAmount = player.price;
-        state.transfers.contractYears = 2;
         renderTransfers();
       });
     });
@@ -3985,7 +5078,7 @@ window.GameService = (() => {
     if (!player) return "";
     const amount = state.transfers.offerAmount || player.price;
     const afterBudget = club.transferBudget - amount;
-    const contractYears = state.transfers.contractYears || 2;
+    const contractYears = player.contract || 1;
     const financeOk = amount <= club.transferBudget;
     const wageOk = player.wage <= wageRoom;
     const squadOk = availableSlots > 0;
@@ -4020,12 +5113,7 @@ window.GameService = (() => {
               <label for="offerAmount">Transfer Fee</label>
               <input id="offerAmount" class="money-input" type="number" min="0" step="500000" value="${amount}" />
             </div>
-            <div>
-              <label for="offerContract">Contract Length</label>
-              <select id="offerContract" class="game-select" style="width:100%">
-                ${[1,2,3].map(y=>`<option value="${y}" ${contractYears===y?"selected":""}>${y} season${y>1?"s":""}</option>`).join("")}
-              </select>
-            </div>
+            <div class="alpha-status-box"><strong>Contract term</strong><p>${contractYears} season${contractYears>1?"s":""} remaining. Direct transfer settlement preserves the current remaining term; wage is validated server-side.</p></div>
             <button class="primary-btn" id="submitOfferBtn" type="button" ${allOk ? "" : "disabled"}>Submit Offer</button>
           </div>
         </article>
@@ -4050,7 +5138,7 @@ window.GameService = (() => {
 
           <div style="height:12px"></div>
           ${allOk
-            ? `<div class="finance-ok">Offer passes current mock checks: transfer budget, wage room and squad limit. Real settlement will be atomic server-side; accepted purchase receives a 2-matchday resale cooldown.</div>`
+            ? `<div class="finance-ok">Offer passes client preview checks: transfer budget, wage room and squad limit. Real settlement will be atomic server-side; accepted purchase receives a 2-matchday resale cooldown.</div>`
             : `<div class="finance-warning">${!financeOk?"Transfer budget insufficient. ":""}${!wageOk?"Wage room insufficient. ":""}${!squadOk?"Squad already at maximum size.":""}</div>`}
         </article>
       </div>
@@ -4059,7 +5147,6 @@ window.GameService = (() => {
 
   function wireOfferPanel(container, market, club, availableSlots, wageRoom) {
     const amountInput = document.getElementById("offerAmount");
-    const contractSelect = document.getElementById("offerContract");
     const submit = document.getElementById("submitOfferBtn");
 
     if (amountInput) {
@@ -4068,18 +5155,13 @@ window.GameService = (() => {
         renderTransfers();
       });
     }
-    if (contractSelect) {
-      contractSelect.addEventListener("change", () => {
-        state.transfers.contractYears = Number(contractSelect.value);
-        renderTransfers();
-      });
-    }
     if (submit) {
-      submit.addEventListener("click", () => {
+      submit.addEventListener("click", async () => {
         const p = market.transferList.find(x=>x.id===state.transfers.selectedPlayer);
-        showToast(`Offer ${money(state.transfers.offerAmount)} submitted for ${p.name} (mock).`);
-        state.transfers.selectedPlayer = null;
-        renderTransfers();
+        submit.disabled=true;
+        try { await GameService.makeTransferOffer(p.id,state.transfers.offerAmount,p.wage); showToast(`Offer ${money(state.transfers.offerAmount)} submitted for ${p.name}.`); state.transfers.selectedPlayer=null; }
+        catch(err){ showToast(`Offer gagal: ${err.message}`); }
+        await renderTransfers();
       });
     }
   }
@@ -4096,7 +5178,7 @@ window.GameService = (() => {
           <span class="badge live">${market.freeAgents.length} active</span>
         </div>
         <div class="lock-banner">Auction duration ≈6–12 hours. Highest bid wins as signing bonus. Any new bid in the final 5 minutes extends the auction by +5 minutes.</div>
-        <button class="secondary-btn" id="nominateFreeAgentBtn" type="button" style="margin-bottom:12px">Nominate Free Agent (Mock)</button>
+        <button class="secondary-btn" id="nominateFreeAgentBtn" type="button" style="margin-bottom:12px" disabled>Free-agent auctions are opened by server/admin workflow</button>
         <div class="transfer-grid">
           ${market.freeAgents.map(p => {
             const minBid = p.currentBid > 0 ? p.currentBid + 500000 : p.openingBid;
@@ -4134,12 +5216,19 @@ window.GameService = (() => {
       </article>
     `;
 
-    document.getElementById("nominateFreeAgentBtn")?.addEventListener("click",()=>showToast("Free-agent nomination flow opened (mock)."));
+    document.getElementById("nominateFreeAgentBtn")?.addEventListener("click",()=>showToast("Admin starts free-agent auctions; manager bidding is real."));
     container.querySelectorAll("[data-auction-bid]").forEach(btn => {
-      btn.addEventListener("click", () => {
+      btn.addEventListener("click", async () => {
         const p = market.freeAgents.find(x=>x.id===btn.dataset.auctionBid);
-        const nextBid = p.currentBid + 500000;
-        showToast(`Bid ${money(nextBid)} placed for ${p.name} (mock).`);
+        const nextBid = p.currentBid>0 ? p.currentBid+500000 : p.openingBid;
+        const tierMid={S:100000,A:67500,B:45000,C:27500,D:15000};
+        const proposedWage=Math.max(0,Number(prompt(`Weekly wage for ${p.name} (£/week)`,String(p.wage||tierMid[p.tier]||20000))));
+        if(!proposedWage)return;
+        const years=Math.min(3,Math.max(1,Number(prompt('Contract seasons (1-3)','2'))||2));
+        btn.disabled=true;
+        try { await GameService.placeFreeAgentBid(p.id,nextBid,proposedWage,years); showToast(`Bid ${money(nextBid)} · ${wage(proposedWage)} · ${years} season placed for ${p.name}.`); }
+        catch(err){ showToast(`Bid gagal: ${err.message}`); }
+        await renderTransfers();
       });
     });
   }
@@ -4198,11 +5287,7 @@ window.GameService = (() => {
             </thead>
             <tbody>
               ${market.offersReceived.map(o => {
-                const owned=window.MockDB.players;
-                const offered=owned.find(p=>p.id===o.playerId);
-                const gkCount=owned.filter(p=>p.pos==="GK").length;
-                const keepsMinGk=!(offered?.pos==="GK" && gkCount<=2);
-                const canSell = squadSize - 1 >= market.squadMin && keepsMinGk && !(offered?.resaleCooldown>0);
+                const canSell = squadSize - 1 >= market.squadMin;
                 return `
                   <tr>
                     <td><strong>${o.player}</strong></td>
@@ -4227,13 +5312,13 @@ window.GameService = (() => {
     `;
 
     container.querySelectorAll("[data-offer-accept]").forEach(btn => {
-      btn.addEventListener("click", () => showToast("Offer accepted locally (mock)."));
+      btn.addEventListener("click", async () => {btn.disabled=true;try{await GameService.respondTransferOffer(btn.dataset.offerAccept,"accept");showToast("Offer accepted and settled server-side.");}catch(err){showToast(`Accept gagal: ${err.message}`);}await renderTransfers();});
     });
     container.querySelectorAll("[data-offer-counter]").forEach(btn => {
-      btn.addEventListener("click", () => showToast("Counter-offer flow placeholder ready."));
+      btn.addEventListener("click", async () => {const amount=Number(prompt("Counter amount (£)","20000000"));if(!amount)return;try{await GameService.respondTransferOffer(btn.dataset.offerCounter,"counter",amount);showToast("Counter-offer sent.");}catch(err){showToast(`Counter gagal: ${err.message}`);}await renderTransfers();});
     });
     container.querySelectorAll("[data-offer-reject]").forEach(btn => {
-      btn.addEventListener("click", () => showToast("Offer rejected locally (mock)."));
+      btn.addEventListener("click", async () => {try{await GameService.respondTransferOffer(btn.dataset.offerReject,"reject");showToast("Offer rejected server-side.");}catch(err){showToast(`Reject gagal: ${err.message}`);}await renderTransfers();});
     });
   }
 
@@ -4259,11 +5344,11 @@ window.GameService = (() => {
           <div class="section-card" style="padding-bottom:8px">
             <div class="section-head">
               <div>
-                <p class="eyebrow">SEASON 1</p>
+                <p class="eyebrow">SEASON ${league.seasonNumber}</p>
                 <h2>${league.name}</h2>
                 <p>Double round-robin · 3 points win / 1 draw / 0 loss.</p>
               </div>
-              <span class="badge live">Matchday 5</span>
+              <span class="badge live">Matchday ${league.matchday} · ${league.phase}</span>
             </div>
           </div>
           <div class="table-wrap">
@@ -4273,9 +5358,9 @@ window.GameService = (() => {
               </thead>
               <tbody>
                 ${league.standings.map(r => `
-                  <tr class="${r.club==="MS7 FC"?"highlight":""}">
+                  <tr class="${r.club===league.myClubName?"highlight":""}">
                     <td><div class="position-badge">${r.pos}</div></td>
-                    <td>${r.club}</td><td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
+                    <td><div class="league-club-cell">${crestMarkup({short:r.clubShort||initials(r.club),name:r.club,logoUrl:r.clubLogoUrl,className:"league-club-logo"})}<span>${r.club}</span></div></td><td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
                     <td>${r.gf}</td><td>${r.ga}</td><td>${r.gd>0?"+":""}${r.gd}</td><td><strong>${r.pts}</strong></td>
                     <td><div class="form-dots">${r.form.map(f=>`<span class="form-dot ${f.toLowerCase()}">${f}</span>`).join("")}</div></td>
                   </tr>
@@ -4292,7 +5377,7 @@ window.GameService = (() => {
             <div>
               <p class="eyebrow">FIXTURES</p>
               <h2>Match Schedule</h2>
-              <p>Current mock schedule. Exact kickoff remains configurable later.</p>
+              <p>Server fixture schedule from Supabase.</p>
             </div>
           </div>
           <div class="fixture-list">
@@ -4316,14 +5401,14 @@ window.GameService = (() => {
         <div class="stats-podium">${top.map((p,i)=>`<article class="podium-card"><span>#${i+1} · ${p.club}</span><strong>${p.name}</strong><b>${p.goals} G</b><span>${p.assists} assists · Rating ${p.rating}</span></article>`).join("")}</div>
         <article class="card table-card"><div class="table-wrap"><table class="transfer-table"><thead><tr><th>#</th><th>Player</th><th>Club</th><th>Pos</th><th>Goals</th><th>Assists</th><th>Rating</th></tr></thead><tbody>${league.playerStats.map(p=>`<tr><td>${p.rank}</td><td><strong>${p.name}</strong></td><td>${p.club}</td><td>${p.pos}</td><td>${p.goals}</td><td>${p.assists}</td><td>${p.rating}</td></tr>`).join("")}</tbody></table></div></article>`;
     } else if (state.league.tab === "awards") {
-      const sc=window.MockDB.seasonCentre;
-      content.innerHTML=`<article class="card section-card"><div class="section-head"><div><p class="eyebrow">AWARDS RACE</p><h2>Season ${sc.currentSeason}</h2><p>Award bonus is intentionally small relative to club finances.</p></div></div><div class="award-grid">${sc.awardsRace.map(a=>`<div class="award-card"><span>${a.award}</span><strong>${a.leader}</strong><span>${a.club}</span><b>${a.value}</b><span>Bonus ${money(window.MockDB.finance.awardBonus[a.award]||0)}</span></div>`).join("")}</div></article>`;
+      const sc=await GameService.getSeasonCentre();
+      content.innerHTML=`<article class="card section-card"><div class="section-head"><div><p class="eyebrow">AWARDS RACE</p><h2>Season ${sc.currentSeason}</h2><p>Award bonus is intentionally small relative to club finances.</p></div></div><div class="award-grid">${sc.awardsRace.map(a=>`<div class="award-card"><span>${a.award}</span><strong>${a.leader}</strong><span>${a.club}</span><b>${a.value}</b><span>Bonus ${money(({"Golden Boot":2000000,"Top Assist":1500000,"Golden Glove":1500000,"Player Of Season":2000000,"Player of Season":2000000}[a.award]||0))}</span></div>`).join("")}</div></article>`;
     } else if (state.league.tab === "hall") {
-      const sc=window.MockDB.seasonCentre;
+      const sc=await GameService.getSeasonCentre();
       content.innerHTML=`<article class="card table-card"><div class="section-card" style="padding-bottom:8px"><div class="section-head"><div><p class="eyebrow">HALL OF FAME</p><h2>Permanent World History</h2><p>Never reset between seasons.</p></div></div></div><div class="table-wrap"><table class="hof-table"><thead><tr><th>Season</th><th>Champion</th><th>Runner-up</th><th>Final Table</th><th>Golden Boot</th><th>Top Assist</th><th>Golden Glove</th><th>Player of Season</th><th>Biggest Win</th><th>Highest Scoring</th></tr></thead><tbody>${sc.hallOfFame.map(h=>`<tr><td>${h.season}</td><td>${h.champion}</td><td>${h.runnerUp}</td><td>${h.finalTable}</td><td>${h.goldenBoot}</td><td>${h.topAssist}</td><td>${h.goldenGlove}</td><td>${h.playerSeason}</td><td>${h.biggestWin}</td><td>${h.highestScoring}</td></tr>`).join("")}</tbody></table></div></article>`;
     } else {
-      const sc=window.MockDB.seasonCentre;
-      content.innerHTML=`<div class="season-hero"><article class="card section-card"><div class="section-head"><div><p class="eyebrow">SEASON ${sc.currentSeason}</p><h2>${sc.phaseLabel}</h2><p>2 matchdays/day · ${sc.totalMatchdays} matchdays at 12 clubs · target cycle ≈15 days.</p></div><span class="badge live">${sc.progressPct}%</span></div><div class="match-progress"><i style="width:${sc.progressPct}%"></i></div><div style="height:16px"></div><div class="phase-track">${sc.timeline.map(p=>`<div class="phase-item ${p.status}"><strong>${p.label}</strong><span>${p.note}</span><span class="phase-state">${p.status}</span></div>`).join("")}</div></article><aside class="card section-card"><p class="eyebrow">ROLLOVER ORDER</p><div class="rollover-list">${sc.rollover.map((r,i)=>`<div class="rollover-row"><i>${i+1}</i><strong>${r}</strong></div>`).join("")}</div></aside></div>`;
+      const sc=await GameService.getSeasonCentre();
+      content.innerHTML=`<div class="season-hero"><article class="card section-card"><div class="section-head"><div><p class="eyebrow">SEASON ${sc.currentSeason}</p><h2>${sc.phaseLabel}</h2><p>2 matchdays/day · ${sc.totalMatchdays} matchdays · ${league.clubCount} clubs in the current world.</p></div><span class="badge live">${sc.progressPct}%</span></div><div class="match-progress"><i style="width:${sc.progressPct}%"></i></div><div style="height:16px"></div><div class="phase-track">${sc.timeline.map(p=>`<div class="phase-item ${p.status}"><strong>${p.label}</strong><span>${p.note}</span><span class="phase-state">${p.status}</span></div>`).join("")}</div></article><aside class="card section-card"><p class="eyebrow">ROLLOVER ORDER</p><div class="rollover-list">${sc.rollover.map((r,i)=>`<div class="rollover-row"><i>${i+1}</i><strong>${r}</strong></div>`).join("")}</div></aside></div>`;
     }
 
     root.querySelectorAll("[data-league-tab]").forEach(btn=>{
@@ -4378,131 +5463,28 @@ window.GameService = (() => {
   }
 
   async function renderMatch() {
-    setHeader("Match Centre", "LIVE MATCH PREVIEW");
+    setHeader("Match Centre", "SERVER MATCH STATE");
     const base = await GameService.getMatchCentre();
-    if (!state.match.events.length) state.match.events = [...base.events];
-
-    const m = state.match;
-    const awayPoss = 100 - m.possessionHome;
-    const progress = Math.min(100,(m.minute/90)*100);
-
-    root.innerHTML = `
+    const squad = await GameService.getSquad();
+    const awayPoss = base.possessionAway ?? (100-base.possessionHome);
+    const progress=Math.min(100,(Number(base.minute||0)/90)*100);
+    root.innerHTML=`
       <div class="match-layout">
         <div class="stack">
           <article class="card section-card">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">${m.running ? "LIVE" : m.minute>=90 ? "FULL TIME" : "PRE-MATCH"}</p>
-                <h2>${base.venue}</h2>
-                <p>${base.kickoff} · Frontend mock preview · production server target: 96 ticks / ±8 real minutes</p>
-              </div>
-              <span class="badge ${m.running?"live":""}">${m.minute>=90?"FT":m.minute+"'"} </span>
-            </div>
-
-            <div class="scoreboard">
-              <div class="score-main">
-                <div class="score-team">
-                  <div class="team-logo">${base.homeShort}</div>
-                  <strong>${base.home}</strong>
-                </div>
-                <div class="score-centre">
-                  <strong>${m.homeScore} – ${m.awayScore}</strong>
-                  <span>${m.minute>=90?"Full Time":m.running?m.minute+"'":"Ready"}</span>
-                </div>
-                <div class="score-team">
-                  <div class="team-logo">${base.awayShort}</div>
-                  <strong>${base.away}</strong>
-                </div>
-              </div>
-              <div class="match-progress"><i style="width:${progress}%"></i></div>
-              <div class="match-controls">
-                <button class="secondary-btn" type="button" id="matchResetBtn">Reset</button>
-                <button class="primary-btn" style="margin:0" type="button" id="matchStartBtn">${m.running?"Advance 5'":m.minute>=90?"Restart Preview":"Start / Advance 5'"}</button>
-              </div>
-            </div>
+            <div class="section-head"><div><p class="eyebrow">${base.status}</p><h2>${base.venue}</h2><p>${base.kickoff} · Server authoritative match state</p></div><span class="badge ${base.isLive?'live':''}">${base.minute||0}'</span></div>
+            <div class="scoreboard"><div class="score-main"><div class="score-team">${crestMarkup({short:base.homeShort,name:base.home,logoUrl:base.homeLogoUrl})}<strong>${base.home}</strong></div><div class="score-centre"><strong>${base.homeScore} – ${base.awayScore}</strong><span>${base.status}</span></div><div class="score-team">${crestMarkup({short:base.awayShort,name:base.away,logoUrl:base.awayLogoUrl})}<strong>${base.away}</strong></div></div><div class="match-progress"><i style="width:${progress}%"></i></div><button class="primary-btn" id="refreshLiveMatchBtn" type="button">Refresh Server Match State</button></div>
           </article>
-
-          <article class="card section-card">
-            <div class="section-head">
-              <div><p class="eyebrow">MATCH STATS</p><h2>Live Statistics</h2></div>
-            </div>
-            <div class="match-stat-grid">
-              <div class="match-stat"><span>Possession</span><strong>${m.possessionHome}% – ${awayPoss}%</strong></div>
-              <div class="match-stat"><span>Shots</span><strong>${m.shotsHome} – ${m.shotsAway}</strong></div>
-              <div class="match-stat"><span>Shots on Target</span><strong>${m.sotHome} – ${m.sotAway}</strong></div>
-              <div class="match-stat"><span>xG</span><strong>${m.xgHome.toFixed(2)} – ${m.xgAway.toFixed(2)}</strong></div>
-              <div class="match-stat"><span>Corners</span><strong>${m.cornersHome} – ${m.cornersAway}</strong></div>
-              <div class="match-stat"><span>Fouls</span><strong>${m.foulsHome} – ${m.foulsAway}</strong></div>
-              <div class="match-stat"><span>Cards</span><strong>${m.cardsHome} – ${m.cardsAway}</strong></div>
-              <div class="match-stat"><span>Pass Accuracy</span><strong>${m.passAccHome}% – ${m.passAccAway}%</strong></div>
-              <div class="match-stat"><span>Avg Fitness</span><strong>${m.fitnessHome}% – ${m.fitnessAway}%</strong></div>
-              <div class="match-stat"><span>Subs Used</span><strong>${state.matchLive.subsUsed} / 5</strong></div>
-            </div>
-          </article>
-          <article class="card section-card"><div class="section-head"><div><p class="eyebrow">LIVE TACTICS</p><h2>In-Match Controls</h2><p>Cooldown ±30 seconds; changes apply on the next server tick.</p></div><span class="badge">${state.matchLive.tacticsCooldown?state.matchLive.tacticsCooldown+"s cooldown":"Ready"}</span></div>
-            <div class="live-control-grid"><div class="live-control-card"><label class="kpi-label">Mentality</label><select class="game-select" id="liveMentality" style="width:100%">${["Defensive","Cautious","Balanced","Positive","Attacking"].map(v=>`<option ${v===state.matchLive.liveMentality?"selected":""}>${v}</option>`).join("")}</select></div><div class="live-control-card"><label class="kpi-label">Pressing</label><select class="game-select" id="livePressing" style="width:100%">${["Low Block","Standard","High Press","Very High Press"].map(v=>`<option ${v===state.matchLive.livePressing?"selected":""}>${v}</option>`).join("")}</select></div></div>
-            <button class="secondary-btn" style="width:100%;margin-top:10px" id="applyLiveTacticsBtn" ${state.matchLive.tacticsCooldown?"disabled":""} type="button">Apply Live Tactics</button>
-          </article>
-          <article class="card section-card"><div class="section-head"><div><p class="eyebrow">LIVE SUBSTITUTION</p><h2>Matchday Changes</h2><p>Maximum 5 substitutions.</p></div></div><div class="live-sub-list"><div class="live-sub-row"><strong>Demo Player 18</strong><span>RW</span><strong>Demo Player 16</strong><button class="secondary-btn" id="makeSubBtn" ${state.matchLive.subsUsed>=5?"disabled":""}>Make Sub</button></div></div></article>
-          <article class="card section-card"><div class="section-head"><div><p class="eyebrow">PLAYER RATINGS</p><h2>Live Ratings</h2><p>Position-sensitive 5.0–10.0 scale.</p></div></div><div class="match-rating-grid">${window.MockDB.matchCentre.playerRatings.map(r=>`<div class="rating-card"><strong>${r.name}</strong><span>${r.pos} · ${r.club}</span><span class="rating-score">${r.rating.toFixed(1)}</span></div>`).join("")}</div></article>
+          <article class="card section-card"><div class="section-head"><div><p class="eyebrow">MATCH STATS</p><h2>Server Statistics</h2></div></div><div class="match-stat-grid"><div class="match-stat"><span>Possession</span><strong>${Number(base.possessionHome||50).toFixed(0)}% – ${Number(awayPoss||50).toFixed(0)}%</strong></div><div class="match-stat"><span>Shots</span><strong>${base.shotsHome||0} – ${base.shotsAway||0}</strong></div><div class="match-stat"><span>Shots on Target</span><strong>${base.sotHome||0} – ${base.sotAway||0}</strong></div><div class="match-stat"><span>xG</span><strong>${Number(base.xgHome||0).toFixed(2)} – ${Number(base.xgAway||0).toFixed(2)}</strong></div></div></article>
+          <article class="card section-card"><div class="section-head"><div><p class="eyebrow">LIVE TACTICS</p><h2>In-Match Controls</h2><p>Only available while server session is LIVE.</p></div></div><div class="live-control-grid"><div class="live-control-card"><label class="kpi-label">Mentality</label><select class="game-select" id="liveMentality" style="width:100%">${["Defensive","Cautious","Balanced","Positive","Attacking"].map(v=>`<option>${v}</option>`).join("")}</select></div><div class="live-control-card"><label class="kpi-label">Pressing</label><select class="game-select" id="livePressing" style="width:100%">${["Low Block","Standard","High Press","Very High Press"].map(v=>`<option>${v}</option>`).join("")}</select></div></div><button class="secondary-btn" style="width:100%;margin-top:10px" id="applyLiveTacticsBtn" ${base.isLive?'':'disabled'}>Apply Live Tactics</button></article>
+          <article class="card section-card"><div class="section-head"><div><p class="eyebrow">LIVE SUBSTITUTION</p><h2>Frozen Match Squad</h2><p>Server validates frozen XI/bench and max 5 substitutions.</p></div></div><div class="tactic-control-grid"><div class="tactic-control"><label>Player Out</label><select class="game-select" id="liveSubOut">${squad.map(p=>`<option value="${p.id}">${p.name} · ${p.pos}</option>`).join("")}</select></div><div class="tactic-control"><label>Player In</label><select class="game-select" id="liveSubIn">${squad.map(p=>`<option value="${p.id}">${p.name} · ${p.pos}</option>`).join("")}</select></div></div><button class="secondary-btn" id="makeSubBtn" style="width:100%;margin-top:10px" ${base.isLive?'':'disabled'}>Submit Substitution</button></article>
+          <article class="card section-card"><div class="section-head"><div><p class="eyebrow">PLAYER RATINGS</p><h2>Match Ratings</h2></div></div><div class="match-rating-grid">${(base.playerRatings||[]).map(r=>`<div class="rating-card"><strong>${r.name}</strong><span>${r.pos} · ${r.club}</span><span class="rating-score">${Number(r.rating).toFixed(1)}</span></div>`).join("")||'<div class="subtext">Ratings appear after server match stats are available.</div>'}</div></article>
         </div>
-
-        <aside class="card section-card">
-          <div class="section-head">
-            <div><p class="eyebrow">TIMELINE</p><h2>Match Events</h2></div>
-          </div>
-          <div class="event-timeline">
-            ${[...m.events].reverse().map(e=>`
-              <div class="event-row">
-                <div class="event-minute">${e.minute}'</div>
-                <div class="event-icon">${matchEventIcon(e.type)}</div>
-                <div><strong>${e.text}</strong></div>
-              </div>
-            `).join("")}
-          </div>
-        </aside>
-      </div>
-    `;
-
-    document.getElementById("matchStartBtn").addEventListener("click",()=>{
-      if (m.minute >= 90) {
-        state.match = {
-          running:true,minute:0,homeScore:0,awayScore:0,shotsHome:0,shotsAway:0,
-          sotHome:0,sotAway:0,xgHome:0,xgAway:0,possessionHome:52,
-          cornersHome:0,cornersAway:0,foulsHome:0,foulsAway:0,cardsHome:0,cardsAway:0,passAccHome:86,passAccAway:84,fitnessHome:93,fitnessAway:92,
-          events:[{minute:0,type:"info",text:"Kickoff — mock simulation restarted."}]
-        };
-      } else {
-        m.running = true;
-        if(state.matchLive.tacticsCooldown>0) state.matchLive.tacticsCooldown=Math.max(0,state.matchLive.tacticsCooldown-5);
-        m.fitnessHome=Math.max(55,+(m.fitnessHome-0.35).toFixed(1)); m.fitnessAway=Math.max(55,+(m.fitnessAway-0.34).toFixed(1));
-        const start = m.minute + 1;
-        m.minute = Math.min(90,m.minute+5);
-        for (let minute=start; minute<=m.minute; minute++) {
-          const evt = generateMockEvent(minute);
-          if (evt) m.events.push(evt);
-        }
-        m.possessionHome = Math.max(42,Math.min(60,m.possessionHome + (Math.random()*4-2)));
-        if (m.minute >= 90) {
-          m.running = false;
-          m.events.push({minute:90,type:"info",text:"Full time."});
-        }
-      }
-      renderMatch();
-    });
-
-    document.getElementById("applyLiveTacticsBtn")?.addEventListener("click",()=>{if(state.matchLive.tacticsCooldown>0)return;state.matchLive.liveMentality=document.getElementById("liveMentality").value;state.matchLive.livePressing=document.getElementById("livePressing").value;state.matchLive.tacticsCooldown=30;m.events.push({minute:m.minute,type:"info",text:`Live tactics: ${state.matchLive.liveMentality}, ${state.matchLive.livePressing}.`});renderMatch();});
-    document.getElementById("makeSubBtn")?.addEventListener("click",()=>{if(state.matchLive.subsUsed>=5)return;state.matchLive.subsUsed++;m.events.push({minute:m.minute,type:"sub",text:"MS7 FC: Demo Player 16 replaces Demo Player 18."});renderMatch();});
-
-    document.getElementById("matchResetBtn").addEventListener("click",()=>{
-      state.match = {
-        running:false,minute:0,homeScore:0,awayScore:0,shotsHome:0,shotsAway:0,
-        sotHome:0,sotAway:0,xgHome:0,xgAway:0,possessionHome:52,
-        cornersHome:0,cornersAway:0,foulsHome:0,foulsAway:0,cardsHome:0,cardsAway:0,passAccHome:86,passAccAway:84,fitnessHome:93,fitnessAway:92,
-        events:[{minute:0,type:"info",text:"Match Centre ready. Start mock simulation to preview live flow."}]
-      };
-      renderMatch();
-    });
+        <aside class="card section-card"><div class="section-head"><div><p class="eyebrow">TIMELINE</p><h2>Server Events</h2></div></div><div class="event-timeline">${[...(base.events||[])].reverse().map(e=>`<div class="event-row"><div class="event-minute">${e.minute}'</div><div class="event-icon">${matchEventIcon(e.type)}</div><div><strong>${e.text}</strong></div></div>`).join("")}</div></aside>
+      </div>`;
+    document.getElementById('refreshLiveMatchBtn')?.addEventListener('click',()=>renderMatch());
+    document.getElementById('applyLiveTacticsBtn')?.addEventListener('click',async()=>{try{await GameService.submitLiveTactics(base.fixtureId,{mentality:document.getElementById('liveMentality').value,press:document.getElementById('livePressing').value});showToast('Live tactics accepted by server; applies next tick.');}catch(err){showToast(`Live tactics gagal: ${err.message}`);}await renderMatch();});
+    document.getElementById('makeSubBtn')?.addEventListener('click',async()=>{const outId=document.getElementById('liveSubOut').value,inId=document.getElementById('liveSubIn').value;if(outId===inId){showToast('Player in/out harus berbeda.');return;}try{await GameService.submitLiveSubstitution(base.fixtureId,outId,inId);showToast('Substitution accepted by server.');}catch(err){showToast(`Sub gagal: ${err.message}`);}await renderMatch();});
   }
 
   async function renderClub() {
@@ -4537,7 +5519,7 @@ window.GameService = (() => {
           <article class="card section-card">
             <div class="section-head">
               <div><p class="eyebrow">CLUB PROFILE</p><h2>${club.name}</h2><p>${club.stadium} · ${club.reputation} reputation</p></div>
-              <div class="team-logo">${club.shortName}</div>
+              ${crestMarkup({short:club.shortName,name:club.name,logoUrl:club.logoUrl})}
             </div>
             <div class="club-overview-grid">
               <div class="club-info-card"><span>Manager</span><strong>${history.manager}</strong></div>
@@ -4610,9 +5592,13 @@ window.GameService = (() => {
           </div>
         </article>`;
       content.querySelectorAll("[data-facility-upgrade]").forEach(btn=>{
-        btn.addEventListener("click",()=>{
-          const f = facilities[Number(btn.dataset.facilityUpgrade)];
-          showToast(`${f.type} upgrade preview: ${money(f.upgradeCost)} (mock).`);
+        btn.addEventListener("click",async()=>{
+          const f=facilities[Number(btn.dataset.facilityUpgrade)];
+          if(!f.upgradeCost){showToast(`${f.type} sudah max level.`);return;}
+          if(!confirm(`Upgrade ${f.type} for ${money(f.upgradeCost)}?`))return;
+          btn.disabled=true;
+          try{await GameService.upgradeFacility(f.facilityKey);showToast(`${f.type} upgraded server-side.`);}catch(err){showToast(`Upgrade gagal: ${err.message}`);}
+          await renderClub();
         });
       });
     } else if (state.clubView.tab === "trophies") {
@@ -4680,16 +5666,9 @@ window.GameService = (() => {
       btn.addEventListener("click",()=>{state.inbox.filter=btn.dataset.inboxFilter;renderInbox();});
     });
     root.querySelectorAll("[data-note-read]").forEach(btn=>{
-      btn.addEventListener("click",()=>{
-        const note = window.MockDB.notifications.find(n=>n.id===btn.dataset.noteRead);
-        if (note) note.read=true;
-        refreshNotificationCounts(); renderInbox();
-      });
+      btn.addEventListener("click",async()=>{try{await GameService.markNotificationRead(btn.dataset.noteRead);showToast("Notification marked read.");}catch(err){showToast(`Read gagal: ${err.message}`);}await refreshNotificationCounts();await renderInbox();});
     });
-    document.getElementById("markAllReadBtn")?.addEventListener("click",()=>{
-      window.MockDB.notifications.forEach(n=>n.read=true);
-      refreshNotificationCounts(); renderInbox();
-    });
+    document.getElementById("markAllReadBtn")?.addEventListener("click",async()=>{try{const c=state.inbox.filter;await GameService.markAllNotificationsRead(["Match","Transfer","Player","Finance","League"].includes(c)?c.toUpperCase():null);showToast("Notifications marked read.");}catch(err){showToast(`Mark all gagal: ${err.message}`);}await refreshNotificationCounts();await renderInbox();});
   }
 
   async function renderSeason() {
@@ -4772,7 +5751,7 @@ window.GameService = (() => {
     } else if(state.adminView.tab==="technical"){
       c.innerHTML=`<article class="card section-card"><div class="section-head"><div><p class="eyebrow">TECHNICAL FAILURE</p><h2>Rerun Only Failed Matches</h2><p>No manual-winner control exists.</p></div></div>${admin.technicalFailures.map(f=>`<div class="admin-user"><div><strong>${f.fixture}</strong><span>${f.reason}</span></div><span>${f.status}</span><button class="secondary-btn" data-rerun-failure="${f.id}">Rerun</button></div>`).join("")}<div class="finance-warning">Admin cannot choose who wins. Match outcome remains engine-controlled.</div></article>`;
     } else if(state.adminView.tab==="world"){
-      c.innerHTML=`<div class="admin-grid"><article class="card section-card"><div class="section-head"><div><p class="eyebrow">WORLD CONTROL</p><h2>${admin.world.name}</h2></div></div><div class="admin-control-grid"><div class="admin-control"><span>Active Managers</span><strong>${admin.world.activeManagers}</strong></div><div class="admin-control"><span>Season</span><strong>${admin.world.season}</strong></div><div class="admin-control"><span>Phase</span><strong>${admin.world.phase}</strong></div><div class="admin-control"><span>Scheduler</span><strong>${admin.world.matchScheduler?'ON':'OFF'}</strong></div></div><div class="auth-form" style="margin-top:14px"><div class="auth-field"><label>Maximum Managers</label><input class="auth-input" id="maxManagersInput" type="number" min="1" max="18" value="${admin.world.maxManagers}"></div><div class="auth-field"><label>Phase</label><select class="game-select" id="adminPhaseSelect">${["PRESEASON","FIRST_HALF","MIDSEASON_BREAK","SECOND_HALF","OFFSEASON"].map(p=>`<option ${p===admin.world.phase?'selected':''}>${p}</option>`).join("")}</select></div><button class="secondary-btn" id="saveWorldBtn">Save World Settings</button><button class="secondary-btn" id="adminSchedulerBtn">${admin.world.matchScheduler?'Pause':'Resume'} Scheduler</button><button class="secondary-btn" id="adminTransferBtn">${admin.world.transferWindow?'Close':'Open'} Transfer Window</button><button class="secondary-btn" id="adminRolloverBtn">Run Season Rollover (Mock)</button></div></article><aside class="card section-card"><div class="finance-warning">Rollover order is fixed: standings → awards/prizes → development → age → decline → retirement → contracts → free agents → sponsorship/budget → offseason → new season.</div></aside></div>`;
+      c.innerHTML=`<div class="admin-grid"><article class="card section-card"><div class="section-head"><div><p class="eyebrow">WORLD CONTROL</p><h2>${admin.world.name}</h2></div></div><div class="admin-control-grid"><div class="admin-control"><span>Active Managers</span><strong>${admin.world.activeManagers}</strong></div><div class="admin-control"><span>Season</span><strong>${admin.world.season}</strong></div><div class="admin-control"><span>Phase</span><strong>${admin.world.phase}</strong></div><div class="admin-control"><span>Scheduler</span><strong>${admin.world.matchScheduler?'ON':'OFF'}</strong></div></div><div class="auth-form" style="margin-top:14px"><div class="auth-field"><label>Maximum Managers</label><input class="auth-input" id="maxManagersInput" type="number" min="1" max="18" value="${admin.world.maxManagers}"></div><div class="auth-field"><label>Phase</label><select class="game-select" id="adminPhaseSelect">${["PRESEASON","FIRST_HALF","MIDSEASON_BREAK","SECOND_HALF","OFFSEASON"].map(p=>`<option ${p===admin.world.phase?'selected':''}>${p}</option>`).join("")}</select></div><button class="secondary-btn" id="saveWorldBtn">Save World Settings</button><button class="secondary-btn" id="adminSchedulerBtn">${admin.world.matchScheduler?'Pause':'Resume'} Scheduler</button><button class="secondary-btn" id="adminTransferBtn">${admin.world.transferWindow?'Close':'Open'} Transfer Window</button><button class="secondary-btn" id="adminRolloverBtn">Run Season Rollover (Admin tool)</button></div></article><aside class="card section-card"><div class="finance-warning">Rollover order is fixed: standings → awards/prizes → development → age → decline → retirement → contracts → free agents → sponsorship/budget → offseason → new season.</div></aside></div>`;
     } else {
       c.innerHTML=`<article class="card table-card"><div class="section-card"><div class="section-head"><div><p class="eyebrow">ADMIN AUDIT LOG</p><h2>Transparent Privileged Actions</h2><p>Timestamp, old value, new value and reason are preserved.</p></div></div></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Timestamp</th><th>Action</th><th>Entity</th><th>Old</th><th>New</th><th>Reason</th></tr></thead><tbody>${admin.auditLog.map(a=>`<tr><td>${a.time}</td><td>${a.action}</td><td>${a.entity}</td><td>${a.oldValue||'—'}</td><td>${a.newValue||'—'}</td><td>${a.reason}</td></tr>`).join("")}</tbody></table></div></article>`;
     }
@@ -4812,6 +5791,8 @@ window.GameService = (() => {
           ${fact("Wage", wage(p.wage))}
           ${fact("Reference Season", p.refSeason)}
           ${fact("Reference Club", p.refClub)}
+          ${fact("Reference Age", p.refAge ?? "-")}
+          ${fact("Career Stage", p.careerStage || "-")}
           ${fact("Primary / Secondary", p.pos + " / " + (p.secondary||"-"))}
           ${fact("Injury", p.injury?.level||"None")}
           ${fact("Suspension", p.suspension?.active ? p.suspension.matches+" match" : "None")}
@@ -4824,7 +5805,7 @@ window.GameService = (() => {
       <div class="attributes"><h3>Season Statistics</h3><div class="player-facts">${fact("Appearances",p.stats?.appearances??0)}${fact("Starts",p.stats?.starts??0)}${fact("Minutes",p.stats?.minutes??0)}${fact("Goals",p.stats?.goals??0)}${fact("Assists",p.stats?.assists??0)}${fact("Avg Rating",p.stats?.avgRating??"-")}${fact("Clean Sheets",p.stats?.cleanSheets??0)}</div></div>
       <div class="attributes"><h3>Injury / Availability</h3><div class="player-facts">${fact("Level",p.injury?.level||"None")}${fact("Matches Affected",p.injury?.matchesAffected??0)}${fact("Playable",p.injury?.playable===false?"No":"Yes")}${fact("Expected Return Fitness",(p.injury?.returnFitness??p.fitness)+"%")}</div></div>
       <div class="attributes"><h3>Development Outlook</h3><div class="player-facts">${fact("Age Multiplier",p.age<=20?"1.35×":p.age<=22?"1.25×":p.age<=24?"1.15×":p.age<=26?"1.00×":p.age<=28?"0.85×":p.age<=30?"0.60×":p.age<=32?"0.35×":"0.15×")}${fact("Season Growth Band",p.age<=24?"Typically +1 to +3 OVR":p.age<=28?"Typically 0 to +1 OVR":"Stable / decline risk")}${fact("Potential",p.potential)}${fact("Retirement Risk",p.retirementRisk||"Low")}</div><div class="subtext">Potential remains a hidden soft ceiling; only the label is shown. Physical attributes decline earlier than technical/positioning attributes.</div></div>
-      <div class="attributes"><h3>Contract Actions</h3><div class="contract-panel"><div class="contract-actions"><select id="renewContractYears" class="game-select">${[1,2,3].map(y=>`<option value="${y}">${y} season${y>1?'s':''}</option>`).join("")}</select><button class="secondary-btn" id="renewContractBtn">Renew Contract</button><button class="reject-btn" id="releasePlayerBtn">Release Player</button></div><div class="subtext">Contract max 3 seasons. Early release compensation: approximately 30–50% remaining wages.</div></div></div>
+      <div class="attributes"><h3>Contract Actions</h3><div class="contract-panel"><div class="contract-actions"><select id="renewContractYears" class="game-select">${[1,2,3].map(y=>`<option value="${y}">${y} season${y>1?'s':''}</option>`).join("")}</select><button class="secondary-btn" id="renewContractBtn">Renew Contract</button><button class="secondary-btn" id="listTransferBtn">List for Transfer</button><button class="reject-btn" id="releasePlayerBtn">Release Player</button></div><div class="subtext">Contract max 3 seasons. Early release compensation: approximately 30–50% remaining wages.</div></div></div>
       <div class="attributes"><h3>Game Career History</h3><div class="table-wrap"><table class="career-table"><thead><tr><th>Season</th><th>Club</th><th>Apps</th><th>Goals</th><th>Assists</th><th>Rating</th></tr></thead><tbody>${(p.careerHistory||[]).map(h=>`<tr><td>${h.season}</td><td>${h.club}</td><td>${h.apps}</td><td>${h.goals}</td><td>${h.assists}</td><td>${h.rating}</td></tr>`).join("")}</tbody></table></div></div>
 
       <div class="attributes">
@@ -4841,8 +5822,9 @@ window.GameService = (() => {
       </div>
     `;
 
-    document.getElementById("renewContractBtn")?.addEventListener("click",()=>{const y=Number(document.getElementById("renewContractYears").value);p.contract=y;showToast(`${p.name} renewed for ${y} season${y>1?'s':''} (mock).`);});
-    document.getElementById("releasePlayerBtn")?.addEventListener("click",()=>showToast(`${p.name} release flow opened; compensation 30–50% remaining wages (mock).`));
+    document.getElementById("renewContractBtn")?.addEventListener("click",async()=>{const y=Number(document.getElementById("renewContractYears").value);try{await GameService.renewContract(p.id,y,p.wage);showToast(`${p.name}: renewal ${y} season queued server-side.`);}catch(err){showToast(`Renew gagal: ${err.message}`);}});
+    document.getElementById("listTransferBtn")?.addEventListener("click",async()=>{const ask=Number(prompt(`Asking price for ${p.name} (£)`,String(Math.max(1000000,Math.round(p.ovr*p.ovr*4000)))));if(!ask)return;try{await GameService.listPlayerForTransfer(p.id,ask);showToast(`${p.name} listed for ${money(ask)}.`);playerDialog.close();}catch(err){showToast(`Listing gagal: ${err.message}`);}});
+    document.getElementById("releasePlayerBtn")?.addEventListener("click",async()=>{if(!confirm(`Release ${p.name}? Server will enforce minimum 18 squad and 2 GK.`))return;try{await GameService.releasePlayer(p.id);showToast(`${p.name} released server-side.`);playerDialog.close();await render();}catch(err){showToast(`Release gagal: ${err.message}`);}});
     playerDialog.showModal();
   }
 
@@ -4878,19 +5860,25 @@ window.GameService = (() => {
     });
   }
 
-  const savedSession = localStorage.getItem("fmMiniSession");
-  if (savedSession === "active") {
-    state.session.loggedIn = true;
-    authRoot.innerHTML = "";
-    gameApp.classList.remove("is-hidden");
-    syncActiveNav();
-    render();
-    refreshNotificationCounts();
-  } else {
-    showAuth();
-  }
+  MS7Service.client.auth.onAuthStateChange((event) => {
+    if (event === "SIGNED_OUT") {
+      state.alpha.bootstrap = null;
+      state.session.screen = "login";
+    }
+  });
+
+  showAuth(true);
 })();
 
 </script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(err => console.warn('Service worker registration failed', err));
+  });
+}
+</script>
+
 </body>
 </html>
