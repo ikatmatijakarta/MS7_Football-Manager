@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ms7-football-manager-rc10-uploadthing-audio';
+const CACHE_NAME = 'ms7-football-manager-rc10-2-lineup-readability';
 const APP_SHELL = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
